@@ -111,9 +111,6 @@
                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
                               }];
 
-    
-    
-    
 }
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
@@ -144,10 +141,10 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+   // UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    //self.navigationItem.rightBarButtonItem = addButton;
   if (!self.objects) {
         self.objects = [[NSMutableArray alloc] init];
    }
@@ -156,9 +153,6 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
      //Search
     self.searchResult = [NSMutableArray arrayWithCapacity:[self.objects count]];
     
-    //DetailView controller
-    if(!controller)
-         controller = [[DetailViewController alloc] init];
     //Movie for DetailView controller
     if(!self.movie)
         self.movie = [[MOVMovie alloc]init];
@@ -232,16 +226,19 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
         return [self.objects count];
     }
 }
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     MOVMovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
      if (cell == nil)
      {
          cell = [[MOVMovieTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+         
          // cell.movies=[NSArray arrayWithArray:self.movies];
      }
     if([tableView isEqual:self.searchDisplayController.searchResultsTableView])
     {
+        
     }
     else{
       if (indexPath.row==0) {cell.typeLabel.text=@"Top rated movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"top_rated"]];}
@@ -255,30 +252,61 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
      }
     return cell;
 }
+ */
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+   
+    if([tableView isEqual:self.searchDisplayController.searchResultsTableView])
+    {
+        static NSString *CellIdentifier = @"NormalCell";
+        
+        UITableViewCell *cell = [self.searchDisplayController.searchResultsTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+        cell.textLabel.text=[[self.searchResult objectAtIndex:indexPath.row] title];
+        return cell;
+    }
+    else{
+        static NSString *CellIdentifier = @"Cell";
+        
+        MOVMovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil)
+        {
+            cell = [[MOVMovieTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            
+            // cell.movies=[NSArray arrayWithArray:self.movies];
+        }
+        if (indexPath.row==0) {cell.typeLabel.text=@"Top rated movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"top_rated"]];}
+        
+        else if (indexPath.row==1) {cell.typeLabel.text = @"Upcoming movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"upcoming"]];}
+        
+        else if(indexPath.row==2) {cell.typeLabel.text=@"Most popular movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"popular"]];}
+        
+        cell.backgroundColor=[UIColor whiteColor];
+        cell.delegate=self;
+        return cell;
+    }
+}
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         
         controller.detailItem = [self.searchResult objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
-            [self performSegueWithIdentifier: @"showDetail" sender:self];
+        [self performSegueWithIdentifier: @"showDetail" sender:self];
         
         NSLog(@"Search Display Controller");
     } else {
-       controller.detailItem = [self.objects objectAtIndex: indexPath.row];
+        controller.detailItem = [self.objects objectAtIndex: indexPath.row];
         [self performSegueWithIdentifier: @"showDetail" sender: self];
         NSLog(@"Default Display Controller");
     }
-     controller.navigationItem.leftItemsSupplementBackButton = YES;
+    controller.navigationItem.leftItemsSupplementBackButton = YES;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-  /*  if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }*/
-}
+
+
+
+
 
 @end

@@ -10,8 +10,7 @@
 #import "DetailViewController.h"
 #import <RestKit/CoreData.h>
 #import <RestKit/RestKit.h>
-#import "FICEntity.h"
-#import "FICImageCache.h"
+
 #import "MOVMovie.h"
 @interface AppDelegate () <UISplitViewControllerDelegate>
 - (void)configureRestKit;

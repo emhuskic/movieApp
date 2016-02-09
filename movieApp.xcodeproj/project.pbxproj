@@ -11,13 +11,6 @@
 		A02A0BCD1C69FDC8001E5402 /* Gaming-Hearts-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A02A0BCC1C69FDC8001E5402 /* Gaming-Hearts-icon.png */; };
 		A06625971C64D16300B1B050 /* MOVMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625961C64D16300B1B050 /* MOVMovieTableViewCell.m */; };
 		A06625A41C64EC0700B1B050 /* MOVMovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625A31C64EC0700B1B050 /* MOVMovieCollectionViewCell.m */; };
-		A06625BB1C68A82A00B1B050 /* FICImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625AD1C68A82A00B1B050 /* FICImageCache.m */; };
-		A06625BC1C68A82A00B1B050 /* FICImageFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625AF1C68A82A00B1B050 /* FICImageFormat.m */; };
-		A06625BD1C68A82A00B1B050 /* FICImageTable.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625B11C68A82A00B1B050 /* FICImageTable.m */; };
-		A06625BE1C68A82A00B1B050 /* FICImageTableChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625B31C68A82A00B1B050 /* FICImageTableChunk.m */; };
-		A06625BF1C68A82A00B1B050 /* FICImageTableEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625B51C68A82A00B1B050 /* FICImageTableEntry.m */; };
-		A06625C01C68A82A00B1B050 /* FICUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625B81C68A82A00B1B050 /* FICUtilities.m */; };
-		A06625C11C68A82A00B1B050 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A06625BA1C68A82A00B1B050 /* Info.plist */; };
 		A06625C41C68AE5500B1B050 /* MOVMovieEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625C31C68AE5500B1B050 /* MOVMovieEntity.m */; };
 		A09F020B1C60B48E002E128D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F020A1C60B48E002E128D /* main.m */; };
 		A09F020E1C60B48E002E128D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F020D1C60B48E002E128D /* AppDelegate.m */; };
@@ -46,23 +39,6 @@
 		A06625961C64D16300B1B050 /* MOVMovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVMovieTableViewCell.m; path = ../MOVMovieTableViewCell.m; sourceTree = "<group>"; };
 		A06625A21C64EC0700B1B050 /* MOVMovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOVMovieCollectionViewCell.h; path = ../MOVMovieCollectionViewCell.h; sourceTree = "<group>"; };
 		A06625A31C64EC0700B1B050 /* MOVMovieCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVMovieCollectionViewCell.m; path = ../MOVMovieCollectionViewCell.m; sourceTree = "<group>"; };
-		A06625AA1C68A82A00B1B050 /* FICEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICEntity.h; sourceTree = "<group>"; };
-		A06625AB1C68A82A00B1B050 /* FICImageCache+FICErrorLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FICImageCache+FICErrorLogging.h"; sourceTree = "<group>"; };
-		A06625AC1C68A82A00B1B050 /* FICImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageCache.h; sourceTree = "<group>"; };
-		A06625AD1C68A82A00B1B050 /* FICImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageCache.m; sourceTree = "<group>"; };
-		A06625AE1C68A82A00B1B050 /* FICImageFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageFormat.h; sourceTree = "<group>"; };
-		A06625AF1C68A82A00B1B050 /* FICImageFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageFormat.m; sourceTree = "<group>"; };
-		A06625B01C68A82A00B1B050 /* FICImageTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageTable.h; sourceTree = "<group>"; };
-		A06625B11C68A82A00B1B050 /* FICImageTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageTable.m; sourceTree = "<group>"; };
-		A06625B21C68A82A00B1B050 /* FICImageTableChunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageTableChunk.h; sourceTree = "<group>"; };
-		A06625B31C68A82A00B1B050 /* FICImageTableChunk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageTableChunk.m; sourceTree = "<group>"; };
-		A06625B41C68A82A00B1B050 /* FICImageTableEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageTableEntry.h; sourceTree = "<group>"; };
-		A06625B51C68A82A00B1B050 /* FICImageTableEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageTableEntry.m; sourceTree = "<group>"; };
-		A06625B61C68A82A00B1B050 /* FICImports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImports.h; sourceTree = "<group>"; };
-		A06625B71C68A82A00B1B050 /* FICUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICUtilities.h; sourceTree = "<group>"; };
-		A06625B81C68A82A00B1B050 /* FICUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICUtilities.m; sourceTree = "<group>"; };
-		A06625B91C68A82A00B1B050 /* FastImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastImageCache.h; sourceTree = "<group>"; };
-		A06625BA1C68A82A00B1B050 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A06625C21C68AE5500B1B050 /* MOVMovieEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieEntity.h; sourceTree = "<group>"; };
 		A06625C31C68AE5500B1B050 /* MOVMovieEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieEntity.m; sourceTree = "<group>"; };
 		A09F02061C60B48E002E128D /* movieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,39 +97,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A06625A81C68A82A00B1B050 /* FastImageCache */ = {
-			isa = PBXGroup;
-			children = (
-				A06625A91C68A82A00B1B050 /* FastImageCache */,
-				A06625B91C68A82A00B1B050 /* FastImageCache.h */,
-				A06625BA1C68A82A00B1B050 /* Info.plist */,
-			);
-			name = FastImageCache;
-			path = ../FastImageCache;
-			sourceTree = "<group>";
-		};
-		A06625A91C68A82A00B1B050 /* FastImageCache */ = {
-			isa = PBXGroup;
-			children = (
-				A06625AA1C68A82A00B1B050 /* FICEntity.h */,
-				A06625AB1C68A82A00B1B050 /* FICImageCache+FICErrorLogging.h */,
-				A06625AC1C68A82A00B1B050 /* FICImageCache.h */,
-				A06625AD1C68A82A00B1B050 /* FICImageCache.m */,
-				A06625AE1C68A82A00B1B050 /* FICImageFormat.h */,
-				A06625AF1C68A82A00B1B050 /* FICImageFormat.m */,
-				A06625B01C68A82A00B1B050 /* FICImageTable.h */,
-				A06625B11C68A82A00B1B050 /* FICImageTable.m */,
-				A06625B21C68A82A00B1B050 /* FICImageTableChunk.h */,
-				A06625B31C68A82A00B1B050 /* FICImageTableChunk.m */,
-				A06625B41C68A82A00B1B050 /* FICImageTableEntry.h */,
-				A06625B51C68A82A00B1B050 /* FICImageTableEntry.m */,
-				A06625B61C68A82A00B1B050 /* FICImports.h */,
-				A06625B71C68A82A00B1B050 /* FICUtilities.h */,
-				A06625B81C68A82A00B1B050 /* FICUtilities.m */,
-			);
-			path = FastImageCache;
-			sourceTree = "<group>";
-		};
 		A09F01FD1C60B48E002E128D = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +143,6 @@
 		A09F02091C60B48E002E128D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A06625A81C68A82A00B1B050 /* FastImageCache */,
 				A09F02711C62509E002E128D /* account.png */,
 				A02A0BCC1C69FDC8001E5402 /* Gaming-Hearts-icon.png */,
 				A09F026D1C623F98002E128D /* movies.png */,
@@ -309,7 +251,6 @@
 				A09F02191C60B48E002E128D /* Assets.xcassets in Resources */,
 				A09F02281C60CCCC002E128D /* movie3.jpeg in Resources */,
 				A09F022C1C60CCD8002E128D /* movie1.jpg in Resources */,
-				A06625C11C68A82A00B1B050 /* Info.plist in Resources */,
 				A09F02171C60B48E002E128D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,13 +313,8 @@
 				A06625A41C64EC0700B1B050 /* MOVMovieCollectionViewCell.m in Sources */,
 				A09F02261C60B5BB002E128D /* MOVMovie.m in Sources */,
 				A09F020E1C60B48E002E128D /* AppDelegate.m in Sources */,
-				A06625C01C68A82A00B1B050 /* FICUtilities.m in Sources */,
-				A06625BB1C68A82A00B1B050 /* FICImageCache.m in Sources */,
 				A09F02351C60D777002E128D /* MOVProductionCompany.m in Sources */,
 				A06625C41C68AE5500B1B050 /* MOVMovieEntity.m in Sources */,
-				A06625BE1C68A82A00B1B050 /* FICImageTableChunk.m in Sources */,
-				A06625BC1C68A82A00B1B050 /* FICImageFormat.m in Sources */,
-				A06625BD1C68A82A00B1B050 /* FICImageTable.m in Sources */,
 				A09F023B1C60D835002E128D /* MOVSpokenLanguage.m in Sources */,
 				A06625971C64D16300B1B050 /* MOVMovieTableViewCell.m in Sources */,
 				A09F02321C60D6E9002E128D /* MOVGenre.m in Sources */,
@@ -386,7 +322,6 @@
 				A09F020B1C60B48E002E128D /* main.m in Sources */,
 				A09F026C1C622B4A002E128D /* MOVMovieTabBarItem.m in Sources */,
 				A09F02381C60D7EA002E128D /* MOVProductionCountry.m in Sources */,
-				A06625BF1C68A82A00B1B050 /* FICImageTableEntry.m in Sources */,
 				A09F02141C60B48E002E128D /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,8 @@
 
 #import "DetailViewController.h"
 #import "MOVMovie.h"
+
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *upperImage;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -55,8 +57,10 @@
         UIImage *imgLower= [[UIImage alloc] initWithData:dataLower];
         NSData *dataUpper = [NSData dataWithContentsOfURL:urlUpper];
         UIImage *imgUpper= [[UIImage alloc] initWithData:dataUpper];
-        self.upperImage.image=imgUpper;
-        self.lowerImage.image=imgLower;
+        [self.upperImage sd_setImageWithURL:urlUpper];
+        [self.lowerImage sd_setImageWithURL:urlLower];
+        //self.upperImage.image=imgUpper;
+        //self.lowerImage.image=imgLower;
         
     }
 }

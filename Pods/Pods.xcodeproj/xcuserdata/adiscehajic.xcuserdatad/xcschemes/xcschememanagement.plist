@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FastImageCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ISO8601DateFormatterValueTransformer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SOCKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,22 +52,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>02A157D85E7FB92E64BE99F977842176</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>080AF914A09167DB5759A733917B840F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3ADCF21DE07F48FF550DDE6471EFC64F</key>
+		<key>0BB7BBFE3DC6E028F7138444826A0085</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3FF39CC2F482FBE29C663DD8386C9855</key>
+		<key>4F306A8932FD0C89A9B03FDA0F69BEA0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>60647815FD6E96D6B482FB448E17D22B</key>
+		<key>557D9AD649F4F14EA21010E7811F55A6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>66699B9F37C8DE0A9A40BCD5435CD7B8</key>
+		<key>74C70FA3C866BFA8C170C72623AC0094</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C47E006176ABF4755350B88C088C3F0D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F71EA3F402F0CC81337C0B2B5E4CD959</key>
 		<dict>
 			<key>primary</key>
 			<true/>

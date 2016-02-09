@@ -7,18 +7,9 @@
 //
 
 #import "MOVMovieTableViewCell.h"
-//#import "MOVMovieEntity.h"
-#import "FICEntity.h"
-#import "FICImageCache.h"
+
 #import "DetailViewController.h"
-@interface MOVMovieTableViewCell () <UIGestureRecognizerDelegate> {
-    BOOL _usesImageTable;
-    NSArray *_photos;
-    NSString *_imageFormatName;
-    NSMutableArray *_imageViews;
-    UITapGestureRecognizer *_tapGestureRecognizer;
-}
-@end
+#import <SDWebImage/UIImageView+WebCache.h>
 @implementation MOVMovieTableViewCell
 
 - (void)awakeFromNib {
@@ -43,7 +34,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 9;
+    return self.movies.count;
 }
 
 - (MOVMovieCollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -67,9 +58,10 @@
         customCell.yearLabel.text=[NSString stringWithFormat:@"%ld",(long)[components year]];
         customCell.titleLabel.text=[mov title];
         NSURL * urlLower = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", mov.posterPath]];
-        NSData *dataLower = [NSData dataWithContentsOfURL:urlLower];
-        UIImage *imgLower= [[UIImage alloc] initWithData:dataLower];
-            customCell.img.image=imgLower;
+       // NSData *dataLower = [NSData dataWithContentsOfURL:urlLower];
+        //UIImage *imgLower= [[UIImage alloc] initWithData:dataLower];
+       // customCell.img.image=imgLower;
+        [customCell.img sd_setImageWithURL:urlLower];
         return customCell;
     }
     else
