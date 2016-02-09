@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "MOVGenre.h"
 #import "MOVProductionCompany.h"
-
 @interface MOVMovie : NSObject
 
 //@property (nonatomic) NSUInteger *id;
@@ -26,12 +25,13 @@
 @property (nonatomic, strong) NSArray *productionCompanies;
 @property (nonatomic, strong) NSString *popularity;
 @property (nonatomic, strong) NSArray *productionCountries;
-@property (nonatomic, strong) NSString *releaseDate;
+@property (nonatomic, strong) NSDate *releaseDate;
 @property (nonatomic, strong) NSString *revenue;
 @property (nonatomic, strong) NSArray *spokenLanguages;
 @property (nonatomic, strong) NSString *status;
 @property (nonatomic, strong) NSString *tagline;
 @property (nonatomic, strong) NSString *title;
+
 @property (nonatomic) BOOL video;
 
 //@property (nonatomic) NSUInteger *voteCount;

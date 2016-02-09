@@ -10,12 +10,57 @@
 #import "DetailViewController.h"
 #import <RestKit/CoreData.h>
 #import <RestKit/RestKit.h>
+#import "FICEntity.h"
+#import "FICImageCache.h"
 #import "MOVMovie.h"
 @interface AppDelegate () <UISplitViewControllerDelegate>
 - (void)configureRestKit;
+- (void) imageCaching;
 @end
 
 @implementation AppDelegate
+/*
+- (void) imageCaching
+{
+    static NSString *XXImageFormatNameUserThumbnailSmall = @"com.mycompany.myapp.XXImageFormatNameUserThumbnailSmall";
+    static NSString *XXImageFormatNameUserThumbnailMedium = @"com.mycompany.myapp.XXImageFormatNameUserThumbnailMedium";
+    static NSString *XXImageFormatFamilyUserThumbnails = @"com.mycompany.myapp.XXImageFormatFamilyUserThumbnails";
+    
+    FICImageFormat *smallUserThumbnailImageFormat = [[FICImageFormat alloc] init];
+    smallUserThumbnailImageFormat.name = XXImageFormatNameUserThumbnailSmall;
+    smallUserThumbnailImageFormat.family = XXImageFormatFamilyUserThumbnails;
+    smallUserThumbnailImageFormat.style = FICImageFormatStyle16BitBGR;
+    smallUserThumbnailImageFormat.imageSize = CGSizeMake(50, 50);
+    smallUserThumbnailImageFormat.maximumCount = 250;
+    smallUserThumbnailImageFormat.devices = FICImageFormatDevicePhone;
+    smallUserThumbnailImageFormat.protectionMode = FICImageFormatProtectionModeNone;
+    
+    FICImageFormat *mediumUserThumbnailImageFormat = [[FICImageFormat alloc] init];
+    mediumUserThumbnailImageFormat.name = XXImageFormatNameUserThumbnailMedium;
+    mediumUserThumbnailImageFormat.family = XXImageFormatFamilyUserThumbnails;
+    mediumUserThumbnailImageFormat.style = FICImageFormatStyle32BitBGRA;
+    mediumUserThumbnailImageFormat.imageSize = CGSizeMake(100, 100);
+    mediumUserThumbnailImageFormat.maximumCount = 250;
+    mediumUserThumbnailImageFormat.devices = FICImageFormatDevicePhone;
+    mediumUserThumbnailImageFormat.protectionMode = FICImageFormatProtectionModeNone;
+    
+    NSArray *imageFormats = @[smallUserThumbnailImageFormat, mediumUserThumbnailImageFormat];
+    FICImageCache *sharedImageCache = [FICImageCache sharedImageCache];
+    sharedImageCache.delegate = self;
+    sharedImageCache.formats = imageFormats;
+}
+
+- (void)imageCache:(FICImageCache *)imageCache wantsSourceImageForEntity:(id<FICEntity>)entity withFormatName:(NSString *)formatName completionBlock:(FICImageRequestCompletionBlock)completionBlock {
+    // Images typically come from the Internet rather than from the app bundle directly, so this would be the place to fire off a network request to download the image.
+    // For the purposes of this demo app, we'll just access images stored locally on disk.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        UIImage *sourceImage = [(MOVMovie*)entity posterPath];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionBlock(sourceImage);
+        });
+    });
+}
+*/
 
 - (void)configureRestKit
 {

@@ -10,11 +10,16 @@
 #import "DetailViewController.h"
 #import <RestKit/RestKit.h>
 #import "MOVMovie.h"
+#import "MOVMovieTableViewCell.h"
+
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
+@property (strong, nonatomic) NSMutableDictionary *moviesDict;
 @property (strong, nonatomic) NSArray *movies;
 @property (nonatomic, strong) NSMutableArray *searchResult;
+@property (nonatomic, strong)  DetailViewController *controller;
+@property (nonatomic, strong) MOVMovieTableViewCell *MovieCell;
 @end
 
 @implementation MasterViewController
@@ -34,7 +39,7 @@
                                                        @"belongs_to_collection":@"belongsToCollection",
                                                        @"adult": @"adult",
                                                        @"genres": @"genres",
-                                                       @"homepage": @"homep,age",
+                                                       @"homepage": @"homepage",
                                                        @"original_language": @"originalLanguage",
                                                        @"overview": @"overview",
                                                        @"imdb_id": @"imdbID",
@@ -63,27 +68,71 @@
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                   
                                                   self.movies = mappingResult.array;
-                                                 self.objects = [NSMutableArray arrayWithArray:self.movies];
-                                                  [self.tableView reloadData];
+                                                  [self.moviesDict setObject:self.movies forKey:@"top_rated"];
+                                                  self.objects=[NSMutableArray arrayWithCapacity:5];
+                                                  [self.objects addObject:self.movies];
+                                                                                                    //self.objects = [NSMutableArray arrayWithArray:self.movies];
+                                                 [self.tableView reloadData];
     }
                                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                               }];
-  
+    
+    
+    RKResponseDescriptor *responseDescriptor2 = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping method:RKRequestMethodAny pathPattern:@"/3/movie/upcoming" keyPath:@"results" statusCodes:statusCodes];
+    RKObjectManager *sharedManager2 = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager2 addResponseDescriptorsFromArray:@[responseDescriptor2]];
+    [ sharedManager2 getObjectsAtPath:@"/3/movie/upcoming" parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825"}
+                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                 
+                                 self.movies = mappingResult.array;
+                                 [self.moviesDict setObject:self.movies forKey:@"upcoming"];
+                                 
+                               //  self.objects=[NSMutableArray arrayWithCapacity:5];
+                              [self.objects addObject:self.movies];
+                                 NSLog(@"tu2");
+                                                                  //self.objects = [NSMutableArray arrayWithArray:self.movies];
+                                 [self.tableView reloadData];
+                             }
+                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                             }];
+    
+    
+    RKResponseDescriptor *responseDescriptor3 = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping method:RKRequestMethodAny pathPattern:@"/3/movie/popular" keyPath:@"results" statusCodes:statusCodes];
+    RKObjectManager *sharedManager3 = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager3 addResponseDescriptorsFromArray:@[responseDescriptor3]];
+    [ sharedManager3 getObjectsAtPath:@"/3/movie/popular" parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825"}
+                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                  
+                                  self.movies = mappingResult.array;
+                                  [self.moviesDict setObject:self.movies forKey:@"popular"];
+                                  
+                                  [self.objects addObject:self.movies ];
+                                  NSLog(@"tu3");
+                                  [self.tableView reloadData];
+                              }
+                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                              }];
+
+    
     
     
 }
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
     NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"title contains[c] %@", searchText];
-    
-    self.searchResult = [self.objects filteredArrayUsingPredicate:resultPredicate];
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    for (int i=0; i<[[self.moviesDict objectForKey:@"top_rated"] count]; i++){
+        [arr addObject:[[self.moviesDict objectForKey:@"top_rated"] objectAtIndex:i]];
+    [arr addObject:[[self.moviesDict objectForKey:@"popular"] objectAtIndex:i]];
+    [arr addObject:[[self.moviesDict objectForKey:@"upcoming"] objectAtIndex:i]];
 }
-
+    
+    self.searchResult = [arr filteredArrayUsingPredicate:resultPredicate];
+ 
+   }
 
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-    [ self filterContentForSearchText:searchString
+    [self filterContentForSearchText:searchString
 scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
        objectAtIndex:[self.searchDisplayController.searchBar
                       selectedScopeButtonIndex]]];
@@ -99,17 +148,23 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-//    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-//    if (!self.objects) {
+  if (!self.objects) {
         self.objects = [[NSMutableArray alloc] init];
-//    }
+   }
+    if(!self.moviesDict)
+        self.moviesDict=[[NSMutableDictionary alloc] init];
      //Search
     self.searchResult = [NSMutableArray arrayWithCapacity:[self.objects count]];
     
-    NSLog(@"kdlakdl");
+    //DetailView controller
+    if(!controller)
+         controller = [[DetailViewController alloc] init];
+    //Movie for DetailView controller
+    if(!self.movie)
+        self.movie = [[MOVMovie alloc]init];
     //RESTKIT
     [self loadMovies];
-}
+ }
 
 - (void)viewWillAppear:(BOOL)animated {
     //self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
@@ -121,42 +176,30 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender {
-  /*  if (!self.objects) {
-        self.objects = [[NSMutableArray alloc] init];
-    }
-    [self.objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];*/
-}
-
 #pragma mark - Segues
-/*
-if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
-    RecipeDetailViewController *destViewController = segue.destinationViewController;
-    
-    NSIndexPath *indexPath = nil;
-    
-    if ([self.searchDisplayController isActive]) {
-        indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
-        destViewController.recipeName = [searchResults objectAtIndex:indexPath.row];
-        
-    } else {
-        indexPath = [self.tableView indexPathForSelectedRow];
-        destViewController.recipeName = [recipes objectAtIndex:indexPath.row];
-    }
-}*/
+
+@synthesize controller;
+
+- (void) selectMovie:(MOVMovieTableViewCell *)view withItem:(MOVMovie *)item
+{
+    self.movie=item;
+    controller.detailItem=item;
+    [self performSegueWithIdentifier:@"showDetail" sender:self];
+}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-      DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+    NSLog(@"Preparing for Segue in Master view controller...");
+   if ([[segue identifier] isEqualToString:@"showDetail"]) {
+   controller = (DetailViewController *)[segue destinationViewController] ;
         if (self.searchDisplayController.active) {
             NSLog(@"Search Display Controller");
             controller.detailItem = [self.searchResult objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
         } else {
             NSLog(@"tututu Default Display Controller");
-          controller.detailItem = [self.objects objectAtIndex: self.tableView.indexPathForSelectedRow.row];
+         controller.detailItem=self.movie;
+            
         }
-         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        
+        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
       }
@@ -169,81 +212,73 @@ if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+   
     if (tableView == self.searchDisplayController.searchResultsTableView)
     {
+      //  NSLog(<#NSString * _Nonnull format, ...#>)
         return [self.searchResult count];
     }
     else
     {
+       /* switch (section) {
+            case 0:
+                return [[self.moviesDict objectForKey:@"top_rated"] count];
+                
+                break;
+                
+            default: return [self.moviesDict count];
+                break;
+        }*/
         return [self.objects count];
     }
-  //  return self.objects.count;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   // UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil)
+    MOVMovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+     if (cell == nil)
+     {
+         cell = [[MOVMovieTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+         // cell.movies=[NSArray arrayWithArray:self.movies];
+     }
+    if([tableView isEqual:self.searchDisplayController.searchResultsTableView])
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    MOVMovie *mov;
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-    {
-         mov = [self.searchResult objectAtIndex:indexPath.row];
-        //cell.textLabel.text = [[self.searchResult objectAtIndex:indexPath.row] title];
-    }
-    else
-    {
-        mov = [self.objects objectAtIndex:indexPath.row];
-        //cell.textLabel.text = [self.objects[indexPath.row] title];
-    }
-    
-
-   // NSDate *object = self.objects[indexPath.row];
-  //  cell.textLabel.text = [self.objects[indexPath.row] title ];
-    
-    
-    cell.textLabel.text = [mov title];
+    else{
+      if (indexPath.row==0) {cell.typeLabel.text=@"Top rated movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"top_rated"]];}
+        
+    else if (indexPath.row==1) {cell.typeLabel.text = @"Upcoming movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"upcoming"]];}
+        
+    else if(indexPath.row==2) {cell.typeLabel.text=@"Most popular movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"popular"]];}
+     
+    cell.backgroundColor=[UIColor whiteColor];
+    cell.delegate=self;
+     }
     return cell;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return NO;
 }
 
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
-    DetailViewController *controller = [[DetailViewController alloc] init];
-    
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         
         controller.detailItem = [self.searchResult objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
-        
-        [self performSegueWithIdentifier: @"showDetail" sender:self];
+            [self performSegueWithIdentifier: @"showDetail" sender:self];
         
         NSLog(@"Search Display Controller");
     } else {
-        
        controller.detailItem = [self.objects objectAtIndex: indexPath.row];
-        
-       // [self performSegueWithIdentifier: @"showDetail" sender: self];
-        
+        [self performSegueWithIdentifier: @"showDetail" sender: self];
         NSLog(@"Default Display Controller");
     }
+     controller.navigationItem.leftItemsSupplementBackButton = YES;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+  /*  if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.objects removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
+    }*/
 }
 
 @end

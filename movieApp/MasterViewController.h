@@ -9,14 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
 #import "MOVMovie.h"
+#import "MOVMovieTableViewCell.h"
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UICollectionViewCell *collectionViewCell;
-
+@interface MasterViewController : UITableViewController <MovieCollectionCellDelegate>
 @property (strong, nonatomic) DetailViewController *detailViewController;
-
-
+@property (strong, nonatomic) MOVMovie *movie;
 @end
 
