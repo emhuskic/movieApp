@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E090FFF91B72EA931C5012EFFF1F12372E06F3F1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E090FFF91B72EA931C5012EFFF1F12372E06F3F1" : 0,
+    "DACF49CFBB0D82F16734EC966DA2A5318576D5E4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "84C01B55-B5B9-4DD7-BA93-6C7548AAACD0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E090FFF91B72EA931C5012EFFF1F12372E06F3F1" : "movieApp\/",
+    "DACF49CFBB0D82F16734EC966DA2A5318576D5E4" : "movieApp\/movieApp\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "movieApp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "movieApp.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/emhuskic\/iOSmovieApp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DACF49CFBB0D82F16734EC966DA2A5318576D5E4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/emhuskic\/movieApp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E090FFF91B72EA931C5012EFFF1F12372E06F3F1"
+    }
+  ]
+}
