@@ -13,9 +13,10 @@
 
 //@property (nonatomic) NSUInteger *id;
 @property (nonatomic) BOOL adult;
+@property (nonatomic, strong) NSNumber *movID;
 @property (nonatomic, strong) NSString *backdropPath;
 @property (nonatomic, strong) NSString *belongsToCollection;
-@property (nonatomic, strong) NSArray *genres;
+@property (nonatomic, strong) NSMutableArray *genres;
 @property (nonatomic, strong) NSString *homepage;
 @property (nonatomic, strong) NSString *originalLanguage;
 @property (nonatomic, strong) NSString *overview;
@@ -31,7 +32,7 @@
 @property (nonatomic, strong) NSString *status;
 @property (nonatomic, strong) NSString *tagline;
 @property (nonatomic, strong) NSString *title;
-
+@property (nonatomic, strong) NSNumber *voteCount;
 @property (nonatomic) BOOL video;
 
 //@property (nonatomic) NSUInteger *voteCount;

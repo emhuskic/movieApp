@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>EDStarRating.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FastImageCache.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,17 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0BB7BBFE3DC6E028F7138444826A0085</key>
+		<key>14653A298E1724CCD896A86392B70F32</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4F306A8932FD0C89A9B03FDA0F69BEA0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>557D9AD649F4F14EA21010E7811F55A6</key>
+		<key>3981D68F042EBEAC0F569F7FC3939B74</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>74C70FA3C866BFA8C170C72623AC0094</key>
+		<key>88635E80517155F2071080A3B5A1A833</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8E60006B1F2559B80C1036E53D3D1ECC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9BEE5F063D739BF8536958FD76629434</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F71EA3F402F0CC81337C0B2B5E4CD959</key>
+		<key>DFEC2DD975A8C95E59290C4DF51FDE02</key>
 		<dict>
 			<key>primary</key>
 			<true/>

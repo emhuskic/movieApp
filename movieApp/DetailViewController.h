@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "MOVMovie.h"
-@interface DetailViewController : UIViewController
+#import "MOVMovieStarRateView.h"
+@interface DetailViewController : UIViewController <RateViewDelegate>
+
 
 @property (strong, nonatomic) MOVMovie *detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet MOVMovieStarRateView *rateView;
+@property (weak, nonatomic) IBOutlet MOVMovieStarRateView *userRateView;
 
 @end
 

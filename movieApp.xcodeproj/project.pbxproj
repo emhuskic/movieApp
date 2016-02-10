@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		51DB8DA0A644345AADCF3F7C /* libPods-movieApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE210623EEC3E4A61D5EB440 /* libPods-movieApp.a */; };
 		A02A0BCD1C69FDC8001E5402 /* Gaming-Hearts-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A02A0BCC1C69FDC8001E5402 /* Gaming-Hearts-icon.png */; };
+		A050774D1C6A2CE40074603B /* movie_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = A050774C1C6A2CE40074603B /* movie_transparent.png */; };
+		A050774F1C6A346D0074603B /* starhighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = A050774E1C6A346D0074603B /* starhighlighted.png */; };
+		A05077511C6A34730074603B /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A05077501C6A34730074603B /* star.png */; };
 		A06625971C64D16300B1B050 /* MOVMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625961C64D16300B1B050 /* MOVMovieTableViewCell.m */; };
 		A06625A41C64EC0700B1B050 /* MOVMovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625A31C64EC0700B1B050 /* MOVMovieCollectionViewCell.m */; };
 		A06625C41C68AE5500B1B050 /* MOVMovieEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625C31C68AE5500B1B050 /* MOVMovieEntity.m */; };
@@ -31,10 +34,19 @@
 		A09F026E1C623F98002E128D /* movies.png in Resources */ = {isa = PBXBuildFile; fileRef = A09F026D1C623F98002E128D /* movies.png */; };
 		A09F02701C625007002E128D /* favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = A09F026F1C625007002E128D /* favorites.png */; };
 		A09F02721C62509E002E128D /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = A09F02711C62509E002E128D /* account.png */; };
+		A0E353E01C6B39ED00E81503 /* MOVMovieStarRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353DF1C6B39ED00E81503 /* MOVMovieStarRateView.m */; };
+		A0E353E21C6B3BF400E81503 /* redstarhald.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E353E11C6B3BF400E81503 /* redstarhald.png */; };
+		A0E353E41C6B3EAB00E81503 /* redstarnotselected.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E353E31C6B3EAB00E81503 /* redstarnotselected.png */; };
+		A0E353E61C6B3EB800E81503 /* redstarfullselected.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E353E51C6B3EB800E81503 /* redstarfullselected.png */; };
+		A0E353ED1C6B5A8500E81503 /* MOVPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353EC1C6B5A8500E81503 /* MOVPerson.m */; };
+		A0E353F01C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353EF1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A02A0BCC1C69FDC8001E5402 /* Gaming-Hearts-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gaming-Hearts-icon.png"; path = "../../../../Downloads/Gaming-Hearts-icon.png"; sourceTree = "<group>"; };
+		A050774C1C6A2CE40074603B /* movie_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie_transparent.png; sourceTree = "<group>"; };
+		A050774E1C6A346D0074603B /* starhighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starhighlighted.png; sourceTree = "<group>"; };
+		A05077501C6A34730074603B /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		A06625951C64D16300B1B050 /* MOVMovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOVMovieTableViewCell.h; path = ../MOVMovieTableViewCell.h; sourceTree = "<group>"; };
 		A06625961C64D16300B1B050 /* MOVMovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVMovieTableViewCell.m; path = ../MOVMovieTableViewCell.m; sourceTree = "<group>"; };
 		A06625A21C64EC0700B1B050 /* MOVMovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOVMovieCollectionViewCell.h; path = ../MOVMovieCollectionViewCell.h; sourceTree = "<group>"; };
@@ -71,6 +83,15 @@
 		A09F026D1C623F98002E128D /* movies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = movies.png; path = ../../../../Downloads/movies.png; sourceTree = "<group>"; };
 		A09F026F1C625007002E128D /* favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = favorites.png; path = ../../../../Downloads/favorites.png; sourceTree = "<group>"; };
 		A09F02711C62509E002E128D /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = account.png; path = ../../../../Downloads/account.png; sourceTree = "<group>"; };
+		A0E353DE1C6B39ED00E81503 /* MOVMovieStarRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieStarRateView.h; sourceTree = "<group>"; };
+		A0E353DF1C6B39ED00E81503 /* MOVMovieStarRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieStarRateView.m; sourceTree = "<group>"; };
+		A0E353E11C6B3BF400E81503 /* redstarhald.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redstarhald.png; sourceTree = "<group>"; };
+		A0E353E31C6B3EAB00E81503 /* redstarnotselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redstarnotselected.png; sourceTree = "<group>"; };
+		A0E353E51C6B3EB800E81503 /* redstarfullselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redstarfullselected.png; sourceTree = "<group>"; };
+		A0E353EB1C6B5A8500E81503 /* MOVPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOVPerson.h; path = Model/MOVPerson.h; sourceTree = SOURCE_ROOT; };
+		A0E353EC1C6B5A8500E81503 /* MOVPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVPerson.m; path = Model/MOVPerson.m; sourceTree = SOURCE_ROOT; };
+		A0E353EE1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieCastCollectionViewCell.h; sourceTree = "<group>"; };
+		A0E353EF1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieCastCollectionViewCell.m; sourceTree = "<group>"; };
 		A3F45D917B677418DE3994AE /* Pods-movieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BE210623EEC3E4A61D5EB440 /* libPods-movieApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movieApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE31C9C8EE8F0F7ED4F5DE42 /* Pods-movieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,8 +146,12 @@
 				A06625961C64D16300B1B050 /* MOVMovieTableViewCell.m */,
 				A06625A21C64EC0700B1B050 /* MOVMovieCollectionViewCell.h */,
 				A06625A31C64EC0700B1B050 /* MOVMovieCollectionViewCell.m */,
+				A0E353EE1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.h */,
+				A0E353EF1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m */,
 				A09F026A1C622B4A002E128D /* MOVMovieTabBarItem.h */,
 				A09F026B1C622B4A002E128D /* MOVMovieTabBarItem.m */,
+				A0E353DE1C6B39ED00E81503 /* MOVMovieStarRateView.h */,
+				A0E353DF1C6B39ED00E81503 /* MOVMovieStarRateView.m */,
 				A09F020F1C60B48E002E128D /* MasterViewController.h */,
 				A09F02101C60B48E002E128D /* MasterViewController.m */,
 				A09F02121C60B48E002E128D /* DetailViewController.h */,
@@ -143,6 +168,12 @@
 		A09F02091C60B48E002E128D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0E353E51C6B3EB800E81503 /* redstarfullselected.png */,
+				A0E353E31C6B3EAB00E81503 /* redstarnotselected.png */,
+				A0E353E11C6B3BF400E81503 /* redstarhald.png */,
+				A05077501C6A34730074603B /* star.png */,
+				A050774E1C6A346D0074603B /* starhighlighted.png */,
+				A050774C1C6A2CE40074603B /* movie_transparent.png */,
 				A09F02711C62509E002E128D /* account.png */,
 				A02A0BCC1C69FDC8001E5402 /* Gaming-Hearts-icon.png */,
 				A09F026D1C623F98002E128D /* movies.png */,
@@ -170,6 +201,8 @@
 				A09F023A1C60D835002E128D /* MOVSpokenLanguage.m */,
 				A06625C21C68AE5500B1B050 /* MOVMovieEntity.h */,
 				A06625C31C68AE5500B1B050 /* MOVMovieEntity.m */,
+				A0E353EB1C6B5A8500E81503 /* MOVPerson.h */,
+				A0E353EC1C6B5A8500E81503 /* MOVPerson.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -242,16 +275,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E353E21C6B3BF400E81503 /* redstarhald.png in Resources */,
 				A09F021C1C60B48E002E128D /* LaunchScreen.storyboard in Resources */,
 				A09F022A1C60CCD3002E128D /* movie2.jpeg in Resources */,
 				A02A0BCD1C69FDC8001E5402 /* Gaming-Hearts-icon.png in Resources */,
 				A09F026E1C623F98002E128D /* movies.png in Resources */,
 				A09F02701C625007002E128D /* favorites.png in Resources */,
+				A050774F1C6A346D0074603B /* starhighlighted.png in Resources */,
 				A09F02721C62509E002E128D /* account.png in Resources */,
 				A09F02191C60B48E002E128D /* Assets.xcassets in Resources */,
+				A0E353E41C6B3EAB00E81503 /* redstarnotselected.png in Resources */,
 				A09F02281C60CCCC002E128D /* movie3.jpeg in Resources */,
+				A0E353E61C6B3EB800E81503 /* redstarfullselected.png in Resources */,
+				A05077511C6A34730074603B /* star.png in Resources */,
 				A09F022C1C60CCD8002E128D /* movie1.jpg in Resources */,
 				A09F02171C60B48E002E128D /* Main.storyboard in Resources */,
+				A050774D1C6A2CE40074603B /* movie_transparent.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,11 +356,14 @@
 				A06625C41C68AE5500B1B050 /* MOVMovieEntity.m in Sources */,
 				A09F023B1C60D835002E128D /* MOVSpokenLanguage.m in Sources */,
 				A06625971C64D16300B1B050 /* MOVMovieTableViewCell.m in Sources */,
+				A0E353ED1C6B5A8500E81503 /* MOVPerson.m in Sources */,
 				A09F02321C60D6E9002E128D /* MOVGenre.m in Sources */,
 				A09F02111C60B48E002E128D /* MasterViewController.m in Sources */,
 				A09F020B1C60B48E002E128D /* main.m in Sources */,
+				A0E353E01C6B39ED00E81503 /* MOVMovieStarRateView.m in Sources */,
 				A09F026C1C622B4A002E128D /* MOVMovieTabBarItem.m in Sources */,
 				A09F02381C60D7EA002E128D /* MOVProductionCountry.m in Sources */,
+				A0E353F01C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m in Sources */,
 				A09F02141C60B48E002E128D /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

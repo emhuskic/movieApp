@@ -34,11 +34,12 @@
     RKObjectMapping* movieMapping = [RKObjectMapping mappingForClass:[MOVMovie class]];
     [movieMapping addAttributeMappingsFromDictionary:@{
                                                        @"title": @"title",
-                                                   //    @"id": @"id",
+                                                       @"id": @"movID",
                                                        @"backdrop_path": @"backdropPath",
                                                        @"belongs_to_collection":@"belongsToCollection",
                                                        @"adult": @"adult",
-                                                       @"genres": @"genres",
+                                                      
+                                                       @"genres": @"genre_ids",
                                                        @"homepage": @"homepage",
                                                        @"original_language": @"originalLanguage",
                                                        @"overview": @"overview",
@@ -55,7 +56,7 @@
                                                        @"tagline": @"tagline",
                                                        @"title": @"title",
                                                        @"video": @"video",
-                                                       
+                                                       @"vote_count": @"voteCount",
                                                        @"vote_average": @"voteAverage"
                                                       
                                                        }];
@@ -191,6 +192,7 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
             NSLog(@"tututu Default Display Controller");
          controller.detailItem=self.movie;
             
+                
         }
         
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
