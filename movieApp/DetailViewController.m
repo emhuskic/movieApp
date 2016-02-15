@@ -120,6 +120,7 @@
         
     }
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.selectedCast =[[MOVPerson alloc] init];
@@ -155,7 +156,6 @@
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-
     return 1;
 }
 

@@ -690,7 +690,7 @@
         <scene sceneID="R3S-5M-7xy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Def-Gt-0Kr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" image="account.png" id="XZP-Zk-sV4"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="account2.png" id="XZP-Zk-sV4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n3j-TP-RL5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -735,7 +735,7 @@
     </scenes>
     <resources>
         <image name="Gaming-Hearts-icon.png" width="256" height="256"/>
-        <image name="account.png" width="30" height="30"/>
+        <image name="account2.png" width="30" height="30"/>
         <image name="movie_transparent.png" width="50" height="50"/>
         <image name="movies.png" width="30" height="30"/>
     </resources>
