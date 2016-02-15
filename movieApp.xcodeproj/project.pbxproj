@@ -40,6 +40,9 @@
 		A0E353E61C6B3EB800E81503 /* redstarfullselected.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E353E51C6B3EB800E81503 /* redstarfullselected.png */; };
 		A0E353ED1C6B5A8500E81503 /* MOVPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353EC1C6B5A8500E81503 /* MOVPerson.m */; };
 		A0E353F01C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353EF1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m */; };
+		A0E353F61C71F3FC00E81503 /* MOVMovieScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353F51C71F3FC00E81503 /* MOVMovieScrollView.m */; };
+		A0E353F91C72043B00E81503 /* CastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353F81C72043B00E81503 /* CastViewController.m */; };
+		A0E353FC1C720F4C00E81503 /* MOVPersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353FB1C720F4C00E81503 /* MOVPersonDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +95,12 @@
 		A0E353EC1C6B5A8500E81503 /* MOVPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVPerson.m; path = Model/MOVPerson.m; sourceTree = SOURCE_ROOT; };
 		A0E353EE1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieCastCollectionViewCell.h; sourceTree = "<group>"; };
 		A0E353EF1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieCastCollectionViewCell.m; sourceTree = "<group>"; };
+		A0E353F41C71F3FC00E81503 /* MOVMovieScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieScrollView.h; sourceTree = "<group>"; };
+		A0E353F51C71F3FC00E81503 /* MOVMovieScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieScrollView.m; sourceTree = "<group>"; };
+		A0E353F71C72043B00E81503 /* CastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CastViewController.h; sourceTree = "<group>"; };
+		A0E353F81C72043B00E81503 /* CastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CastViewController.m; sourceTree = "<group>"; };
+		A0E353FA1C720F4C00E81503 /* MOVPersonDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVPersonDetail.h; sourceTree = "<group>"; };
+		A0E353FB1C720F4C00E81503 /* MOVPersonDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVPersonDetail.m; sourceTree = "<group>"; };
 		A3F45D917B677418DE3994AE /* Pods-movieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BE210623EEC3E4A61D5EB440 /* libPods-movieApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movieApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE31C9C8EE8F0F7ED4F5DE42 /* Pods-movieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +165,10 @@
 				A09F02101C60B48E002E128D /* MasterViewController.m */,
 				A09F02121C60B48E002E128D /* DetailViewController.h */,
 				A09F02131C60B48E002E128D /* DetailViewController.m */,
+				A0E353F41C71F3FC00E81503 /* MOVMovieScrollView.h */,
+				A0E353F51C71F3FC00E81503 /* MOVMovieScrollView.m */,
+				A0E353F71C72043B00E81503 /* CastViewController.h */,
+				A0E353F81C72043B00E81503 /* CastViewController.m */,
 				A09F02151C60B48E002E128D /* Main.storyboard */,
 				A09F02181C60B48E002E128D /* Assets.xcassets */,
 				A09F021A1C60B48E002E128D /* LaunchScreen.storyboard */,
@@ -203,6 +216,8 @@
 				A06625C31C68AE5500B1B050 /* MOVMovieEntity.m */,
 				A0E353EB1C6B5A8500E81503 /* MOVPerson.h */,
 				A0E353EC1C6B5A8500E81503 /* MOVPerson.m */,
+				A0E353FA1C720F4C00E81503 /* MOVPersonDetail.h */,
+				A0E353FB1C720F4C00E81503 /* MOVPersonDetail.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -359,12 +374,15 @@
 				A0E353ED1C6B5A8500E81503 /* MOVPerson.m in Sources */,
 				A09F02321C60D6E9002E128D /* MOVGenre.m in Sources */,
 				A09F02111C60B48E002E128D /* MasterViewController.m in Sources */,
+				A0E353FC1C720F4C00E81503 /* MOVPersonDetail.m in Sources */,
+				A0E353F61C71F3FC00E81503 /* MOVMovieScrollView.m in Sources */,
 				A09F020B1C60B48E002E128D /* main.m in Sources */,
 				A0E353E01C6B39ED00E81503 /* MOVMovieStarRateView.m in Sources */,
 				A09F026C1C622B4A002E128D /* MOVMovieTabBarItem.m in Sources */,
 				A09F02381C60D7EA002E128D /* MOVProductionCountry.m in Sources */,
 				A0E353F01C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m in Sources */,
 				A09F02141C60B48E002E128D /* DetailViewController.m in Sources */,
+				A0E353F91C72043B00E81503 /* CastViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

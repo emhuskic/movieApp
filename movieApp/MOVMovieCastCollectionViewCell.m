@@ -10,4 +10,5 @@
 
 @implementation MOVMovieCastCollectionViewCell
 
+
 @end

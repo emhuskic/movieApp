@@ -68,6 +68,7 @@
         return customCell;
 }
 @synthesize controller;
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSLog(@"Preparing for Segue controller...");
     if ([[segue identifier] isEqualToString:@"cellShowDetail"]) {

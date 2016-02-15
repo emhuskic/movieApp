@@ -12,7 +12,9 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MOVPerson.h"
 #import "MOVMovieCastCollectionViewCell.h"
-@interface DetailViewController ()
+#import "MOVMovieScrollView.h"
+#import "CastViewController.h"
+@interface DetailViewController()
 @property (weak, nonatomic) IBOutlet UILabel *averageRatingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *voteCountLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *upperImage;
@@ -24,7 +26,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (strong, nonatomic) MOVMovie *movie;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) CastViewController *castView;
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionViewFlowLayout;
 @property (strong, nonatomic) NSArray *cast;
+@property (strong, nonatomic) MOVPerson *selectedCast;
 
 @end
 
@@ -39,7 +44,7 @@
         _movie=[[MOVMovie alloc] init];
         _movie = _detailItem;
         // Update the view.
-        [self configureView];
+       [self configureView];
     }
 }
 - (void) loadCast
@@ -63,20 +68,25 @@
     RKObjectManager *sharedManager = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager addResponseDescriptorsFromArray:@[responseDescriptor]];
     [ sharedManager getObjectsAtPath:[NSString stringWithFormat:@"/3/movie/%@/credits",self.movie.movID]  parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825"}
                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                 NSLog(@"prije dodjele je %ld", self.cast.count);
                                  self.cast=mappingResult.array;
+                                 [self.collectionView reloadData];
+                                 NSLog(@"poslije dodjele count je: %ld", self.cast.count);
                               }
                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
                              }];
     
     
    
-    
+   
     // https://api.themoviedb.org/3/movies/%d/credits?=
     
     
 }
 - (void)configureView {
-     // Update the user interface for the detail item.
+     // Update the user interface for the detail
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     if (self.detailItem) {
         
        
@@ -90,7 +100,7 @@
         [self.releaseDateLabel sizeToFit];
         NSLog(@"genre: %@",  self.movie.posterPath);
      //   self.genreLabel.text= [[[self.movie genres] firstObject] name];
-      NSURL * urlLower = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", self.movie.posterPath]];
+        NSURL * urlLower = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", self.movie.posterPath]];
         NSURL *urlUpper = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w1280", self.movie.backdropPath]];
         //NSURL *url = [NSURL URLWithString:str];
         NSData *dataLower = [NSData dataWithContentsOfURL:urlLower];
@@ -101,19 +111,19 @@
         [self.lowerImage sd_setImageWithURL:urlLower];
         self.voteCountLabel.text=[NSString stringWithFormat:@"%@", self.movie.voteCount];
         self.averageRatingLabel.text=[NSString stringWithFormat:@"%@", self.movie.voteAverage];
-     //   self.rateView.delegate = self;
+     //  self.rateView.delegate = self;
         self.rateView.rating=[[self.movie voteAverage] floatValue]/2.;
+        [self.collectionViewFlowLayout setItemSize:CGSizeMake(410, 548)];
+        [self.collectionView setDelegate:self];
+        [self.collectionView setDataSource:self];
         [self loadCast];
-        
-        
-               //self.upperImage.image=imgUpper;
-        //self.lowerImage.image=imgLower;
         
     }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    self.selectedCast =[[MOVPerson alloc] init];
+    
     self.rateView.notSelectedImage = [UIImage imageNamed:@"redstarnotselected.png"];
     
     self.rateView.halfSelectedImage = [UIImage imageNamed:@"redstarhald.png"];
@@ -123,19 +133,20 @@
     
     self.userRateView.halfSelectedImage = [UIImage imageNamed:@"redstarhald.png"];
     self.userRateView.fullSelectedImage = [UIImage imageNamed:@"redstarfullselected.png"];
-    
-    
     self.rateView.rating = 0;
     self.rateView.editable = NO;
     self.rateView.maxRating = 5;
-    
     self.userRateView.rating = 0;
     self.userRateView.editable = YES;
     self.userRateView.maxRating = 5;
     self.rateView.delegate = self;
     // Do any additional setup after loading the view, typically from a nib.
-    self.collectionView.backgroundColor = [UIColor clearColor];
-    [self configureView];
+   // [self.collectionView setDataSource:self];
+    //[self.collectionView setDelegate:self];
+    [self.collectionView setBackgroundColor:[UIColor clearColor]];
+    [self.view addSubview:self.collectionView];
+      [self configureView];
+    [self.collectionView reloadData];
 }
 - (void)rateView:(MOVMovieStarRateView *)rateView ratingDidChange:(float)rating {
    // self.statusLabel.text = [NSString stringWithFormat:@"Rating: %f", rating];
@@ -144,20 +155,19 @@
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
+
     return 1;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.cast.count;
+    return 10;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
-                        cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-     NSString *cellIdentifier = @"castCell";
+    NSString *cellIdentifier = @"castCell";
     MOVMovieCastCollectionViewCell *customCell = (MOVMovieCastCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    
     customCell.backgroundColor=[UIColor whiteColor];
     collectionView.backgroundColor = [UIColor clearColor];
     collectionView.backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -166,12 +176,31 @@
     {
         pers = [self.cast objectAtIndex:indexPath.row];
         NSURL * urlLower = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", [pers profilePath]]];
-        [customCell.img sd_setImageWithURL:urlLower];
+       [customCell.img sd_setImageWithURL:urlLower];
         customCell.nameLabel.text=[pers name];
         return customCell;
     }
     else
         return customCell;
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+   self.selectedCast=[self.cast objectAtIndex:indexPath.row];
+   
+   [self performSegueWithIdentifier:@"castSegue" sender:self];
+}
+
+@synthesize castView;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    NSLog(@"Preparing for Segue in DETAIL VIEW CONTROLLER...");
+    if ([[segue identifier] isEqualToString:@"castSegue"]) {
+         castView = (CastViewController *)[segue destinationViewController] ;
+                   NSLog(@"castSegue");
+         self.castView.person=self.selectedCast;
+        
+        }
 }
 
 - (void)didReceiveMemoryWarning {

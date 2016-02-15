@@ -16,4 +16,7 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSNumber *order;
 @property (strong, nonatomic) NSString *profilePath;
+@property (strong, nonatomic) NSDate *birthDate;
+@property (strong, nonatomic) NSString *city;
+@property (strong, nonatomic) NSString *country;
 @end

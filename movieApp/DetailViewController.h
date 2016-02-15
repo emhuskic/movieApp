@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "MOVMovie.h"
 #import "MOVMovieStarRateView.h"
-@interface DetailViewController : UIViewController <RateViewDelegate>
+#import "MOVMovieCastCollectionViewCell.h"
+@interface DetailViewController : UIViewController <RateViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 
 @property (strong, nonatomic) MOVMovie *detailItem;
