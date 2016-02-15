@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		51DB8DA0A644345AADCF3F7C /* libPods-movieApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE210623EEC3E4A61D5EB440 /* libPods-movieApp.a */; };
-		A02A0BCD1C69FDC8001E5402 /* Gaming-Hearts-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A02A0BCC1C69FDC8001E5402 /* Gaming-Hearts-icon.png */; };
 		A050774D1C6A2CE40074603B /* movie_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = A050774C1C6A2CE40074603B /* movie_transparent.png */; };
 		A050774F1C6A346D0074603B /* starhighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = A050774E1C6A346D0074603B /* starhighlighted.png */; };
 		A05077511C6A34730074603B /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A05077501C6A34730074603B /* star.png */; };
@@ -23,16 +22,11 @@
 		A09F02191C60B48E002E128D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09F02181C60B48E002E128D /* Assets.xcassets */; };
 		A09F021C1C60B48E002E128D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A09F021A1C60B48E002E128D /* LaunchScreen.storyboard */; };
 		A09F02261C60B5BB002E128D /* MOVMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F02251C60B5BB002E128D /* MOVMovie.m */; };
-		A09F02281C60CCCC002E128D /* movie3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A09F02271C60CCCC002E128D /* movie3.jpeg */; };
-		A09F022A1C60CCD3002E128D /* movie2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A09F02291C60CCD3002E128D /* movie2.jpeg */; };
-		A09F022C1C60CCD8002E128D /* movie1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A09F022B1C60CCD8002E128D /* movie1.jpg */; };
 		A09F02321C60D6E9002E128D /* MOVGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F02311C60D6E9002E128D /* MOVGenre.m */; };
 		A09F02351C60D777002E128D /* MOVProductionCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F02341C60D777002E128D /* MOVProductionCompany.m */; };
 		A09F02381C60D7EA002E128D /* MOVProductionCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F02371C60D7EA002E128D /* MOVProductionCountry.m */; };
 		A09F023B1C60D835002E128D /* MOVSpokenLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F023A1C60D835002E128D /* MOVSpokenLanguage.m */; };
 		A09F026C1C622B4A002E128D /* MOVMovieTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F026B1C622B4A002E128D /* MOVMovieTabBarItem.m */; };
-		A09F026E1C623F98002E128D /* movies.png in Resources */ = {isa = PBXBuildFile; fileRef = A09F026D1C623F98002E128D /* movies.png */; };
-		A09F02701C625007002E128D /* favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = A09F026F1C625007002E128D /* favorites.png */; };
 		A09F02721C62509E002E128D /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = A09F02711C62509E002E128D /* account.png */; };
 		A0E353E01C6B39ED00E81503 /* MOVMovieStarRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353DF1C6B39ED00E81503 /* MOVMovieStarRateView.m */; };
 		A0E353E21C6B3BF400E81503 /* redstarhald.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E353E11C6B3BF400E81503 /* redstarhald.png */; };
@@ -43,10 +37,11 @@
 		A0E353F61C71F3FC00E81503 /* MOVMovieScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353F51C71F3FC00E81503 /* MOVMovieScrollView.m */; };
 		A0E353F91C72043B00E81503 /* CastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353F81C72043B00E81503 /* CastViewController.m */; };
 		A0E353FC1C720F4C00E81503 /* MOVPersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353FB1C720F4C00E81503 /* MOVPersonDetail.m */; };
+		A0E354001C72225000E81503 /* favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E353FF1C72225000E81503 /* favorites.png */; };
+		A0E354021C72225700E81503 /* movies.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E354011C72225700E81503 /* movies.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A02A0BCC1C69FDC8001E5402 /* Gaming-Hearts-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gaming-Hearts-icon.png"; path = "../../../../Downloads/Gaming-Hearts-icon.png"; sourceTree = "<group>"; };
 		A050774C1C6A2CE40074603B /* movie_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie_transparent.png; sourceTree = "<group>"; };
 		A050774E1C6A346D0074603B /* starhighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starhighlighted.png; sourceTree = "<group>"; };
 		A05077501C6A34730074603B /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
@@ -70,9 +65,6 @@
 		A09F021D1C60B48E002E128D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A09F02241C60B5BB002E128D /* MOVMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOVMovie.h; path = Model/MOVMovie.h; sourceTree = SOURCE_ROOT; };
 		A09F02251C60B5BB002E128D /* MOVMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVMovie.m; path = Model/MOVMovie.m; sourceTree = SOURCE_ROOT; };
-		A09F02271C60CCCC002E128D /* movie3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = movie3.jpeg; path = ../../../../Downloads/movie3.jpeg; sourceTree = "<group>"; };
-		A09F02291C60CCD3002E128D /* movie2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = movie2.jpeg; path = ../../../../Downloads/movie2.jpeg; sourceTree = "<group>"; };
-		A09F022B1C60CCD8002E128D /* movie1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = movie1.jpg; path = ../../../../Downloads/movie1.jpg; sourceTree = "<group>"; };
 		A09F02301C60D6E9002E128D /* MOVGenre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVGenre.h; sourceTree = "<group>"; };
 		A09F02311C60D6E9002E128D /* MOVGenre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVGenre.m; sourceTree = "<group>"; };
 		A09F02331C60D777002E128D /* MOVProductionCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVProductionCompany.h; sourceTree = "<group>"; };
@@ -83,8 +75,6 @@
 		A09F023A1C60D835002E128D /* MOVSpokenLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVSpokenLanguage.m; sourceTree = "<group>"; };
 		A09F026A1C622B4A002E128D /* MOVMovieTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieTabBarItem.h; sourceTree = "<group>"; };
 		A09F026B1C622B4A002E128D /* MOVMovieTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieTabBarItem.m; sourceTree = "<group>"; };
-		A09F026D1C623F98002E128D /* movies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = movies.png; path = ../../../../Downloads/movies.png; sourceTree = "<group>"; };
-		A09F026F1C625007002E128D /* favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = favorites.png; path = ../../../../Downloads/favorites.png; sourceTree = "<group>"; };
 		A09F02711C62509E002E128D /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = account.png; path = ../../../../Downloads/account.png; sourceTree = "<group>"; };
 		A0E353DE1C6B39ED00E81503 /* MOVMovieStarRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieStarRateView.h; sourceTree = "<group>"; };
 		A0E353DF1C6B39ED00E81503 /* MOVMovieStarRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieStarRateView.m; sourceTree = "<group>"; };
@@ -101,6 +91,8 @@
 		A0E353F81C72043B00E81503 /* CastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CastViewController.m; sourceTree = "<group>"; };
 		A0E353FA1C720F4C00E81503 /* MOVPersonDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVPersonDetail.h; sourceTree = "<group>"; };
 		A0E353FB1C720F4C00E81503 /* MOVPersonDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVPersonDetail.m; sourceTree = "<group>"; };
+		A0E353FF1C72225000E81503 /* favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorites.png; sourceTree = "<group>"; };
+		A0E354011C72225700E81503 /* movies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movies.png; sourceTree = "<group>"; };
 		A3F45D917B677418DE3994AE /* Pods-movieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BE210623EEC3E4A61D5EB440 /* libPods-movieApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movieApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE31C9C8EE8F0F7ED4F5DE42 /* Pods-movieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,17 +175,13 @@
 			children = (
 				A0E353E51C6B3EB800E81503 /* redstarfullselected.png */,
 				A0E353E31C6B3EAB00E81503 /* redstarnotselected.png */,
+				A0E353FF1C72225000E81503 /* favorites.png */,
 				A0E353E11C6B3BF400E81503 /* redstarhald.png */,
 				A05077501C6A34730074603B /* star.png */,
 				A050774E1C6A346D0074603B /* starhighlighted.png */,
+				A0E354011C72225700E81503 /* movies.png */,
 				A050774C1C6A2CE40074603B /* movie_transparent.png */,
 				A09F02711C62509E002E128D /* account.png */,
-				A02A0BCC1C69FDC8001E5402 /* Gaming-Hearts-icon.png */,
-				A09F026D1C623F98002E128D /* movies.png */,
-				A09F022B1C60CCD8002E128D /* movie1.jpg */,
-				A09F02291C60CCD3002E128D /* movie2.jpeg */,
-				A09F02271C60CCCC002E128D /* movie3.jpeg */,
-				A09F026F1C625007002E128D /* favorites.png */,
 				A09F020A1C60B48E002E128D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -292,18 +280,14 @@
 			files = (
 				A0E353E21C6B3BF400E81503 /* redstarhald.png in Resources */,
 				A09F021C1C60B48E002E128D /* LaunchScreen.storyboard in Resources */,
-				A09F022A1C60CCD3002E128D /* movie2.jpeg in Resources */,
-				A02A0BCD1C69FDC8001E5402 /* Gaming-Hearts-icon.png in Resources */,
-				A09F026E1C623F98002E128D /* movies.png in Resources */,
-				A09F02701C625007002E128D /* favorites.png in Resources */,
 				A050774F1C6A346D0074603B /* starhighlighted.png in Resources */,
 				A09F02721C62509E002E128D /* account.png in Resources */,
 				A09F02191C60B48E002E128D /* Assets.xcassets in Resources */,
 				A0E353E41C6B3EAB00E81503 /* redstarnotselected.png in Resources */,
-				A09F02281C60CCCC002E128D /* movie3.jpeg in Resources */,
 				A0E353E61C6B3EB800E81503 /* redstarfullselected.png in Resources */,
 				A05077511C6A34730074603B /* star.png in Resources */,
-				A09F022C1C60CCD8002E128D /* movie1.jpg in Resources */,
+				A0E354021C72225700E81503 /* movies.png in Resources */,
+				A0E354001C72225000E81503 /* favorites.png in Resources */,
 				A09F02171C60B48E002E128D /* Main.storyboard in Resources */,
 				A050774D1C6A2CE40074603B /* movie_transparent.png in Resources */,
 			);
