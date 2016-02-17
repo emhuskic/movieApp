@@ -8,40 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		51DB8DA0A644345AADCF3F7C /* libPods-movieApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE210623EEC3E4A61D5EB440 /* libPods-movieApp.a */; };
+		A01B5BA01C749E4E0017CEEC /* MOVRealmMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = A01B5B9F1C749E4E0017CEEC /* MOVRealmMovie.m */; };
+		A01B5BA31C74B1530017CEEC /* FavoritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01B5BA21C74B1530017CEEC /* FavoritesController.m */; };
+		A01B5BA61C74C46D0017CEEC /* MOVFavoritesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A01B5BA51C74C46D0017CEEC /* MOVFavoritesTableViewCell.m */; };
 		A050774D1C6A2CE40074603B /* movie_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = A050774C1C6A2CE40074603B /* movie_transparent.png */; };
 		A050774F1C6A346D0074603B /* starhighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = A050774E1C6A346D0074603B /* starhighlighted.png */; };
 		A05077511C6A34730074603B /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A05077501C6A34730074603B /* star.png */; };
 		A06625971C64D16300B1B050 /* MOVMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625961C64D16300B1B050 /* MOVMovieTableViewCell.m */; };
 		A06625A41C64EC0700B1B050 /* MOVMovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625A31C64EC0700B1B050 /* MOVMovieCollectionViewCell.m */; };
-		A06625C41C68AE5500B1B050 /* MOVMovieEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625C31C68AE5500B1B050 /* MOVMovieEntity.m */; };
 		A09F020B1C60B48E002E128D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F020A1C60B48E002E128D /* main.m */; };
 		A09F020E1C60B48E002E128D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F020D1C60B48E002E128D /* AppDelegate.m */; };
 		A09F02111C60B48E002E128D /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F02101C60B48E002E128D /* MasterViewController.m */; };
-		A09F02141C60B48E002E128D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F02131C60B48E002E128D /* DetailViewController.m */; };
-		A09F02171C60B48E002E128D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A09F02151C60B48E002E128D /* Main.storyboard */; };
 		A09F02191C60B48E002E128D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09F02181C60B48E002E128D /* Assets.xcassets */; };
 		A09F021C1C60B48E002E128D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A09F021A1C60B48E002E128D /* LaunchScreen.storyboard */; };
 		A09F02261C60B5BB002E128D /* MOVMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F02251C60B5BB002E128D /* MOVMovie.m */; };
 		A09F02321C60D6E9002E128D /* MOVGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F02311C60D6E9002E128D /* MOVGenre.m */; };
-		A09F02351C60D777002E128D /* MOVProductionCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F02341C60D777002E128D /* MOVProductionCompany.m */; };
-		A09F02381C60D7EA002E128D /* MOVProductionCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F02371C60D7EA002E128D /* MOVProductionCountry.m */; };
-		A09F023B1C60D835002E128D /* MOVSpokenLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F023A1C60D835002E128D /* MOVSpokenLanguage.m */; };
-		A09F026C1C622B4A002E128D /* MOVMovieTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F026B1C622B4A002E128D /* MOVMovieTabBarItem.m */; };
 		A0E353E01C6B39ED00E81503 /* MOVMovieStarRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353DF1C6B39ED00E81503 /* MOVMovieStarRateView.m */; };
 		A0E353E21C6B3BF400E81503 /* redstarhald.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E353E11C6B3BF400E81503 /* redstarhald.png */; };
 		A0E353E41C6B3EAB00E81503 /* redstarnotselected.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E353E31C6B3EAB00E81503 /* redstarnotselected.png */; };
 		A0E353E61C6B3EB800E81503 /* redstarfullselected.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E353E51C6B3EB800E81503 /* redstarfullselected.png */; };
 		A0E353ED1C6B5A8500E81503 /* MOVPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353EC1C6B5A8500E81503 /* MOVPerson.m */; };
 		A0E353F01C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353EF1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m */; };
-		A0E353F61C71F3FC00E81503 /* MOVMovieScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353F51C71F3FC00E81503 /* MOVMovieScrollView.m */; };
-		A0E353F91C72043B00E81503 /* CastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353F81C72043B00E81503 /* CastViewController.m */; };
-		A0E353FC1C720F4C00E81503 /* MOVPersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353FB1C720F4C00E81503 /* MOVPersonDetail.m */; };
 		A0E354001C72225000E81503 /* favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E353FF1C72225000E81503 /* favorites.png */; };
 		A0E354021C72225700E81503 /* movies.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E354011C72225700E81503 /* movies.png */; };
 		A0E354061C72239C00E81503 /* account2.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E354051C72239C00E81503 /* account2.png */; };
+		A0E354091C722FE600E81503 /* MOVUpperImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E354081C722FE600E81503 /* MOVUpperImageCell.m */; };
+		A0E3540C1C72319900E81503 /* MOVDescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E3540B1C72319900E81503 /* MOVDescriptionTableViewCell.m */; };
+		A0E3540F1C72332D00E81503 /* MOVRatingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E3540E1C72332D00E81503 /* MOVRatingTableViewCell.m */; };
+		A0E354121C72353700E81503 /* MOVMovieCastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E354111C72353700E81503 /* MOVMovieCastTableViewCell.m */; };
+		A0E354151C723A2100E81503 /* MOVDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E354141C723A2100E81503 /* MOVDetailController.m */; };
+		A0E354181C72421B00E81503 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E354161C72421B00E81503 /* Main.storyboard */; };
+		A0E3541E1C736E4700E81503 /* MOVCastController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E3541D1C736E4700E81503 /* MOVCastController.m */; };
+		A0E354241C7370FD00E81503 /* MOVCastUpperImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E354231C7370FD00E81503 /* MOVCastUpperImageCell.m */; };
+		A0E354271C73711800E81503 /* MOVCastBiographyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E354261C73711800E81503 /* MOVCastBiographyCell.m */; };
+		A0E3542A1C737E8500E81503 /* MOVCastMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E354291C737E8500E81503 /* MOVCastMovieTableViewCell.m */; };
+		A0E3542D1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E3542C1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A01B5B9E1C749E4E0017CEEC /* MOVRealmMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVRealmMovie.h; sourceTree = "<group>"; };
+		A01B5B9F1C749E4E0017CEEC /* MOVRealmMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVRealmMovie.m; sourceTree = "<group>"; };
+		A01B5BA11C74B1530017CEEC /* FavoritesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesController.h; sourceTree = "<group>"; };
+		A01B5BA21C74B1530017CEEC /* FavoritesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesController.m; sourceTree = "<group>"; };
+		A01B5BA41C74C46D0017CEEC /* MOVFavoritesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVFavoritesTableViewCell.h; sourceTree = "<group>"; };
+		A01B5BA51C74C46D0017CEEC /* MOVFavoritesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVFavoritesTableViewCell.m; sourceTree = "<group>"; };
 		A050774C1C6A2CE40074603B /* movie_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie_transparent.png; sourceTree = "<group>"; };
 		A050774E1C6A346D0074603B /* starhighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starhighlighted.png; sourceTree = "<group>"; };
 		A05077501C6A34730074603B /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
@@ -49,17 +59,12 @@
 		A06625961C64D16300B1B050 /* MOVMovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVMovieTableViewCell.m; path = ../MOVMovieTableViewCell.m; sourceTree = "<group>"; };
 		A06625A21C64EC0700B1B050 /* MOVMovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOVMovieCollectionViewCell.h; path = ../MOVMovieCollectionViewCell.h; sourceTree = "<group>"; };
 		A06625A31C64EC0700B1B050 /* MOVMovieCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVMovieCollectionViewCell.m; path = ../MOVMovieCollectionViewCell.m; sourceTree = "<group>"; };
-		A06625C21C68AE5500B1B050 /* MOVMovieEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieEntity.h; sourceTree = "<group>"; };
-		A06625C31C68AE5500B1B050 /* MOVMovieEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieEntity.m; sourceTree = "<group>"; };
 		A09F02061C60B48E002E128D /* movieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A09F020A1C60B48E002E128D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A09F020C1C60B48E002E128D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A09F020D1C60B48E002E128D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A09F020F1C60B48E002E128D /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		A09F02101C60B48E002E128D /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		A09F02121C60B48E002E128D /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		A09F02131C60B48E002E128D /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		A09F02161C60B48E002E128D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A09F02181C60B48E002E128D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A09F021B1C60B48E002E128D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A09F021D1C60B48E002E128D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,14 +72,6 @@
 		A09F02251C60B5BB002E128D /* MOVMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVMovie.m; path = Model/MOVMovie.m; sourceTree = SOURCE_ROOT; };
 		A09F02301C60D6E9002E128D /* MOVGenre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVGenre.h; sourceTree = "<group>"; };
 		A09F02311C60D6E9002E128D /* MOVGenre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVGenre.m; sourceTree = "<group>"; };
-		A09F02331C60D777002E128D /* MOVProductionCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVProductionCompany.h; sourceTree = "<group>"; };
-		A09F02341C60D777002E128D /* MOVProductionCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVProductionCompany.m; sourceTree = "<group>"; };
-		A09F02361C60D7EA002E128D /* MOVProductionCountry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVProductionCountry.h; sourceTree = "<group>"; };
-		A09F02371C60D7EA002E128D /* MOVProductionCountry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVProductionCountry.m; sourceTree = "<group>"; };
-		A09F02391C60D835002E128D /* MOVSpokenLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVSpokenLanguage.h; sourceTree = "<group>"; };
-		A09F023A1C60D835002E128D /* MOVSpokenLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVSpokenLanguage.m; sourceTree = "<group>"; };
-		A09F026A1C622B4A002E128D /* MOVMovieTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieTabBarItem.h; sourceTree = "<group>"; };
-		A09F026B1C622B4A002E128D /* MOVMovieTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieTabBarItem.m; sourceTree = "<group>"; };
 		A0E353DE1C6B39ED00E81503 /* MOVMovieStarRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieStarRateView.h; sourceTree = "<group>"; };
 		A0E353DF1C6B39ED00E81503 /* MOVMovieStarRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieStarRateView.m; sourceTree = "<group>"; };
 		A0E353E11C6B3BF400E81503 /* redstarhald.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redstarhald.png; sourceTree = "<group>"; };
@@ -84,15 +81,30 @@
 		A0E353EC1C6B5A8500E81503 /* MOVPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVPerson.m; path = Model/MOVPerson.m; sourceTree = SOURCE_ROOT; };
 		A0E353EE1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieCastCollectionViewCell.h; sourceTree = "<group>"; };
 		A0E353EF1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieCastCollectionViewCell.m; sourceTree = "<group>"; };
-		A0E353F41C71F3FC00E81503 /* MOVMovieScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieScrollView.h; sourceTree = "<group>"; };
-		A0E353F51C71F3FC00E81503 /* MOVMovieScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieScrollView.m; sourceTree = "<group>"; };
-		A0E353F71C72043B00E81503 /* CastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CastViewController.h; sourceTree = "<group>"; };
-		A0E353F81C72043B00E81503 /* CastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CastViewController.m; sourceTree = "<group>"; };
-		A0E353FA1C720F4C00E81503 /* MOVPersonDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVPersonDetail.h; sourceTree = "<group>"; };
-		A0E353FB1C720F4C00E81503 /* MOVPersonDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVPersonDetail.m; sourceTree = "<group>"; };
 		A0E353FF1C72225000E81503 /* favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorites.png; sourceTree = "<group>"; };
 		A0E354011C72225700E81503 /* movies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movies.png; sourceTree = "<group>"; };
 		A0E354051C72239C00E81503 /* account2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account2.png; sourceTree = "<group>"; };
+		A0E354071C722FE600E81503 /* MOVUpperImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVUpperImageCell.h; sourceTree = "<group>"; };
+		A0E354081C722FE600E81503 /* MOVUpperImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVUpperImageCell.m; sourceTree = "<group>"; };
+		A0E3540A1C72319900E81503 /* MOVDescriptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVDescriptionTableViewCell.h; sourceTree = "<group>"; };
+		A0E3540B1C72319900E81503 /* MOVDescriptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVDescriptionTableViewCell.m; sourceTree = "<group>"; };
+		A0E3540D1C72332D00E81503 /* MOVRatingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVRatingTableViewCell.h; sourceTree = "<group>"; };
+		A0E3540E1C72332D00E81503 /* MOVRatingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVRatingTableViewCell.m; sourceTree = "<group>"; };
+		A0E354101C72353700E81503 /* MOVMovieCastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieCastTableViewCell.h; sourceTree = "<group>"; };
+		A0E354111C72353700E81503 /* MOVMovieCastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieCastTableViewCell.m; sourceTree = "<group>"; };
+		A0E354131C723A2100E81503 /* MOVDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVDetailController.h; sourceTree = "<group>"; };
+		A0E354141C723A2100E81503 /* MOVDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVDetailController.m; sourceTree = "<group>"; };
+		A0E354171C72421B00E81503 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A0E3541C1C736E4700E81503 /* MOVCastController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVCastController.h; sourceTree = "<group>"; };
+		A0E3541D1C736E4700E81503 /* MOVCastController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVCastController.m; sourceTree = "<group>"; };
+		A0E354221C7370FD00E81503 /* MOVCastUpperImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVCastUpperImageCell.h; sourceTree = "<group>"; };
+		A0E354231C7370FD00E81503 /* MOVCastUpperImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVCastUpperImageCell.m; sourceTree = "<group>"; };
+		A0E354251C73711800E81503 /* MOVCastBiographyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVCastBiographyCell.h; sourceTree = "<group>"; };
+		A0E354261C73711800E81503 /* MOVCastBiographyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVCastBiographyCell.m; sourceTree = "<group>"; };
+		A0E354281C737E8500E81503 /* MOVCastMovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVCastMovieTableViewCell.h; sourceTree = "<group>"; };
+		A0E354291C737E8500E81503 /* MOVCastMovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVCastMovieTableViewCell.m; sourceTree = "<group>"; };
+		A0E3542B1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVCastMovieCollectionViewCell.h; sourceTree = "<group>"; };
+		A0E3542C1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVCastMovieCollectionViewCell.m; sourceTree = "<group>"; };
 		A3F45D917B677418DE3994AE /* Pods-movieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BE210623EEC3E4A61D5EB440 /* libPods-movieApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movieApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE31C9C8EE8F0F7ED4F5DE42 /* Pods-movieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,27 +153,25 @@
 			isa = PBXGroup;
 			children = (
 				A09F02231C60B57A002E128D /* Model */,
-				A09F020C1C60B48E002E128D /* AppDelegate.h */,
-				A09F020D1C60B48E002E128D /* AppDelegate.m */,
 				A06625951C64D16300B1B050 /* MOVMovieTableViewCell.h */,
 				A06625961C64D16300B1B050 /* MOVMovieTableViewCell.m */,
 				A06625A21C64EC0700B1B050 /* MOVMovieCollectionViewCell.h */,
 				A06625A31C64EC0700B1B050 /* MOVMovieCollectionViewCell.m */,
-				A0E353EE1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.h */,
-				A0E353EF1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m */,
-				A09F026A1C622B4A002E128D /* MOVMovieTabBarItem.h */,
-				A09F026B1C622B4A002E128D /* MOVMovieTabBarItem.m */,
 				A0E353DE1C6B39ED00E81503 /* MOVMovieStarRateView.h */,
 				A0E353DF1C6B39ED00E81503 /* MOVMovieStarRateView.m */,
 				A09F020F1C60B48E002E128D /* MasterViewController.h */,
 				A09F02101C60B48E002E128D /* MasterViewController.m */,
-				A09F02121C60B48E002E128D /* DetailViewController.h */,
-				A09F02131C60B48E002E128D /* DetailViewController.m */,
-				A0E353F41C71F3FC00E81503 /* MOVMovieScrollView.h */,
-				A0E353F51C71F3FC00E81503 /* MOVMovieScrollView.m */,
-				A0E353F71C72043B00E81503 /* CastViewController.h */,
-				A0E353F81C72043B00E81503 /* CastViewController.m */,
-				A09F02151C60B48E002E128D /* Main.storyboard */,
+				A0E354131C723A2100E81503 /* MOVDetailController.h */,
+				A0E354141C723A2100E81503 /* MOVDetailController.m */,
+				A0E3541A1C736DB100E81503 /* Detail Cells */,
+				A0E3541C1C736E4700E81503 /* MOVCastController.h */,
+				A0E3541D1C736E4700E81503 /* MOVCastController.m */,
+				A0E3541B1C736E1700E81503 /* Cast View Cells */,
+				A01B5BA11C74B1530017CEEC /* FavoritesController.h */,
+				A01B5BA21C74B1530017CEEC /* FavoritesController.m */,
+				A01B5BA41C74C46D0017CEEC /* MOVFavoritesTableViewCell.h */,
+				A01B5BA51C74C46D0017CEEC /* MOVFavoritesTableViewCell.m */,
+				A0E354161C72421B00E81503 /* Main.storyboard */,
 				A09F02181C60B48E002E128D /* Assets.xcassets */,
 				A09F021A1C60B48E002E128D /* LaunchScreen.storyboard */,
 				A09F021D1C60B48E002E128D /* Info.plist */,
@@ -173,6 +183,8 @@
 		A09F02091C60B48E002E128D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A09F020C1C60B48E002E128D /* AppDelegate.h */,
+				A09F020D1C60B48E002E128D /* AppDelegate.m */,
 				A0E353E51C6B3EB800E81503 /* redstarfullselected.png */,
 				A0E353E31C6B3EAB00E81503 /* redstarnotselected.png */,
 				A0E353FF1C72225000E81503 /* favorites.png */,
@@ -194,20 +206,44 @@
 				A09F02251C60B5BB002E128D /* MOVMovie.m */,
 				A09F02301C60D6E9002E128D /* MOVGenre.h */,
 				A09F02311C60D6E9002E128D /* MOVGenre.m */,
-				A09F02331C60D777002E128D /* MOVProductionCompany.h */,
-				A09F02341C60D777002E128D /* MOVProductionCompany.m */,
-				A09F02361C60D7EA002E128D /* MOVProductionCountry.h */,
-				A09F02371C60D7EA002E128D /* MOVProductionCountry.m */,
-				A09F02391C60D835002E128D /* MOVSpokenLanguage.h */,
-				A09F023A1C60D835002E128D /* MOVSpokenLanguage.m */,
-				A06625C21C68AE5500B1B050 /* MOVMovieEntity.h */,
-				A06625C31C68AE5500B1B050 /* MOVMovieEntity.m */,
 				A0E353EB1C6B5A8500E81503 /* MOVPerson.h */,
 				A0E353EC1C6B5A8500E81503 /* MOVPerson.m */,
-				A0E353FA1C720F4C00E81503 /* MOVPersonDetail.h */,
-				A0E353FB1C720F4C00E81503 /* MOVPersonDetail.m */,
+				A01B5B9E1C749E4E0017CEEC /* MOVRealmMovie.h */,
+				A01B5B9F1C749E4E0017CEEC /* MOVRealmMovie.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A0E3541A1C736DB100E81503 /* Detail Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A0E354101C72353700E81503 /* MOVMovieCastTableViewCell.h */,
+				A0E354111C72353700E81503 /* MOVMovieCastTableViewCell.m */,
+				A0E353EE1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.h */,
+				A0E353EF1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m */,
+				A0E354071C722FE600E81503 /* MOVUpperImageCell.h */,
+				A0E354081C722FE600E81503 /* MOVUpperImageCell.m */,
+				A0E3540A1C72319900E81503 /* MOVDescriptionTableViewCell.h */,
+				A0E3540B1C72319900E81503 /* MOVDescriptionTableViewCell.m */,
+				A0E3540D1C72332D00E81503 /* MOVRatingTableViewCell.h */,
+				A0E3540E1C72332D00E81503 /* MOVRatingTableViewCell.m */,
+			);
+			name = "Detail Cells";
+			sourceTree = "<group>";
+		};
+		A0E3541B1C736E1700E81503 /* Cast View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A0E354221C7370FD00E81503 /* MOVCastUpperImageCell.h */,
+				A0E354231C7370FD00E81503 /* MOVCastUpperImageCell.m */,
+				A0E354251C73711800E81503 /* MOVCastBiographyCell.h */,
+				A0E354261C73711800E81503 /* MOVCastBiographyCell.m */,
+				A0E354281C737E8500E81503 /* MOVCastMovieTableViewCell.h */,
+				A0E354291C737E8500E81503 /* MOVCastMovieTableViewCell.m */,
+				A0E3542B1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.h */,
+				A0E3542C1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m */,
+			);
+			name = "Cast View Cells";
 			sourceTree = "<group>";
 		};
 		F8ABC589A075389147F3BB51 /* Frameworks */ = {
@@ -281,13 +317,13 @@
 				A0E353E21C6B3BF400E81503 /* redstarhald.png in Resources */,
 				A09F021C1C60B48E002E128D /* LaunchScreen.storyboard in Resources */,
 				A050774F1C6A346D0074603B /* starhighlighted.png in Resources */,
+				A0E354181C72421B00E81503 /* Main.storyboard in Resources */,
 				A09F02191C60B48E002E128D /* Assets.xcassets in Resources */,
 				A0E353E41C6B3EAB00E81503 /* redstarnotselected.png in Resources */,
 				A0E353E61C6B3EB800E81503 /* redstarfullselected.png in Resources */,
 				A05077511C6A34730074603B /* star.png in Resources */,
 				A0E354021C72225700E81503 /* movies.png in Resources */,
 				A0E354001C72225000E81503 /* favorites.png in Resources */,
-				A09F02171C60B48E002E128D /* Main.storyboard in Resources */,
 				A0E354061C72239C00E81503 /* account2.png in Resources */,
 				A050774D1C6A2CE40074603B /* movie_transparent.png in Resources */,
 			);
@@ -350,43 +386,47 @@
 			files = (
 				A06625A41C64EC0700B1B050 /* MOVMovieCollectionViewCell.m in Sources */,
 				A09F02261C60B5BB002E128D /* MOVMovie.m in Sources */,
+				A0E3542D1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m in Sources */,
 				A09F020E1C60B48E002E128D /* AppDelegate.m in Sources */,
-				A09F02351C60D777002E128D /* MOVProductionCompany.m in Sources */,
-				A06625C41C68AE5500B1B050 /* MOVMovieEntity.m in Sources */,
-				A09F023B1C60D835002E128D /* MOVSpokenLanguage.m in Sources */,
+				A0E3541E1C736E4700E81503 /* MOVCastController.m in Sources */,
 				A06625971C64D16300B1B050 /* MOVMovieTableViewCell.m in Sources */,
+				A01B5BA01C749E4E0017CEEC /* MOVRealmMovie.m in Sources */,
+				A0E3540C1C72319900E81503 /* MOVDescriptionTableViewCell.m in Sources */,
 				A0E353ED1C6B5A8500E81503 /* MOVPerson.m in Sources */,
+				A01B5BA31C74B1530017CEEC /* FavoritesController.m in Sources */,
 				A09F02321C60D6E9002E128D /* MOVGenre.m in Sources */,
+				A0E354151C723A2100E81503 /* MOVDetailController.m in Sources */,
 				A09F02111C60B48E002E128D /* MasterViewController.m in Sources */,
-				A0E353FC1C720F4C00E81503 /* MOVPersonDetail.m in Sources */,
-				A0E353F61C71F3FC00E81503 /* MOVMovieScrollView.m in Sources */,
 				A09F020B1C60B48E002E128D /* main.m in Sources */,
 				A0E353E01C6B39ED00E81503 /* MOVMovieStarRateView.m in Sources */,
-				A09F026C1C622B4A002E128D /* MOVMovieTabBarItem.m in Sources */,
-				A09F02381C60D7EA002E128D /* MOVProductionCountry.m in Sources */,
+				A0E354241C7370FD00E81503 /* MOVCastUpperImageCell.m in Sources */,
+				A0E3542A1C737E8500E81503 /* MOVCastMovieTableViewCell.m in Sources */,
 				A0E353F01C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m in Sources */,
-				A09F02141C60B48E002E128D /* DetailViewController.m in Sources */,
-				A0E353F91C72043B00E81503 /* CastViewController.m in Sources */,
+				A0E354091C722FE600E81503 /* MOVUpperImageCell.m in Sources */,
+				A0E354121C72353700E81503 /* MOVMovieCastTableViewCell.m in Sources */,
+				A0E3540F1C72332D00E81503 /* MOVRatingTableViewCell.m in Sources */,
+				A01B5BA61C74C46D0017CEEC /* MOVFavoritesTableViewCell.m in Sources */,
+				A0E354271C73711800E81503 /* MOVCastBiographyCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A09F02151C60B48E002E128D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A09F02161C60B48E002E128D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A09F021A1C60B48E002E128D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A09F021B1C60B48E002E128D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A0E354161C72421B00E81503 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0E354171C72421B00E81503 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

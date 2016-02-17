@@ -7,18 +7,17 @@
 //
 
 #import "MasterViewController.h"
-#import "DetailViewController.h"
 #import <RestKit/RestKit.h>
 #import "MOVMovie.h"
 #import "MOVMovieTableViewCell.h"
-
+#import "MOVDetailController.h"
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
 @property (strong, nonatomic) NSMutableDictionary *moviesDict;
 @property (strong, nonatomic) NSArray *movies;
 @property (nonatomic, strong) NSMutableArray *searchResult;
-@property (nonatomic, strong)  DetailViewController *controller;
+@property (nonatomic, strong)  MOVDetailController *controller;
 @property (nonatomic, strong) MOVMovieTableViewCell *MovieCell;
 @end
 
@@ -178,19 +177,21 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
 - (void) selectMovie:(MOVMovieTableViewCell *)view withItem:(MOVMovie *)item
 {
     self.movie=item;
-    controller.detailItem=item;
+    controller.movie=item;
     [self performSegueWithIdentifier:@"showDetail" sender:self];
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSLog(@"Preparing for Segue in Master view controller...");
    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-   controller = (DetailViewController *)[segue destinationViewController] ;
+        controller = (MOVDetailController *)[segue destinationViewController];
+       
+   //controller = (MOVDetailController *)[segue destinationViewController] ;
         if (self.searchDisplayController.active) {
             NSLog(@"Search Display Controller");
-            controller.detailItem = [self.searchResult objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
+            controller.movie = [self.searchResult objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
         } else {
             NSLog(@"tututu Default Display Controller");
-         controller.detailItem=self.movie;
+         controller.movie=self.movie;
             
                 
         }
@@ -287,6 +288,7 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
         
         cell.backgroundColor=[UIColor whiteColor];
         cell.delegate=self;
+      //  cell.selectionStyle = UITableViewCellSelectionStyle.none;
         return cell;
     }
 }
@@ -294,12 +296,12 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
 {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         
-        controller.detailItem = [self.searchResult objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
+        controller.movie= [self.searchResult objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
         [self performSegueWithIdentifier: @"showDetail" sender:self];
         
         NSLog(@"Search Display Controller");
     } else {
-        controller.detailItem = [self.objects objectAtIndex: indexPath.row];
+        controller.movie = [self.objects objectAtIndex: indexPath.row];
         [self performSegueWithIdentifier: @"showDetail" sender: self];
         NSLog(@"Default Display Controller");
     }

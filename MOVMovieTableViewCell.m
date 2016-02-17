@@ -8,7 +8,6 @@
 
 #import "MOVMovieTableViewCell.h"
 
-#import "DetailViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 @implementation MOVMovieTableViewCell
 
@@ -67,21 +66,10 @@
     else
         return customCell;
 }
-@synthesize controller;
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"Preparing for Segue controller...");
-    if ([[segue identifier] isEqualToString:@"cellShowDetail"]) {
-        controller = (DetailViewController *)[segue destinationViewController] ;
-        controller.detailItem=self.selectedMovie;
-       controller.navigationItem.leftItemsSupplementBackButton = YES;
-    }
-}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
    MOVMovieCollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    controller.detailItem = [self.movies objectAtIndex: indexPath.row];
-    NSLog([[self.movies objectAtIndex: indexPath.row] title]);
+   NSLog([[self.movies objectAtIndex: indexPath.row] title]);
         self.selectedMovie=[self.movies objectAtIndex: indexPath.row];
     [self.delegate selectMovie:self withItem:[self.movies objectAtIndex: indexPath.row]];
    // [super. performSegueWithIdentifier:@"cellShowDetail" sender:self];
@@ -89,13 +77,6 @@
  //   self.image = cell.img;
 }
 
-
-- (void)collectionView:(UICollectionViewCell *)collectionView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(!self.controller)
-        self.controller = [[DetailViewController alloc] init];
-    
-}
 
 @end
 

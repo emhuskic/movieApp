@@ -4,6 +4,9 @@ PODS:
   - FastImageCache (1.5.1)
   - ISO8601DateFormatterValueTransformer (0.6.1):
     - RKValueTransformers (~> 1.1.0)
+  - Realm (0.98.1):
+    - Realm/Headers (= 0.98.1)
+  - Realm/Headers (0.98.1)
   - RestKit (0.26.0):
     - RestKit/Core (= 0.26.0)
   - RestKit/Core (0.26.0):
@@ -33,6 +36,7 @@ PODS:
 DEPENDENCIES:
   - EDStarRating
   - FastImageCache (= 1.5.1)
+  - Realm
   - RestKit (~> 0.22)
   - SDWebImage (= 3.7)
 
@@ -41,12 +45,13 @@ SPEC CHECKSUMS:
   EDStarRating: a41a6440a945020745d0e9ff8ada7d1afa952114
   FastImageCache: 2e7a6f677b15336eb3d1a4092a494676256c891d
   ISO8601DateFormatterValueTransformer: 52da467d6ec899d6aedda8e48280ac92e8ee97e6
+  Realm: ca4a4122e939e228e10694fc49011386cb2ecb07
   RestKit: 112fba5bd1f97598aac0db7981863d5fdc0263a2
   RKValueTransformers: 66ac5e4f077fdbe3496e792d89eeff4c3eb67701
   SDWebImage: b42db92951f9d565c55f1d7f1d5efe47e33a7515
   SOCKit: c7376ac262bea9115b8f749358f762522a47d392
   TransitionKit: 9ceccda4cd0cdc0a05ef85eb235e5a3292c3c250
 
-PODFILE CHECKSUM: 2d8cd3a2106768e2c4c5f41b090402bb9a12ccc5
+PODFILE CHECKSUM: 2018b87869b86fa4657966e9fbf13a1d2f51b7d1
 
 COCOAPODS: 1.0.0.beta.2

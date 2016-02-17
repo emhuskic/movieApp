@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MOVMovieCollectionViewCell.h"
 #import "MOVMovie.h"
-#import "DetailViewController.h"
 
 @class MOVMovieTableViewCell;
 
@@ -28,7 +27,6 @@
 @property (strong, nonatomic) MOVMovie *selectedMovie;
 @property (strong, nonatomic) NSArray *photos;
 @property (nonatomic, copy) NSString *imageFormatName;
-@property (nonatomic, strong)  DetailViewController *controller;
 
 
 //- (id)initWithMovie:(MOVMovie *)movie;

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "MOVGenre.h"
-#import "MOVProductionCompany.h"
 @interface MOVMovie : NSObject
 
 //@property (nonatomic) NSUInteger *id;

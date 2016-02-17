@@ -19,4 +19,10 @@
 @property (strong, nonatomic) NSDate *birthDate;
 @property (strong, nonatomic) NSString *city;
 @property (strong, nonatomic) NSString *country;
+@property (strong, nonatomic) NSString *biography;
+@property (strong, nonatomic) NSDate *birthday;
+@property (strong, nonatomic) NSDate *deathday;
+@property (strong, nonatomic) NSString *homepage;
+@property (strong, nonatomic) NSString *birthPlace;
+@property (strong, nonatomic) NSString *filePath;
 @end
