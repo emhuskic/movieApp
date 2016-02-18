@@ -45,9 +45,16 @@
     if([self.cast count])
     {
         per = [self.cast objectAtIndex:indexPath.row];
-       customCell.nameLabel.text=[per name];
         NSURL * urlLower = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", [per profilePath]]];
+        
          [customCell.img sd_setImageWithURL:urlLower];
+        //customCell.img.layer.backgroundColor=[[UIColor clearColor] CGColor];
+        customCell.img.layer.cornerRadius=10;
+        customCell.img.layer.borderWidth=0.0;
+        customCell.img.layer.masksToBounds = YES;
+        customCell.img.layer.borderColor=[[UIColor clearColor] CGColor];
+        customCell.nameLabel.text=[per name];
+        
         return customCell;
     }
     else

@@ -231,6 +231,7 @@
         {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
+        cell.backgroundColor=[UIColor clearColor];
         return cell;
     }
     else
@@ -286,7 +287,7 @@
     }
     else if (indexPath.row==2)
     {
-        return 23;
+        return 37;
     }
     else
     {

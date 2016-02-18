@@ -61,6 +61,10 @@
         //UIImage *imgLower= [[UIImage alloc] initWithData:dataLower];
        // customCell.img.image=imgLower;
         [customCell.img sd_setImageWithURL:urlLower];
+        customCell.img.layer.cornerRadius=5;
+        customCell.img.layer.borderWidth=0.0;
+        customCell.img.layer.masksToBounds = YES;
+        customCell.img.layer.borderColor=[[UIColor clearColor] CGColor];
         return customCell;
     }
     else

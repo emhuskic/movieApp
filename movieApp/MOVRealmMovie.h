@@ -41,4 +41,5 @@
 @property  NSNumber<RLMDouble> *voteCount;
 @property  NSNumber<RLMDouble> *voteAverage;
 @property  BOOL video;
+@property BOOL isFavorite;
 @end

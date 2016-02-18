@@ -33,7 +33,7 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSNumber *voteCount;
 @property (nonatomic) BOOL video;
-
+@property (nonatomic) BOOL isFavorite;
 //@property (nonatomic) NSUInteger *voteCount;
 @property (nonatomic, strong) NSNumber *voteAverage;
 @end

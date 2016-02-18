@@ -13,5 +13,10 @@
 
 @implementation MOVMovie
 
-
+- (id) init
+{
+    self=[super init];
+    self.isFavorite=NO;
+    return self;
+}
 @end

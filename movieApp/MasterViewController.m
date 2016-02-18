@@ -11,6 +11,8 @@
 #import "MOVMovie.h"
 #import "MOVMovieTableViewCell.h"
 #import "MOVDetailController.h"
+
+#import "NSString+FontAwesome.h"
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
@@ -152,17 +154,26 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
         self.moviesDict=[[NSMutableDictionary alloc] init];
      //Search
     self.searchResult = [NSMutableArray arrayWithCapacity:[self.objects count]];
-    
+  
     //Movie for DetailView controller
     if(!self.movie)
         self.movie = [[MOVMovie alloc]init];
     //RESTKIT
     [self loadMovies];
+    
  }
 
 - (void)viewWillAppear:(BOOL)animated {
     //self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
     [super viewWillAppear:animated];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{
+                                                        NSFontAttributeName:[UIFont fontWithName:@"FontAwesome" size:20.0f]
+                                                        } forState:UIControlStateNormal];
+
+   [[self.tabBarController.tabBar.items objectAtIndex:0]  setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAVideoCamera]]];
+    [[self.tabBarController.tabBar.items objectAtIndex:1]  setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAHeartO]]];
+    [[self.tabBarController.tabBar.items objectAtIndex:2]  setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAUser]]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -309,6 +320,15 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
 }
 
 
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+        if(!self.movies.count)
+            return 0;
+        else if([tableView isEqual:self.searchDisplayController.searchResultsTableView])
+            return 47;
+        else return 297;
+            
+}
 
 
 

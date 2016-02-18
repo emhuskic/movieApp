@@ -18,7 +18,9 @@
 #import "MOVMovieCastTableViewCell.h"
 #import "MOVCastController.h"
 #import "MOVRealmMovie.h"
-
+#import "NSString+FontAwesome.h"
+#import "FavoritesController.h"
+#import "MasterViewController.h"
 @interface MOVDetailController()
 @property (strong, nonatomic) NSArray *cast;
 @property (strong, nonatomic) MOVPerson *selectedCast;
@@ -28,15 +30,16 @@
 
 @implementation MOVDetailController
 
-
+- (void) refreshDetail:(MasterViewController *)view
+{
+    [self.tableView reloadData];
+}
 - (void)selectCast:(MOVMovieCastTableViewCell *)view withItem:(MOVPerson *)item
 {
     self.selectedCast=item;
     self.controller.persID=[item personID];
     [self performSegueWithIdentifier:@"castSegue" sender:self];
 }
-
-
 
 - (void) loadCast
 {
@@ -70,6 +73,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.tableView reloadData];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 - (void)viewDidLoad {
@@ -77,12 +81,29 @@
     self.realm = [RLMRealm defaultRealm];
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     self.navigationController.navigationBar.hidden = NO;
-    [self loadCast];
     
-    [[self tableView] reloadData];
+    UITabBarController *tabBarController = (UITabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController ;
+    [tabBarController setDelegate:self];
+    [self loadCast];
+        [[self tableView] reloadData];
 }
 
-
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+        if([viewController.title isEqual:@"FavoritesNavigationController"])
+        {
+            UINavigationController *navController = (UINavigationController *)[tabBarController selectedViewController];
+            FavoritesController *favcontroller=navController.viewControllers[0];
+            [favcontroller.tableView reloadData];
+        }
+    else
+    {
+        UINavigationController *navController = (UINavigationController *)[tabBarController selectedViewController];
+        MasterViewController *favcontroller=navController.viewControllers[0];
+        favcontroller.delegate=self;
+         [favcontroller.delegate refreshDetail:favcontroller];
+    }
+}
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -106,11 +127,12 @@
             //Upper image
             NSURL * url= [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w1280", self.movie.backdropPath]];
             NSData *data = [NSData dataWithContentsOfURL:url];
-            cell.img.image = [UIImage imageWithData:data];
+            UIImage *cellimg=[UIImage imageWithData:data];
+            cell.img.image = cellimg;
+            // Get the Layer of any view
             
             //Title label
             cell.titleLabel.text = self.movie.title;
-            
             //Duration label
             
             //Genre label
@@ -121,9 +143,15 @@
             
             //Favorites button
             [cell.favorite addTarget:self action:@selector(favoritesButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-            
-            // bla bla bla
-            cell.favorite.tag = indexPath.row;
+            NSPredicate *pred = [NSPredicate predicateWithFormat:@"title = %@",
+                                 [self.movie title]];
+            RLMResults<MOVRealmMovie *> *dbmovies = [MOVRealmMovie objectsWithPredicate:pred];
+            if(dbmovies.count)
+                 [cell.favorite setTitle:[NSString fontAwesomeIconStringForEnum:FAHeart] forState:UIControlStateNormal];
+            else
+                 [cell.favorite setTitle:[NSString fontAwesomeIconStringForEnum:FAHeartO] forState:UIControlStateNormal];
+         // bla bla bla
+           
             return cell;
 
         }
@@ -139,6 +167,13 @@
             NSURL * url= [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w1280", self.movie.posterPath]];
             NSData *data = [NSData dataWithContentsOfURL:url];
             cell.img.image = [UIImage imageWithData:data];
+            
+            [cell.videosButton setTitle:[NSString stringWithFormat:@"%@ Videos",[NSString fontAwesomeIconStringForEnum:FAFilm]]forState:UIControlStateNormal];
+            
+            [cell.smallVideosButton setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAAngleRight]]forState:UIControlStateNormal];
+            
+            [cell.descriptionButton setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAInfoCircle]]forState:UIControlStateNormal];
+            
             cell.descriptionLabel.text=[self.movie overview];
             return cell;
         }
@@ -177,7 +212,7 @@
 @synthesize realm;
 -(void)favoritesButtonTapped:(id)sender
 {
-    
+    UIButton *button = (UIButton *) sender;
     int tag = [(UIButton *)sender tag];
     MOVRealmMovie *mov = [[MOVRealmMovie alloc] init];
     mov.posterPath=self.movie.posterPath;
@@ -193,22 +228,39 @@
     mov.overview=self.movie.overview;
     mov.movID=self.movie.movID;
     mov.imdbID=self.movie.imdbID;
+    mov.isFavorite=self.movie.isFavorite;
     mov.voteAverage=self.movie.voteAverage;
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"title = %@",
                         [self.movie title]];
     RLMResults<MOVRealmMovie *> *movies = [MOVRealmMovie objectsWithPredicate:pred];
    if (movies.count)
     {
-        
+        RLMArray *arr = [[RLMArray alloc] initWithObjectClassName:@"MOVRealmMovie"];
+        [arr addObjects:movies];
         [realm beginWriteTransaction];
-     //   [realm deleteObject:mov];
+        [realm deleteObject:[arr firstObject]];
         [realm commitWriteTransaction];
+        [button.titleLabel setHidden:NO];
+       NSString *str=[NSString fontAwesomeIconStringForEnum:FAHeartO];
+       [button setTitle:str forState:UIControlStateNormal];
+        [button setTag:1];
+        self.movie.isFavorite=NO;
+        
     }
     else
     {
         [realm beginWriteTransaction];
         [realm addObject:mov];
         [realm commitWriteTransaction];
+        self.movie.isFavorite=YES;
+        [button.titleLabel setHidden:NO];
+        NSString *str =[NSString fontAwesomeIconStringForEnum:FAHeart];
+        [button setTitle:str forState:UIControlStateNormal];
+        [button setTag:2];
+        
+        
+
+
     }
 
     [self.delegate updateFavorites:self];
@@ -240,14 +292,6 @@
 
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
-   
-    //self.controller.person = [self.cast objectAtIndex: indexPath.row];
-      //  self.selectedCast=[self.cast objectAtIndex:indexPath.row];
-   /* self.controller.persID=[self.selectedCast personID];
-        [self performSegueWithIdentifier: @"castSegue" sender: self];
-        NSLog(@"didSelectRowAtIndexPath Segue in DETAIL Controller");*/
-    
-
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

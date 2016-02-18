@@ -13,9 +13,6 @@
 #import "MOVDetailController.h"
 RLM_ARRAY_TYPE(MOVRealmMovie)
 @interface FavoritesController()
-@property RLMArray<MOVRealmMovie*><MOVRealmMovie> *movies;
-@property (strong, nonatomic) MOVDetailController *controller;
-@property (strong, nonatomic) MOVMovie *selectedMovie;
 @end
 @implementation FavoritesController
 /*
@@ -36,7 +33,7 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
 {
     [super viewWillAppear:animated];
     self.movies = [MOVRealmMovie allObjects];
-
+    [self.tableView reloadData];
 }
 - (void) viewDidLoad
 {
@@ -45,6 +42,10 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     detailViewController.delegate = self;
    self.movies = [MOVRealmMovie allObjects];
     self.selectedMovie =[[MOVMovie alloc] init];
+}
+- (void) viewDidAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -118,6 +119,7 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     self.selectedMovie.originalLanguage=[[self.movies objectAtIndex: indexPath.row] originalTitle];
     self.selectedMovie.voteAverage=[[self.movies objectAtIndex: indexPath.row] voteAverage];
     self.selectedMovie.voteCount=[[self.movies objectAtIndex: indexPath.row] voteCount];
+    self.selectedMovie.isFavorite=[[self.movies objectAtIndex:indexPath.row] isFavorite];
         controller.movie = self.selectedMovie;
      //   [self performSegueWithIdentifier: @"showDetail" sender: self];
         NSLog(@"Default Display Controller");

@@ -10,7 +10,7 @@
 #import "MOVMovieStarRateView.h"
 #import "MOVMovie.h"
 #import "MOVMovieCastTableViewCell.h"
-
+#import "MasterViewController.h"
 @class MOVDetailController;
 
 @protocol ControllerToFavoritesDelegate <NSObject>
@@ -18,7 +18,7 @@
 @end
 
 
-@interface MOVDetailController : UITableViewController <MovieCastCollectionCellDelegate>
+@interface MOVDetailController : UITableViewController <MovieCastCollectionCellDelegate, UITabBarControllerDelegate, MasterDetailDelegate>
 
 
 @property (nonatomic, weak) id <ControllerToFavoritesDelegate> delegate;

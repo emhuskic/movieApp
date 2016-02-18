@@ -11,9 +11,15 @@
 #import "MOVMovie.h"
 #import "MOVMovieTableViewCell.h"
 @class DetailViewController;
+@class MasterViewController;
+
+@protocol MasterDetailDelegate <NSObject>
+- (void)refreshDetail:(MasterViewController *)view;
+@end
 
 @interface MasterViewController : UITableViewController <MovieCollectionCellDelegate>
 @property (strong, nonatomic) DetailViewController *detailViewController;
+@property (nonatomic, weak) id <MasterDetailDelegate> delegate;
 @property (strong, nonatomic) MOVMovie *movie;
 @end
 
