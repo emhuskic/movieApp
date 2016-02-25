@@ -21,10 +21,18 @@
 #import "NSString+FontAwesome.h"
 #import "FavoritesController.h"
 #import "MasterViewController.h"
+#import "MOVVideosController.h"
+#import "MOVVideo.h"
+#import "MOVUser.h"
 @interface MOVDetailController()
 @property (strong, nonatomic) NSArray *cast;
 @property (strong, nonatomic) MOVPerson *selectedCast;
 @property (strong, nonatomic) MOVCastController *controller;
+@property (strong, nonatomic) NSArray *videos;
+@property (strong, nonatomic) MOVMovie *movs;
+@property (strong, nonatomic) NSArray *ratedMovies;
+@property (strong, nonatomic) NSString *sessionID;
+@property (strong, nonatomic) NSNumber *userID;
 @property RLMRealm *realm;
 @end
 
@@ -40,7 +48,128 @@
     self.controller.persID=[item personID];
     [self performSegueWithIdentifier:@"castSegue" sender:self];
 }
+- (void)registerAsObserver {
+    /*
+     Register 'inspector' to receive change notifications for the "openingBalance" property of
+     the 'account' object and specify that both the old and new values of "openingBalance"
+     should be provided in the observe… method.
+     */
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"NotificationIdentifier" object:nil];
+}
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+- (void) updateView:(NSNotification*)notification
+{
+    self.sessionID=notification.userInfo[@"sessionID"];
+    [self loadUser];
+}
+- (void) loadUser
+{
+    
+    NSURL *baseURL = [NSURL URLWithString:@"https://api.themoviedb.org"];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
+    
+    //IMAGES MAPPING
+    RKObjectMapping* movieMapping2 = [RKObjectMapping mappingForClass:[MOVUser class]];
+    [movieMapping2 addAttributeMappingsFromDictionary:@{
+                                                        @"id":@"userID",
+                                                        @"username":@"username"
+                                                        }];
+    RKResponseDescriptor *responseDescriptor2 = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping2 method:RKRequestMethodAny pathPattern:[NSString stringWithFormat:@"/3/account"]  keyPath:@"" statusCodes:statusCodes];
+    RKObjectManager *sharedManager2 = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager2 addResponseDescriptorsFromArray:@[responseDescriptor2]];
+    [ sharedManager2 getObjectsAtPath:[NSString stringWithFormat:@"/3/account"]  parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825", @"session_id" : [NSString stringWithFormat:@"%@",self.sessionID]}
+                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                  self.userID=[[mappingResult.array firstObject] userID];
+                                  [self loadRatings];
+                                  //[self configureView];
+                              }
+                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                              }];
 
+}
+- (void) loadRatings
+{
+    NSURL *baseURL = [NSURL URLWithString:@"https://api.themoviedb.org"];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
+    
+    //IMAGES MAPPING
+    RKObjectMapping* movieMapping2 = [RKObjectMapping mappingForClass:[MOVMovie class]];
+    [movieMapping2 addAttributeMappingsFromDictionary:@{
+                                                        @"rating":@"userRating",
+                                                        @"id": @"movID",
+                                                        @"backdrop_path": @"backdropPath",
+                                                        @"original_title": @"originalTitle",
+                                                        @"poster_path": @"posterPath",
+                                                        @"release_date": @"releaseDate",
+                                                        @"title": @"title",
+                                                        @"vote_count": @"voteCount",
+                                                        @"vote_average": @"voteAverage"
+                                                        
+                                                        }];
+    RKResponseDescriptor *responseDescriptor2 = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping2 method:RKRequestMethodAny pathPattern:[NSString stringWithFormat:@"/3/account/%@/rated/movies", self.userID]  keyPath:@"results" statusCodes:statusCodes];
+    RKObjectManager *sharedManager2 = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager2 addResponseDescriptorsFromArray:@[responseDescriptor2]];
+    [ sharedManager2 getObjectsAtPath:[NSString stringWithFormat:@"/3/account/%@/rated/movies", self.userID]  parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825", @"session_id" : [NSString stringWithFormat:@"%@",self.sessionID]}
+                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                  self.ratedMovies=mappingResult.array;
+                                  [[self tableView] reloadData];
+                                //[self configureView];
+                              }
+                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                              }];
+
+}
+- (void) loadGenres
+{
+    NSURL *baseURL = [NSURL URLWithString:@"https://api.themoviedb.org"];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    RKObjectMapping* movieMapping = [RKObjectMapping mappingForClass:[MOVGenre class]];
+    [movieMapping addAttributeMappingsFromDictionary:@{
+                                                       @"id":@"genreID",
+                                                       @"name":@"name"
+                                                       }];
+    NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping method:RKRequestMethodAny pathPattern:[NSString stringWithFormat:@"/3/genre/movie/list"]  keyPath:@"genres" statusCodes:statusCodes];
+    
+    RKObjectManager *sharedManager = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager addResponseDescriptorsFromArray:@[responseDescriptor]];
+    [ sharedManager getObjectsAtPath:[NSString stringWithFormat:@"/3/genre/movie/list"]  parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825"}
+                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                 self.genres=mappingResult.array;
+                                 [[self tableView] reloadData];
+                             }
+                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                             }];
+
+}
+- (void) loadVideos
+{
+    NSURL *baseURL = [NSURL URLWithString:@"https://api.themoviedb.org"];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    RKObjectMapping* movieMapping = [RKObjectMapping mappingForClass:[MOVVideo class]];
+    [movieMapping addAttributeMappingsFromDictionary:@{
+                                                       @"key": @"key",
+                                                       @"site": @"site",
+                                                       @"size": @"size",
+                                                       @"type": @"type",
+                                                       @"name": @"name"
+                                                       }];
+    NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping method:RKRequestMethodAny pathPattern:[NSString stringWithFormat:@"/3/movie/%@/videos",self.movie.movID]  keyPath:@"results" statusCodes:statusCodes];
+    
+    RKObjectManager *sharedManager = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager addResponseDescriptorsFromArray:@[responseDescriptor]];
+    [ sharedManager getObjectsAtPath:[NSString stringWithFormat:@"/3/movie/%@/videos",self.movie.movID]  parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825"}
+                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                 NSLog(@"prije dodjele count videos je %ld", self.videos.count);
+                                 self.videos=mappingResult.array;
+                                 NSLog(@"poslije dodjele count videos je: %ld", self.videos.count);
+                                                            }
+                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                             }];
+
+}
 - (void) loadCast
 {
     NSURL *baseURL = [NSURL URLWithString:@"https://api.themoviedb.org"];
@@ -71,20 +200,69 @@
                              }];
 }
 
+- (void) loadMovie
+{
+    NSURL *baseURL = [NSURL URLWithString:@"https://api.themoviedb.org"];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    RKObjectMapping* movieMapping = [RKObjectMapping mappingForClass:[MOVMovie class]];
+    [movieMapping addAttributeMappingsFromDictionary:@{
+                                                       @"runtime":@"runtime",
+                                                       @"id":@"movID"
+                                                       
+                                                       }];
+    NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping method:RKRequestMethodAny pathPattern:[NSString stringWithFormat:@"/3/movie/%@",self.movie.movID]  keyPath:@"" statusCodes:statusCodes];
+    
+    RKObjectManager *sharedManager = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager addResponseDescriptorsFromArray:@[responseDescriptor]];
+    [ sharedManager getObjectsAtPath:[NSString stringWithFormat:@"/3/movie/%@",self.movie.movID]  parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825"}
+                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                 self.movs=[mappingResult.array firstObject];
+                                 [self.tableView reloadData];
+                             }
+                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                             }];
+
+}
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self loadGenres];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
     [self.tableView reloadData];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    UIImage *image = [UIImage imageNamed:@"HEARTicon.png"];
+    [[[self.tabBarController.tabBar items] objectAtIndex:1 ] setImage: [self imageWithImage:image scaledToSize:CGSizeMake(30, 30)]];
+    UIImage *image1 = [UIImage imageNamed:@"videocamicon.png"];
+    [[[self.tabBarController.tabBar items] objectAtIndex:0 ] setImage: [self imageWithImage:image1 scaledToSize:CGSizeMake(30, 30)]];
+    UIImage *image2 = [UIImage imageNamed:@"fa-user.png"];
+    [[[self.tabBarController.tabBar items] objectAtIndex:2 ] setImage: [self imageWithImage:image2 scaledToSize:CGSizeMake(30, 30)]];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self registerAsObserver];
+    [self loadVideos];
+    [self loadGenres];
+    [self loadMovie];
     self.realm = [RLMRealm defaultRealm];
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
-    self.navigationController.navigationBar.hidden = NO;
+    self.navigationController.topViewController.title = [NSString stringWithFormat:@"%@", [self.movie title]];
+     self.navigationController.navigationBar.hidden = NO;
     
     UITabBarController *tabBarController = (UITabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController ;
     [tabBarController setDelegate:self];
     [self loadCast];
+    UIImage *image = [UIImage imageNamed:@"HEARTicon.png"];
+    [[[self.tabBarController.tabBar items] objectAtIndex:1 ] setImage: [self imageWithImage:image scaledToSize:CGSizeMake(30, 30)]];
+    UIImage *image1 = [UIImage imageNamed:@"videocamicon.png"];
+    [[[self.tabBarController.tabBar items] objectAtIndex:0 ] setImage: [self imageWithImage:image1 scaledToSize:CGSizeMake(30, 30)]];
+    UIImage *image2 = [UIImage imageNamed:@"fa-user.png"];
+    
+    [[[self.tabBarController.tabBar items] objectAtIndex:2 ] setImage: [self imageWithImage:image2 scaledToSize:CGSizeMake(30, 30)]];
         [[self tableView] reloadData];
 }
 
@@ -100,8 +278,7 @@
     {
         UINavigationController *navController = (UINavigationController *)[tabBarController selectedViewController];
         MasterViewController *favcontroller=navController.viewControllers[0];
-        favcontroller.delegate=self;
-         [favcontroller.delegate refreshDetail:favcontroller];
+      
     }
 }
 
@@ -135,11 +312,24 @@
             cell.titleLabel.text = self.movie.title;
             //Duration label
             
+            int hour = [[self.movs runtime] intValue] / 60;
+            int min = [[self.movs runtime] intValue] % 60;
+            
+            NSString *timeString = [NSString stringWithFormat: @" %dh %02dmin|", hour, min];
+            cell.durationLabel.text = [NSString stringWithFormat:@"%@",timeString];
             //Genre label
+            for (int i=0; i<self.genres.count; i++)
+            {
+                if ([[[self.genres objectAtIndex:i] genreID] isEqual:(NSNumber*)[[self.movie genres] firstObject]] )
+                {
+                   cell.genreLabel.text=[[self.genres objectAtIndex:i] name];
+                    break;
+                }
+            }
             
             //Year label
             NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[self.movie releaseDate]];
-            cell.yearLabel.text=[NSString stringWithFormat:@"%ld",(long)[components year]];
+            cell.yearLabel.text=[NSString stringWithFormat:@"(%ld)",(long)[components year]];
             
             //Favorites button
             [cell.favorite addTarget:self action:@selector(favoritesButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -151,7 +341,7 @@
             else
                  [cell.favorite setTitle:[NSString fontAwesomeIconStringForEnum:FAHeartO] forState:UIControlStateNormal];
          // bla bla bla
-           
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
 
         }
@@ -170,11 +360,18 @@
             
             [cell.videosButton setTitle:[NSString stringWithFormat:@"%@ Videos",[NSString fontAwesomeIconStringForEnum:FAFilm]]forState:UIControlStateNormal];
             
+            
             [cell.smallVideosButton setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAAngleRight]]forState:UIControlStateNormal];
             
             [cell.descriptionButton setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAInfoCircle]]forState:UIControlStateNormal];
             
             cell.descriptionLabel.text=[self.movie overview];
+            
+             [cell.videosButton addTarget:self action:@selector(videosButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [cell.smallVideosButton addTarget:self action:@selector(videosButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
             return cell;
         }
     
@@ -191,7 +388,18 @@
             cell.avgLabel.text=[NSString stringWithFormat:@"%@",[self.movie voteAverage]];
             cell.countLabel.text=[NSString stringWithFormat:@"%@", [self.movie voteCount]];
             cell.avg=self.movie.voteAverage;
+            for (int i=0; i<[self.ratedMovies count]; i++)
+            {
+                if ([[[self.ratedMovies objectAtIndex:i] movID] isEqual:[self.movie movID]])
+                {
+                    cell.rating=[[self.ratedMovies objectAtIndex:i] userRating];
+                }
+                else
+                    cell.rating=0;
+            }
             [cell refresh];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
             return cell;
         }
         else
@@ -206,17 +414,24 @@
             cell.cast=self.cast;
             cell.delegate=self;
             [cell refreshCollection];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
             return cell;
         }
+}
+-(void)videosButtonTapped:(id)sender
+{
+     [self performSegueWithIdentifier:@"videosSegue" sender:self];
 }
 @synthesize realm;
 -(void)favoritesButtonTapped:(id)sender
 {
     UIButton *button = (UIButton *) sender;
     int tag = [(UIButton *)sender tag];
-    MOVRealmMovie *mov = [[MOVRealmMovie alloc] init];
-    mov.posterPath=self.movie.posterPath;
+    MOVRealmMovie *mov = [[MOVRealmMovie alloc] initWithMOVObject:self.movie];
+   /* mov.posterPath=self.movie.posterPath;
     mov.title=self.movie.title;
+ //   mov.genres=self.movie.genres;
     mov.originalLanguage=self.movie.originalLanguage;
     mov.originalTitle=self.movie.originalTitle;
     mov.popularity=self.movie.popularity;
@@ -229,7 +444,7 @@
     mov.movID=self.movie.movID;
     mov.imdbID=self.movie.imdbID;
     mov.isFavorite=self.movie.isFavorite;
-    mov.voteAverage=self.movie.voteAverage;
+    mov.voteAverage=self.movie.voteAverage;*/
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"title = %@",
                         [self.movie title]];
     RLMResults<MOVRealmMovie *> *movies = [MOVRealmMovie objectsWithPredicate:pred];
@@ -301,5 +516,10 @@
         self.controller.persID=self.selectedCast.personID;
         //self.controller.person=self.selectedCast;
                }
+    else if([[segue identifier] isEqualToString:@"videosSegue"]) {
+        MOVVideosController *videocontroller = (MOVVideosController *)[segue destinationViewController];
+        videocontroller.path=[[self.videos firstObject] key];
+        videocontroller.video=[self.videos firstObject];
+    }
 }
 @end

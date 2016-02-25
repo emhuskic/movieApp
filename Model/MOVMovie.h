@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "MOVGenre.h"
-@interface MOVMovie : NSObject
+#import "MOVRealmMovie.h"
 
+@class MOVRealmMovie;
+@interface MOVMovie : NSObject
 //@property (nonatomic) NSUInteger *id;
 @property (nonatomic) BOOL adult;
 @property (nonatomic, strong) NSNumber *movID;
@@ -34,6 +36,11 @@
 @property (nonatomic, strong) NSNumber *voteCount;
 @property (nonatomic) BOOL video;
 @property (nonatomic) BOOL isFavorite;
-//@property (nonatomic) NSUInteger *voteCount;
+
+@property (nonatomic) NSNumber *userRating;
 @property (nonatomic, strong) NSNumber *voteAverage;
+@property (nonatomic, strong) NSNumber *runtime;
+
+
+- (id) initWithRLMObject:(MOVRealmMovie *)RLMmov;
 @end

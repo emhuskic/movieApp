@@ -33,6 +33,7 @@
 - (void) refresh
 {
     self.apiRateView.rating=[self.avg floatValue]/2.;
+    self.userRateView.rating=[self.rating floatValue]/2.;
 
 }
 - (void)rateView:(MOVMovieStarRateView *)rateView ratingDidChange:(float)rating {

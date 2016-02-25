@@ -10,6 +10,7 @@
 #import <RestKit/CoreData.h>
 #import <RestKit/RestKit.h>
 
+
 #import "MOVMovie.h"
 @interface AppDelegate () <UISplitViewControllerDelegate>
 - (void)configureRestKit;
@@ -17,6 +18,8 @@
 @end
 
 @implementation AppDelegate
+
+
 /*
 - (void) imageCaching
 {

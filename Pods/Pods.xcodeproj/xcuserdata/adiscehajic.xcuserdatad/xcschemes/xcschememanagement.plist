@@ -4,149 +4,135 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFNetworking.xcscheme</key>
+		<key>Pods-AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
-		<key>EDStarRating.xcscheme</key>
+		<key>Pods-EDStarRating.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
-		<key>FastImageCache.xcscheme</key>
+		<key>Pods-FastImageCache.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
-		<key>FontAwesome-iOS.xcscheme</key>
+		<key>Pods-FontAwesome-iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
-		<key>ISO8601DateFormatterValueTransformer.xcscheme</key>
+		<key>Pods-ISO8601DateFormatterValueTransformer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
-		<key>Pods-movieApp.xcscheme</key>
+		<key>Pods-RKValueTransformers.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
-		<key>RKValueTransformers.xcscheme</key>
+		<key>Pods-Realm.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>9</integer>
 		</dict>
-		<key>Realm.xcscheme</key>
+		<key>Pods-RestKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
-		<key>RestKit.xcscheme</key>
+		<key>Pods-SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>8</integer>
 		</dict>
-		<key>SDWebImage.xcscheme</key>
+		<key>Pods-SOCKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>10</integer>
 		</dict>
-		<key>SOCKit.xcscheme</key>
+		<key>Pods-TransitionKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>11</integer>
 		</dict>
-		<key>TransitionKit.xcscheme</key>
+		<key>Pods-youtube-ios-player-helper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>12</integer>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>02A157D85E7FB92E64BE99F977842176</key>
+		<key>01B93F74117D1F62873B9AE6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>080AF914A09167DB5759A733917B840F</key>
+		<key>0CBD872A88E99811543DA5AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>10C99F0C3FC1F39A184A612F72A7433B</key>
+		<key>0E589228C7DB9DE512AE4B0E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61681BF0E677683490353B846C61A129</key>
+		<key>15FE0A64ADF93D7B4A97D286</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7A4BAFCE5DCDBD66C5E409DF1977D9E7</key>
+		<key>217AA55D28372501FACFE31F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>85EF4840607A492019B9AAB456E7D846</key>
+		<key>2DEB2660722557C35A7F7D05</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9BEE5F063D739BF8536958FD76629434</key>
+		<key>3F244F64C16904C9BA6F950C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9CA3033B44055D28FF881CCE51651565</key>
+		<key>4B77857917E7B80E3F7DF7AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C47E006176ABF4755350B88C088C3F0D</key>
+		<key>546FEAB82954ADC30690FF1E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D19C8DC91C0AFDBC5D347608B816EB9A</key>
+		<key>91E5ADCBA8A80270BF33EF06</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D84BA9FEA84258C630F560C29CA24BC4</key>
+		<key>ABB278FC938212FB1B16B46A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EA206FA83F0243C437D555A270C11B17</key>
+		<key>C9A2E10F3415BB4906800E96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE2D3BDC4D4DCFF6EB096D79</key>
 		<dict>
 			<key>primary</key>
 			<true/>

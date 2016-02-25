@@ -15,20 +15,7 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
 @interface FavoritesController()
 @end
 @implementation FavoritesController
-/*
- 
- specimens = Specimen.allObjects()  // 2
- // Create annotations for each one
- for specimen in specimens {
- let aSpecimen = specimen as Specimen
- let coord = CLLocationCoordinate2D(latitude: aSpecimen.latitude, longitude: aSpecimen.longitude);
- let specimenAnnotation = SpecimenAnnotation(coordinate: coord,
- title: aSpecimen.name,
- subtitle: aSpecimen.category.name,
- specimen: aSpecimen) // 3
- mapView.addAnnotation(specimenAnnotation) // 4
- }
- */
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -40,6 +27,7 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     MOVDetailController *detailViewController = [[MOVDetailController alloc] init];
     // Assign self as the delegate for the child view controller
     detailViewController.delegate = self;
+  self.navigationController.topViewController.title = @"Favorites";
    self.movies = [MOVRealmMovie allObjects];
     self.selectedMovie =[[MOVMovie alloc] init];
 }
@@ -68,13 +56,12 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     if (cell == nil) {
         cell = [[MOVFavoritesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier];
     }
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[[self.movies objectAtIndex:indexPath.row] releaseDate]];
     cell.titleLabel.text = [[self.movies objectAtIndex:indexPath.row] title];
+    cell.ratingLabel.text=[NSString stringWithFormat:@"%@/10", [[self.movies objectAtIndex:indexPath.row]voteAverage ]];
+    cell.yearLabel.text=[NSString stringWithFormat:@"From %ld", (long)[components year]];
     NSURL * url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", [[self.movies objectAtIndex:indexPath.row] posterPath]]];
-    // NSData *dataLower = [NSData dataWithContentsOfURL:urlLower];
-    //UIImage *imgLower= [[UIImage alloc] initWithData:dataLower];
-    // customCell.img.image=imgLower;
     [cell.img sd_setImageWithURL:url];
-    //cell.img.image=[[self.movies objectAtIndex:indexPath.row]
     return cell;
 }
 
@@ -110,6 +97,7 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
 {
     self.selectedMovie.overview=[[self.movies objectAtIndex: indexPath.row] overview];
     self.selectedMovie.posterPath=[[self.movies objectAtIndex: indexPath.row] posterPath];
+   // self.selectedMovie.genres=[[self.movies objectAtIndex:indexPath.row] genres];
     self.selectedMovie.imdbID=[[self.movies objectAtIndex: indexPath.row] imdbID];
     self.selectedMovie.movID=[[self.movies objectAtIndex: indexPath.row] movID];
     self.selectedMovie.releaseDate=[[self.movies objectAtIndex: indexPath.row] releaseDate];
@@ -120,7 +108,8 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     self.selectedMovie.voteAverage=[[self.movies objectAtIndex: indexPath.row] voteAverage];
     self.selectedMovie.voteCount=[[self.movies objectAtIndex: indexPath.row] voteCount];
     self.selectedMovie.isFavorite=[[self.movies objectAtIndex:indexPath.row] isFavorite];
-        controller.movie = self.selectedMovie;
+   controller.movie= [[MOVMovie alloc] initWithRLMObject: [self.movies objectAtIndex:indexPath.row]];
+   // controller.genres =[[NSArray alloc] initWithObjects:[[self.movies objectAtIndex:indexPath.row] genres], nil];
      //   [self performSegueWithIdentifier: @"showDetail" sender: self];
         NSLog(@"Default Display Controller");
 }

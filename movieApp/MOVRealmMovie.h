@@ -6,8 +6,10 @@
 //  Copyright © 2016 EminaHuskic. All rights reserved.
 //
 
+#import "MOVMovie.h"
 #import <Realm/Realm.h>
-
+#import "MOVRealmGenre.h"
+@class MOVMovie;
 /*
  @property BOOL value;	@property NSNumber<RLMBool> *value;
  Int	@property int value;	@property NSNumber<RLMInt> *value;
@@ -17,12 +19,14 @@
  Data	@property NSData *value; †	@property NSData *value;
  Date	@property NSDate *value; †	@property NSDate *value;
  Object	n/a: must be optional	@property Object *value;*/
+
+RLM_ARRAY_TYPE(MOVRealmGenre)
 @interface MOVRealmMovie : RLMObject
 @property  NSNumber<RLMBool>* adult;
 @property  NSNumber<RLMInt> *movID;
 @property  NSString *backdropPath;
 @property  NSString *belongsToCollection;
-//@property  NSMutableArray *genres;
+@property RLMArray<MOVRealmGenre*><MOVRealmGenre> *genres;
 @property  NSString *homepage;
 @property  NSString *originalLanguage;
 @property  NSString *overview;
@@ -42,4 +46,8 @@
 @property  NSNumber<RLMDouble> *voteAverage;
 @property  BOOL video;
 @property BOOL isFavorite;
+
+
+- (id) initWithMOVObject:(MOVMovie *)mov;
 @end
+

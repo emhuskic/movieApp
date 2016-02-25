@@ -39,8 +39,8 @@
                                                        @"backdrop_path": @"backdropPath",
                                                        @"belongs_to_collection":@"belongsToCollection",
                                                        @"adult": @"adult",
-                                                      
-                                                       @"genres": @"genre_ids",
+                                            
+                                                       @"genre_ids": @"genres",
                                                        @"homepage": @"homepage",
                                                        @"original_language": @"originalLanguage",
                                                        @"overview": @"overview",
@@ -112,7 +112,19 @@
                               }
                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
                               }];
-
+    
+    
+    
+  /*  RKObjectMapping* issueMapping = [RKObjectMapping mappingForClass: [MOVMovie class] usingBlock:^(RKObjectMapping *mapping) {
+        [movieMapping addAttributeMappingsFromDictionary:@{
+                                                           @"genr"
+        [mapping mapKeyPathsToAttributes:
+         @"id", @"identifier",
+         nil];
+    }];
+    issueMapping.rootKeyPath = @"issue";
+    [omp setObjectMaping: issueMapping forKeyPath: @"issuelist"];
+*/
 }
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
@@ -142,6 +154,7 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     [self.navigationController setNavigationBarHidden:YES animated:NO];
     // Do any additional setup after loading the view, typically from a nib.
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
@@ -159,20 +172,42 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
     if(!self.movie)
         self.movie = [[MOVMovie alloc]init];
     //RESTKIT
+    UIImage *image = [UIImage imageNamed:@"HEARTicon.png"];
+    [[[self.tabBarController.tabBar items] objectAtIndex:1 ] setImage: [self imageWithImage:image scaledToSize:CGSizeMake(30, 30)]];
+    UIImage *image1 = [UIImage imageNamed:@"videocamicon.png"];
+    [[[self.tabBarController.tabBar items] objectAtIndex:0 ] setImage: [self imageWithImage:image1 scaledToSize:CGSizeMake(30, 30)]];
+    UIImage *image2 = [UIImage imageNamed:@"fa-user.png"];
+     self.definesPresentationContext = NO;
+    [[[self.tabBarController.tabBar items] objectAtIndex:2 ] setImage: [self imageWithImage:image2 scaledToSize:CGSizeMake(30, 30)]];
     [self loadMovies];
     
  }
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     //self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
     [super viewWillAppear:animated];
     [[UITabBarItem appearance] setTitleTextAttributes:@{
-                                                        NSFontAttributeName:[UIFont fontWithName:@"FontAwesome" size:20.0f]
+                                                        NSFontAttributeName:[UIFont fontWithName:@"FontAwesome" size:10.0f]
                                                         } forState:UIControlStateNormal];
+    UIImage *image = [UIImage imageNamed:@"HEARTicon.png"];
+    [[[self.tabBarController.tabBar items] objectAtIndex:1 ] setImage: [self imageWithImage:image scaledToSize:CGSizeMake(30, 30)]];
+    UIImage *image1 = [UIImage imageNamed:@"videocamicon.png"];
+    [[[self.tabBarController.tabBar items] objectAtIndex:0 ] setImage: [self imageWithImage:image1 scaledToSize:CGSizeMake(30, 30)]];
+    UIImage *image2 = [UIImage imageNamed:@"fa-user.png"];
+    
+    [[[self.tabBarController.tabBar items] objectAtIndex:2 ] setImage: [self imageWithImage:image2 scaledToSize:CGSizeMake(30, 30)]];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 
-   [[self.tabBarController.tabBar.items objectAtIndex:0]  setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAVideoCamera]]];
-    [[self.tabBarController.tabBar.items objectAtIndex:1]  setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAHeartO]]];
-    [[self.tabBarController.tabBar.items objectAtIndex:2]  setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAUser]]];
+  /* [[self.tabBarController.tabBar.items objectAtIndex:0]  setTitle:[NSString stringWithFormat:@"%@\nFeed",[NSString fontAwesomeIconStringForEnum:FAVideoCamera]]];
+    [[self.tabBarController.tabBar.items objectAtIndex:1]  setTitle:[NSString stringWithFormat:@"%@\nFavorites",[NSString fontAwesomeIconStringForEnum:FAHeartO]]];
+    [[self.tabBarController.tabBar.items objectAtIndex:2]  setTitle:[NSString stringWithFormat:@"%@\nAccount",[NSString fontAwesomeIconStringForEnum:FAUser]]];*/
     
 }
 
@@ -330,7 +365,14 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
             
 }
 
+- (void)willPresentSearchController:(UISearchController *)searchController {
+    // do something before the search controller is presented
+    self.navigationController.navigationBar.translucent = YES;
+}
 
-
+-(void)willDismissSearchController:(UISearchController *)searchController
+{
+    self.navigationController.navigationBar.translucent = NO;
+}
 
 @end

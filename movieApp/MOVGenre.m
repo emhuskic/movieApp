@@ -10,4 +10,12 @@
 
 @implementation MOVGenre
 
+
+- (id) initWithRLMGenre:(MOVRealmGenre *)RLMgen
+{
+    self=[super init];
+    self.genreID=RLMgen.genreID;
+    self.name=RLMgen.name;
+    return self;
+}
 @end

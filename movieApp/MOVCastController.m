@@ -37,7 +37,7 @@
                                                         @"belongs_to_collection":@"belongsToCollection",
                                                         @"adult": @"adult",
                                                         
-                                                        //@"genres": @"genre_ids",
+                                                        @"genre_ids": @"genres",
                                                         @"homepage": @"homepage",
                                                         @"original_language": @"originalLanguage",
                                                         @"overview": @"overview",
@@ -66,7 +66,6 @@
     [ sharedManager2 getObjectsAtPath:[NSString stringWithFormat:@"/3/search/movie"]  parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825", @"query" : [NSString stringWithFormat:@"%@",self.selectedMovieID]}
                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                   self.selectedMovie = [mappingResult.array firstObject];
-                                  
                                   [self performSegueWithIdentifier:@"showDetail" sender:self];
                                   //[self configureView];
                               }
@@ -80,7 +79,7 @@
     self.selectedMovieID=[item title];
     [self loadMovie];
     self.controller.movie=item;
-    self.selectedMovie=item;
+   // self.selectedMovie=item;
 }
 
 - (void) loadPerson
@@ -197,10 +196,13 @@
         //Birthday label
         NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[self.person birthday]];
         [NSString stringWithFormat:@"%ld",(long)[components year]];
-        cell.birthdayLabel.text=[NSString stringWithFormat:@"Born %@ in %@", [NSString stringWithFormat:@"%ld-%ld-%ld",(long)[components year], [components month], [components day]], [self.person birthPlace]];
+        NSArray *listItems = [[self.person birthPlace] componentsSeparatedByString:@", "];
+        cell.birthdayLabel.text=[NSString stringWithFormat:@"Born %@ in %@", [NSString stringWithFormat:@"%ld-%ld-%ld",(long)[components year], [components month], [components day]], [listItems firstObject]];
         
         //Birthplace label
-        cell.birthplaceLabel.text=[self.person birthPlace];
+        cell.birthplaceLabel.text=@"";
+        for (int i=1; i<listItems.count; i++)
+        cell.birthplaceLabel.text=[NSString stringWithFormat:@"%@-%@", cell.birthplaceLabel.text, [listItems objectAtIndex:i]];
         return cell;
     }
     
@@ -279,11 +281,11 @@
 {
     if (indexPath.row==0)
     {
-        return 181;
+        return 200;
     }
     else if (indexPath.row==1)
     {
-        return 210;
+        return 182;
     }
     else if (indexPath.row==2)
     {

@@ -25,4 +25,6 @@
 @property (strong, nonatomic) MOVMovie *detailItem;
 @property (strong, nonatomic) MOVMovie *movie;
 
+@property (strong, nonatomic) NSArray *genres;
+
 @end
