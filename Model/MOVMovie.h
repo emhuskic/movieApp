@@ -11,6 +11,7 @@
 #import "MOVRealmMovie.h"
 
 @class MOVRealmMovie;
+
 @interface MOVMovie : NSObject
 //@property (nonatomic) NSUInteger *id;
 @property (nonatomic) BOOL adult;

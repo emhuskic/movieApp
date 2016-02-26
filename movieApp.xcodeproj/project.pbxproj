@@ -1,3028 +1,800 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>1B1F24148A95CCAE8C470696</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A3F45D917B677418DE3994AE</string>
-				<string>BE31C9C8EE8F0F7ED4F5DE42</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>33E20C0D08E2D56B1BE39798</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>8CB42AF5B309EC9B0848E241</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>9E58288AE62D0CEFE0A7C932</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-movieApp/Pods-movieApp-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>A00BFE921C7DC78600DD2227</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>movieApp-Bridging-Header.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A00BFE931C7DC78600DD2227</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AccountController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A00BFE941C7DC78600DD2227</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A00BFE931C7DC78600DD2227</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A00BFE971C7DD24500DD2227</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Constants.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A00BFE981C7DD24500DD2227</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A00BFE971C7DD24500DD2227</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A00BFE9B1C7DF4F500DD2227</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVUser.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A00BFE9C1C7DF4F500DD2227</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVUser.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A00BFE9D1C7DF4F500DD2227</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A00BFE9C1C7DF4F500DD2227</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A00BFEA01C7F347E00DD2227</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>LoginViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A00BFEA11C7F347E00DD2227</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A00BFEA01C7F347E00DD2227</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B5B9E1C749E4E0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVRealmMovie.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B5B9F1C749E4E0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVRealmMovie.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B5BA01C749E4E0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B5B9F1C749E4E0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B5BA11C74B1530017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FavoritesController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B5BA21C74B1530017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FavoritesController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B5BA31C74B1530017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B5BA21C74B1530017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B5BA41C74C46D0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVFavoritesTableViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B5BA51C74C46D0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVFavoritesTableViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B5BA61C74C46D0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B5BA51C74C46D0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B631A1C75EDAB0017CEEC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A01B631B1C75EDAB0017CEEC</string>
-				<string>A01B631E1C75EDAB0017CEEC</string>
-				<string>A01B63251C75EDAB0017CEEC</string>
-				<string>A01B63261C75EDAB0017CEEC</string>
-				<string>A01B63341C75EDAB0017CEEC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>font-awesome-4.5.0</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B631B1C75EDAB0017CEEC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A01B631C1C75EDAB0017CEEC</string>
-				<string>A01B631D1C75EDAB0017CEEC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>css</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B631C1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.css</string>
-			<key>path</key>
-			<string>font-awesome.css</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B631D1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.css</string>
-			<key>path</key>
-			<string>font-awesome.min.css</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B631E1C75EDAB0017CEEC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A01B631F1C75EDAB0017CEEC</string>
-				<string>A01B63201C75EDAB0017CEEC</string>
-				<string>A01B63211C75EDAB0017CEEC</string>
-				<string>A01B63221C75EDAB0017CEEC</string>
-				<string>A01B63231C75EDAB0017CEEC</string>
-				<string>A01B63241C75EDAB0017CEEC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>fonts</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B631F1C75EDAB0017CEEC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file</string>
-			<key>path</key>
-			<string>fontawesome-webfont.eot</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63201C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xml</string>
-			<key>path</key>
-			<string>fontawesome-webfont.svg</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63211C75EDAB0017CEEC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file</string>
-			<key>path</key>
-			<string>fontawesome-webfont.ttf</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63221C75EDAB0017CEEC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file</string>
-			<key>path</key>
-			<string>fontawesome-webfont.woff</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63231C75EDAB0017CEEC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file</string>
-			<key>path</key>
-			<string>fontawesome-webfont.woff2</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63241C75EDAB0017CEEC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file</string>
-			<key>path</key>
-			<string>FontAwesome.otf</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63251C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>HELP-US-OUT.txt</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63261C75EDAB0017CEEC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A01B63271C75EDAB0017CEEC</string>
-				<string>A01B63281C75EDAB0017CEEC</string>
-				<string>A01B63291C75EDAB0017CEEC</string>
-				<string>A01B632A1C75EDAB0017CEEC</string>
-				<string>A01B632B1C75EDAB0017CEEC</string>
-				<string>A01B632C1C75EDAB0017CEEC</string>
-				<string>A01B632D1C75EDAB0017CEEC</string>
-				<string>A01B632E1C75EDAB0017CEEC</string>
-				<string>A01B632F1C75EDAB0017CEEC</string>
-				<string>A01B63301C75EDAB0017CEEC</string>
-				<string>A01B63311C75EDAB0017CEEC</string>
-				<string>A01B63321C75EDAB0017CEEC</string>
-				<string>A01B63331C75EDAB0017CEEC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>less</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63271C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>animated.less</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63281C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>bordered-pulled.less</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63291C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>core.less</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B632A1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>fixed-width.less</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B632B1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>font-awesome.less</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B632C1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>icons.less</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B632D1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>larger.less</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B632E1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>list.less</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B632F1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>mixins.less</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63301C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>path.less</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63311C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>rotated-flipped.less</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63321C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>stacked.less</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63331C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>variables.less</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63341C75EDAB0017CEEC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A01B63351C75EDAB0017CEEC</string>
-				<string>A01B63361C75EDAB0017CEEC</string>
-				<string>A01B63371C75EDAB0017CEEC</string>
-				<string>A01B63381C75EDAB0017CEEC</string>
-				<string>A01B63391C75EDAB0017CEEC</string>
-				<string>A01B633A1C75EDAB0017CEEC</string>
-				<string>A01B633B1C75EDAB0017CEEC</string>
-				<string>A01B633C1C75EDAB0017CEEC</string>
-				<string>A01B633D1C75EDAB0017CEEC</string>
-				<string>A01B633E1C75EDAB0017CEEC</string>
-				<string>A01B633F1C75EDAB0017CEEC</string>
-				<string>A01B63401C75EDAB0017CEEC</string>
-				<string>A01B63411C75EDAB0017CEEC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>scss</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63351C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>_animated.scss</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63361C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>_bordered-pulled.scss</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63371C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>_core.scss</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63381C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>_fixed-width.scss</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63391C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>_icons.scss</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B633A1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>_larger.scss</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B633B1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>_list.scss</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B633C1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>_mixins.scss</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B633D1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>_path.scss</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B633E1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>_rotated-flipped.scss</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B633F1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>_stacked.scss</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63401C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>_variables.scss</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63411C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>font-awesome.scss</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63421C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B631C1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63431C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B631D1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63441C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B631F1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63451C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63201C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63461C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63211C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63471C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63221C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63481C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63231C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63491C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63241C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B634A1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63251C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B634B1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63271C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B634C1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63281C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B634D1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63291C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B634E1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B632A1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B634F1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B632B1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63501C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B632C1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63511C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B632D1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63521C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B632E1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63531C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B632F1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63541C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63301C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63551C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63311C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63561C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63321C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63571C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63331C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63581C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63351C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63591C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63361C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B635A1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63371C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B635B1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63381C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B635C1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63391C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B635D1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B633A1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B635E1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B633B1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B635F1C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B633C1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63601C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B633D1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63611C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B633E1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63621C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B633F1C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63631C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63401C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63641C75EDAB0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63411C75EDAB0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63E11C75EF880017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>NSString+FontAwesome.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63E21C75EF880017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>NSString+FontAwesome.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63E31C75EF880017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63E21C75EF880017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63E41C7620500017CEEC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.ico</string>
-			<key>path</key>
-			<string>videocameraICON.ico</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63E51C7620500017CEEC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>HEARTicon.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63E61C7620500017CEEC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>ACCOUNTicon.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63E71C7620500017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63E41C7620500017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63E81C7620500017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63E51C7620500017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63E91C7620500017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63E61C7620500017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63EA1C7621400017CEEC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.jpeg</string>
-			<key>path</key>
-			<string>video-camera-icon.jpg</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63EB1C7621400017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63EA1C7621400017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63EC1C771A3D0017CEEC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>fa-user.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63ED1C771A3D0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63EC1C771A3D0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63EE1C771A4F0017CEEC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>videocamicon.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63EF1C771A4F0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63EE1C771A4F0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63F01C7B131E0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVVideosController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63F11C7B131E0017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVVideosController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63F21C7B131E0017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63F11C7B131E0017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63F31C7B19360017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVVideo.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63F41C7B19360017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVVideo.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63F51C7B19360017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63F41C7B19360017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01B63F61C7B3A860017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVRealmGenre.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63F71C7B3A860017CEEC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVRealmGenre.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01B63F81C7B3A860017CEEC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01B63F71C7B3A860017CEEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A050774C1C6A2CE40074603B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>movie_transparent.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A050774D1C6A2CE40074603B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A050774C1C6A2CE40074603B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A050774E1C6A346D0074603B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>starhighlighted.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A050774F1C6A346D0074603B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A050774E1C6A346D0074603B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A05077501C6A34730074603B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>star.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A05077511C6A34730074603B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A05077501C6A34730074603B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A06625951C64D16300B1B050</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MOVMovieTableViewCell.h</string>
-			<key>path</key>
-			<string>../MOVMovieTableViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A06625961C64D16300B1B050</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MOVMovieTableViewCell.m</string>
-			<key>path</key>
-			<string>../MOVMovieTableViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A06625971C64D16300B1B050</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A06625961C64D16300B1B050</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A06625A21C64EC0700B1B050</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MOVMovieCollectionViewCell.h</string>
-			<key>path</key>
-			<string>../MOVMovieCollectionViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A06625A31C64EC0700B1B050</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MOVMovieCollectionViewCell.m</string>
-			<key>path</key>
-			<string>../MOVMovieCollectionViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A06625A41C64EC0700B1B050</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A06625A31C64EC0700B1B050</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A09F01FD1C60B48E002E128D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A09F02081C60B48E002E128D</string>
-				<string>A09F02071C60B48E002E128D</string>
-				<string>1B1F24148A95CCAE8C470696</string>
-				<string>F8ABC589A075389147F3BB51</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F01FE1C60B48E002E128D</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>KnownAssetTags</key>
-				<array>
-					<string>New</string>
-				</array>
-				<key>LastUpgradeCheck</key>
-				<string>0720</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>EminaHuskic</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>A09F02051C60B48E002E128D</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.2</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>A09F02011C60B48E002E128D</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>A09F01FD1C60B48E002E128D</string>
-			<key>productRefGroup</key>
-			<string>A09F02071C60B48E002E128D</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>A09F02051C60B48E002E128D</string>
-			</array>
-		</dict>
-		<key>A09F02011C60B48E002E128D</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>A09F021E1C60B48E002E128D</string>
-				<string>A09F021F1C60B48E002E128D</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>A09F02021C60B48E002E128D</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A06625A41C64EC0700B1B050</string>
-				<string>A09F02261C60B5BB002E128D</string>
-				<string>A0E3542D1C737F8C00E81503</string>
-				<string>A09F020E1C60B48E002E128D</string>
-				<string>A0E3541E1C736E4700E81503</string>
-				<string>A00BFE981C7DD24500DD2227</string>
-				<string>A06625971C64D16300B1B050</string>
-				<string>A01B63F51C7B19360017CEEC</string>
-				<string>A00BFE941C7DC78600DD2227</string>
-				<string>A01B5BA01C749E4E0017CEEC</string>
-				<string>A0E3540C1C72319900E81503</string>
-				<string>A01B63F21C7B131E0017CEEC</string>
-				<string>A0E353ED1C6B5A8500E81503</string>
-				<string>A00BFEA11C7F347E00DD2227</string>
-				<string>A01B5BA31C74B1530017CEEC</string>
-				<string>A09F02321C60D6E9002E128D</string>
-				<string>A0E354151C723A2100E81503</string>
-				<string>A09F02111C60B48E002E128D</string>
-				<string>A09F020B1C60B48E002E128D</string>
-				<string>A0E353E01C6B39ED00E81503</string>
-				<string>A00BFE9D1C7DF4F500DD2227</string>
-				<string>A0E354241C7370FD00E81503</string>
-				<string>A0E3542A1C737E8500E81503</string>
-				<string>A0E353F01C6B63DB00E81503</string>
-				<string>A0E354091C722FE600E81503</string>
-				<string>A0E354121C72353700E81503</string>
-				<string>A01B63E31C75EF880017CEEC</string>
-				<string>A0E3540F1C72332D00E81503</string>
-				<string>A01B5BA61C74C46D0017CEEC</string>
-				<string>A01B63F81C7B3A860017CEEC</string>
-				<string>A0E354271C73711800E81503</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>A09F02031C60B48E002E128D</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F56DFE1D7BBDBDF2F9D3637C</string>
-				<string>E8C5C0D528B59906A4F0992F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>A09F02041C60B48E002E128D</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A01B63451C75EDAB0017CEEC</string>
-				<string>A01B634B1C75EDAB0017CEEC</string>
-				<string>A01B63EB1C7621400017CEEC</string>
-				<string>A01B63E81C7620500017CEEC</string>
-				<string>A0E353E21C6B3BF400E81503</string>
-				<string>A01B63EF1C771A4F0017CEEC</string>
-				<string>A01B63551C75EDAB0017CEEC</string>
-				<string>A01B63471C75EDAB0017CEEC</string>
-				<string>A01B635D1C75EDAB0017CEEC</string>
-				<string>A01B63461C75EDAB0017CEEC</string>
-				<string>A01B63641C75EDAB0017CEEC</string>
-				<string>A09F021C1C60B48E002E128D</string>
-				<string>A050774F1C6A346D0074603B</string>
-				<string>A01B63581C75EDAB0017CEEC</string>
-				<string>A01B634E1C75EDAB0017CEEC</string>
-				<string>A01B635A1C75EDAB0017CEEC</string>
-				<string>A01B63E91C7620500017CEEC</string>
-				<string>A0E354181C72421B00E81503</string>
-				<string>A01B63561C75EDAB0017CEEC</string>
-				<string>A01B635B1C75EDAB0017CEEC</string>
-				<string>A09F02191C60B48E002E128D</string>
-				<string>A01B63541C75EDAB0017CEEC</string>
-				<string>A01B63621C75EDAB0017CEEC</string>
-				<string>A01B63631C75EDAB0017CEEC</string>
-				<string>A0E353E41C6B3EAB00E81503</string>
-				<string>A01B63591C75EDAB0017CEEC</string>
-				<string>A01B634D1C75EDAB0017CEEC</string>
-				<string>A01B634C1C75EDAB0017CEEC</string>
-				<string>A0E353E61C6B3EB800E81503</string>
-				<string>A01B63491C75EDAB0017CEEC</string>
-				<string>A05077511C6A34730074603B</string>
-				<string>A01B63501C75EDAB0017CEEC</string>
-				<string>A01B634A1C75EDAB0017CEEC</string>
-				<string>A01B635F1C75EDAB0017CEEC</string>
-				<string>A01B634F1C75EDAB0017CEEC</string>
-				<string>A0E354021C72225700E81503</string>
-				<string>A01B63531C75EDAB0017CEEC</string>
-				<string>A0E354001C72225000E81503</string>
-				<string>A01B63431C75EDAB0017CEEC</string>
-				<string>A01B635C1C75EDAB0017CEEC</string>
-				<string>A01B63511C75EDAB0017CEEC</string>
-				<string>A01B63E71C7620500017CEEC</string>
-				<string>A01B63601C75EDAB0017CEEC</string>
-				<string>A0E354061C72239C00E81503</string>
-				<string>A01B63571C75EDAB0017CEEC</string>
-				<string>A01B63611C75EDAB0017CEEC</string>
-				<string>A01B63441C75EDAB0017CEEC</string>
-				<string>A050774D1C6A2CE40074603B</string>
-				<string>A01B63421C75EDAB0017CEEC</string>
-				<string>A01B63521C75EDAB0017CEEC</string>
-				<string>A01B63ED1C771A3D0017CEEC</string>
-				<string>A01B635E1C75EDAB0017CEEC</string>
-				<string>A01B63481C75EDAB0017CEEC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>A09F02051C60B48E002E128D</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>A09F02201C60B48E002E128D</string>
-			<key>buildPhases</key>
-			<array>
-				<string>FA370ACA89CBA9073FEFE495</string>
-				<string>A09F02021C60B48E002E128D</string>
-				<string>A09F02031C60B48E002E128D</string>
-				<string>A09F02041C60B48E002E128D</string>
-				<string>9E58288AE62D0CEFE0A7C932</string>
-				<string>8CB42AF5B309EC9B0848E241</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>movieApp</string>
-			<key>productName</key>
-			<string>movieApp</string>
-			<key>productReference</key>
-			<string>A09F02061C60B48E002E128D</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>A09F02061C60B48E002E128D</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>movieApp.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>A09F02071C60B48E002E128D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A09F02061C60B48E002E128D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F02081C60B48E002E128D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A09F02231C60B57A002E128D</string>
-				<string>A06625951C64D16300B1B050</string>
-				<string>A06625961C64D16300B1B050</string>
-				<string>A06625A21C64EC0700B1B050</string>
-				<string>A06625A31C64EC0700B1B050</string>
-				<string>A0E353DE1C6B39ED00E81503</string>
-				<string>A0E353DF1C6B39ED00E81503</string>
-				<string>A09F020F1C60B48E002E128D</string>
-				<string>A09F02101C60B48E002E128D</string>
-				<string>A0E354131C723A2100E81503</string>
-				<string>A0E354141C723A2100E81503</string>
-				<string>A0E3541A1C736DB100E81503</string>
-				<string>A0E3541C1C736E4700E81503</string>
-				<string>A0E3541D1C736E4700E81503</string>
-				<string>A0E3541B1C736E1700E81503</string>
-				<string>A01B5BA11C74B1530017CEEC</string>
-				<string>A01B5BA21C74B1530017CEEC</string>
-				<string>A01B5BA41C74C46D0017CEEC</string>
-				<string>A01B5BA51C74C46D0017CEEC</string>
-				<string>A01B63F01C7B131E0017CEEC</string>
-				<string>A01B63F11C7B131E0017CEEC</string>
-				<string>A00BFE931C7DC78600DD2227</string>
-				<string>A00BFEA01C7F347E00DD2227</string>
-				<string>A00BFE971C7DD24500DD2227</string>
-				<string>A0E354161C72421B00E81503</string>
-				<string>A09F02181C60B48E002E128D</string>
-				<string>A09F021A1C60B48E002E128D</string>
-				<string>A09F021D1C60B48E002E128D</string>
-				<string>A09F02091C60B48E002E128D</string>
-				<string>A00BFE921C7DC78600DD2227</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>movieApp</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F02091C60B48E002E128D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A01B63EE1C771A4F0017CEEC</string>
-				<string>A01B63EC1C771A3D0017CEEC</string>
-				<string>A01B63EA1C7621400017CEEC</string>
-				<string>A01B63E41C7620500017CEEC</string>
-				<string>A01B63E51C7620500017CEEC</string>
-				<string>A01B63E61C7620500017CEEC</string>
-				<string>A01B63E11C75EF880017CEEC</string>
-				<string>A01B63E21C75EF880017CEEC</string>
-				<string>A01B631A1C75EDAB0017CEEC</string>
-				<string>A09F020C1C60B48E002E128D</string>
-				<string>A09F020D1C60B48E002E128D</string>
-				<string>A0E353E51C6B3EB800E81503</string>
-				<string>A0E353E31C6B3EAB00E81503</string>
-				<string>A0E353FF1C72225000E81503</string>
-				<string>A0E353E11C6B3BF400E81503</string>
-				<string>A05077501C6A34730074603B</string>
-				<string>A0E354051C72239C00E81503</string>
-				<string>A050774E1C6A346D0074603B</string>
-				<string>A0E354011C72225700E81503</string>
-				<string>A050774C1C6A2CE40074603B</string>
-				<string>A09F020A1C60B48E002E128D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F020A1C60B48E002E128D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F020B1C60B48E002E128D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A09F020A1C60B48E002E128D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A09F020C1C60B48E002E128D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F020D1C60B48E002E128D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F020E1C60B48E002E128D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A09F020D1C60B48E002E128D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A09F020F1C60B48E002E128D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MasterViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F02101C60B48E002E128D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MasterViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F02111C60B48E002E128D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A09F02101C60B48E002E128D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A09F02181C60B48E002E128D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F02191C60B48E002E128D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A09F02181C60B48E002E128D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A09F021A1C60B48E002E128D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A09F021B1C60B48E002E128D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F021B1C60B48E002E128D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F021C1C60B48E002E128D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A09F021A1C60B48E002E128D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A09F021D1C60B48E002E128D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F021E1C60B48E002E128D</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.2</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>A09F021F1C60B48E002E128D</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.2</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>A09F02201C60B48E002E128D</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>A09F02211C60B48E002E128D</string>
-				<string>A09F02221C60B48E002E128D</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>A09F02211C60B48E002E128D</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>A3F45D917B677418DE3994AE</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>movieApp/Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>OTHER_LDFLAGS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>-all_load</string>
-					<string>-ObjC</string>
-					<string>-framework</string>
-					<string>"AFNetworking"</string>
-					<string>-framework</string>
-					<string>"Alamofire"</string>
-					<string>-framework</string>
-					<string>"EDStarRating"</string>
-					<string>-framework</string>
-					<string>"FastImageCache"</string>
-					<string>-framework</string>
-					<string>"FontAwesome_iOS"</string>
-					<string>-framework</string>
-					<string>"ISO8601DateFormatterValueTransformer"</string>
-					<string>-framework</string>
-					<string>"RKValueTransformers"</string>
-					<string>-framework</string>
-					<string>"Realm"</string>
-					<string>-framework</string>
-					<string>"RestKit"</string>
-					<string>-framework</string>
-					<string>"SDWebImage"</string>
-					<string>-framework</string>
-					<string>"SOCKit"</string>
-					<string>-framework</string>
-					<string>"TransitionKit"</string>
-					<string>-framework</string>
-					<string>"youtube_ios_player_helper"</string>
-				</array>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.eminahuskic.movieApp</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
-				<string>movieApp/movieApp-Bridging-Header.h</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>USER_HEADER_SEARCH_PATHS</key>
-				<string>${PODS_ROOT}/**</string>
-				<key>USER_HEADER_SEARCH_PATHS[arch=*]</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>A09F02221C60B48E002E128D</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>BE31C9C8EE8F0F7ED4F5DE42</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>movieApp/Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>OTHER_LDFLAGS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>-all_load</string>
-					<string>-ObjC</string>
-					<string>-framework</string>
-					<string>"AFNetworking"</string>
-					<string>-framework</string>
-					<string>"Alamofire"</string>
-					<string>-framework</string>
-					<string>"EDStarRating"</string>
-					<string>-framework</string>
-					<string>"FastImageCache"</string>
-					<string>-framework</string>
-					<string>"FontAwesome_iOS"</string>
-					<string>-framework</string>
-					<string>"ISO8601DateFormatterValueTransformer"</string>
-					<string>-framework</string>
-					<string>"RKValueTransformers"</string>
-					<string>-framework</string>
-					<string>"Realm"</string>
-					<string>-framework</string>
-					<string>"RestKit"</string>
-					<string>-framework</string>
-					<string>"SDWebImage"</string>
-					<string>-framework</string>
-					<string>"SOCKit"</string>
-					<string>-framework</string>
-					<string>"TransitionKit"</string>
-					<string>-framework</string>
-					<string>"youtube_ios_player_helper"</string>
-				</array>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.eminahuskic.movieApp</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
-				<string>movieApp/movieApp-Bridging-Header.h</string>
-				<key>USER_HEADER_SEARCH_PATHS</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>A09F02231C60B57A002E128D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A09F02241C60B5BB002E128D</string>
-				<string>A09F02251C60B5BB002E128D</string>
-				<string>A09F02301C60D6E9002E128D</string>
-				<string>A09F02311C60D6E9002E128D</string>
-				<string>A0E353EB1C6B5A8500E81503</string>
-				<string>A0E353EC1C6B5A8500E81503</string>
-				<string>A01B5B9E1C749E4E0017CEEC</string>
-				<string>A01B5B9F1C749E4E0017CEEC</string>
-				<string>A01B63F61C7B3A860017CEEC</string>
-				<string>A01B63F71C7B3A860017CEEC</string>
-				<string>A01B63F31C7B19360017CEEC</string>
-				<string>A01B63F41C7B19360017CEEC</string>
-				<string>A00BFE9B1C7DF4F500DD2227</string>
-				<string>A00BFE9C1C7DF4F500DD2227</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Model</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F02241C60B5BB002E128D</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MOVMovie.h</string>
-			<key>path</key>
-			<string>Model/MOVMovie.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>A09F02251C60B5BB002E128D</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MOVMovie.m</string>
-			<key>path</key>
-			<string>Model/MOVMovie.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>A09F02261C60B5BB002E128D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A09F02251C60B5BB002E128D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A09F02301C60D6E9002E128D</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVGenre.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F02311C60D6E9002E128D</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVGenre.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09F02321C60D6E9002E128D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A09F02311C60D6E9002E128D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E353DE1C6B39ED00E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVMovieStarRateView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E353DF1C6B39ED00E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVMovieStarRateView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E353E01C6B39ED00E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E353DF1C6B39ED00E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E353E11C6B3BF400E81503</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>redstarhald.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E353E21C6B3BF400E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E353E11C6B3BF400E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E353E31C6B3EAB00E81503</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>redstarnotselected.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E353E41C6B3EAB00E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E353E31C6B3EAB00E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E353E51C6B3EB800E81503</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>redstarfullselected.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E353E61C6B3EB800E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E353E51C6B3EB800E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E353EB1C6B5A8500E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MOVPerson.h</string>
-			<key>path</key>
-			<string>Model/MOVPerson.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>A0E353EC1C6B5A8500E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MOVPerson.m</string>
-			<key>path</key>
-			<string>Model/MOVPerson.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>A0E353ED1C6B5A8500E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E353EC1C6B5A8500E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E353EE1C6B63DB00E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVMovieCastCollectionViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E353EF1C6B63DB00E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVMovieCastCollectionViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E353F01C6B63DB00E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E353EF1C6B63DB00E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E353FF1C72225000E81503</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>favorites.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354001C72225000E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E353FF1C72225000E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E354011C72225700E81503</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>movies.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354021C72225700E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E354011C72225700E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E354051C72239C00E81503</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>account2.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354061C72239C00E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E354051C72239C00E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E354071C722FE600E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVUpperImageCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354081C722FE600E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVUpperImageCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354091C722FE600E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E354081C722FE600E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E3540A1C72319900E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVDescriptionTableViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E3540B1C72319900E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVDescriptionTableViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E3540C1C72319900E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E3540B1C72319900E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E3540D1C72332D00E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVRatingTableViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E3540E1C72332D00E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVRatingTableViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E3540F1C72332D00E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E3540E1C72332D00E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E354101C72353700E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVMovieCastTableViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354111C72353700E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVMovieCastTableViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354121C72353700E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E354111C72353700E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E354131C723A2100E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVDetailController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354141C723A2100E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVDetailController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354151C723A2100E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E354141C723A2100E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E354161C72421B00E81503</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A0E354171C72421B00E81503</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354171C72421B00E81503</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354181C72421B00E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E354161C72421B00E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E3541A1C736DB100E81503</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A0E354101C72353700E81503</string>
-				<string>A0E354111C72353700E81503</string>
-				<string>A0E353EE1C6B63DB00E81503</string>
-				<string>A0E353EF1C6B63DB00E81503</string>
-				<string>A0E354071C722FE600E81503</string>
-				<string>A0E354081C722FE600E81503</string>
-				<string>A0E3540A1C72319900E81503</string>
-				<string>A0E3540B1C72319900E81503</string>
-				<string>A0E3540D1C72332D00E81503</string>
-				<string>A0E3540E1C72332D00E81503</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Detail Cells</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E3541B1C736E1700E81503</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A0E354221C7370FD00E81503</string>
-				<string>A0E354231C7370FD00E81503</string>
-				<string>A0E354251C73711800E81503</string>
-				<string>A0E354261C73711800E81503</string>
-				<string>A0E354281C737E8500E81503</string>
-				<string>A0E354291C737E8500E81503</string>
-				<string>A0E3542B1C737F8C00E81503</string>
-				<string>A0E3542C1C737F8C00E81503</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Cast View Cells</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E3541C1C736E4700E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVCastController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E3541D1C736E4700E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVCastController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E3541E1C736E4700E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E3541D1C736E4700E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E354221C7370FD00E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVCastUpperImageCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354231C7370FD00E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVCastUpperImageCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354241C7370FD00E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E354231C7370FD00E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E354251C73711800E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVCastBiographyCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354261C73711800E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVCastBiographyCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354271C73711800E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E354261C73711800E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E354281C737E8500E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVCastMovieTableViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E354291C737E8500E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVCastMovieTableViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E3542A1C737E8500E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E354291C737E8500E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0E3542B1C737F8C00E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MOVCastMovieCollectionViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E3542C1C737F8C00E81503</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MOVCastMovieCollectionViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0E3542D1C737F8C00E81503</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0E3542C1C737F8C00E81503</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A3F45D917B677418DE3994AE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-movieApp.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-movieApp/Pods-movieApp.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A8C2605DA2C5D941A97F5526</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_movieApp.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>BE31C9C8EE8F0F7ED4F5DE42</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-movieApp.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-movieApp/Pods-movieApp.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E8C5C0D528B59906A4F0992F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>33E20C0D08E2D56B1BE39798</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F56DFE1D7BBDBDF2F9D3637C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A8C2605DA2C5D941A97F5526</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F8ABC589A075389147F3BB51</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A8C2605DA2C5D941A97F5526</string>
-				<string>33E20C0D08E2D56B1BE39798</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA370ACA89CBA9073FEFE495</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>A09F01FE1C60B48E002E128D</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		51DB8DA0A644345AADCF3F7C /* libPods-movieApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE210623EEC3E4A61D5EB440 /* libPods-movieApp.a */; };
+		A01B5BA01C749E4E0017CEEC /* MOVRealmMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = A01B5B9F1C749E4E0017CEEC /* MOVRealmMovie.m */; };
+		A01B5BA31C74B1530017CEEC /* FavoritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01B5BA21C74B1530017CEEC /* FavoritesController.m */; };
+		A01B5BA61C74C46D0017CEEC /* MOVFavoritesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A01B5BA51C74C46D0017CEEC /* MOVFavoritesTableViewCell.m */; };
+		A01B63421C75EDAB0017CEEC /* font-awesome.css in Resources */ = {isa = PBXBuildFile; fileRef = A01B631C1C75EDAB0017CEEC /* font-awesome.css */; };
+		A01B63431C75EDAB0017CEEC /* font-awesome.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A01B631D1C75EDAB0017CEEC /* font-awesome.min.css */; };
+		A01B63441C75EDAB0017CEEC /* fontawesome-webfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = A01B631F1C75EDAB0017CEEC /* fontawesome-webfont.eot */; };
+		A01B63451C75EDAB0017CEEC /* fontawesome-webfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = A01B63201C75EDAB0017CEEC /* fontawesome-webfont.svg */; };
+		A01B63461C75EDAB0017CEEC /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A01B63211C75EDAB0017CEEC /* fontawesome-webfont.ttf */; };
+		A01B63471C75EDAB0017CEEC /* fontawesome-webfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = A01B63221C75EDAB0017CEEC /* fontawesome-webfont.woff */; };
+		A01B63481C75EDAB0017CEEC /* fontawesome-webfont.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = A01B63231C75EDAB0017CEEC /* fontawesome-webfont.woff2 */; };
+		A01B63491C75EDAB0017CEEC /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = A01B63241C75EDAB0017CEEC /* FontAwesome.otf */; };
+		A01B634A1C75EDAB0017CEEC /* HELP-US-OUT.txt in Resources */ = {isa = PBXBuildFile; fileRef = A01B63251C75EDAB0017CEEC /* HELP-US-OUT.txt */; };
+		A01B634B1C75EDAB0017CEEC /* animated.less in Resources */ = {isa = PBXBuildFile; fileRef = A01B63271C75EDAB0017CEEC /* animated.less */; };
+		A01B634C1C75EDAB0017CEEC /* bordered-pulled.less in Resources */ = {isa = PBXBuildFile; fileRef = A01B63281C75EDAB0017CEEC /* bordered-pulled.less */; };
+		A01B634D1C75EDAB0017CEEC /* core.less in Resources */ = {isa = PBXBuildFile; fileRef = A01B63291C75EDAB0017CEEC /* core.less */; };
+		A01B634E1C75EDAB0017CEEC /* fixed-width.less in Resources */ = {isa = PBXBuildFile; fileRef = A01B632A1C75EDAB0017CEEC /* fixed-width.less */; };
+		A01B634F1C75EDAB0017CEEC /* font-awesome.less in Resources */ = {isa = PBXBuildFile; fileRef = A01B632B1C75EDAB0017CEEC /* font-awesome.less */; };
+		A01B63501C75EDAB0017CEEC /* icons.less in Resources */ = {isa = PBXBuildFile; fileRef = A01B632C1C75EDAB0017CEEC /* icons.less */; };
+		A01B63511C75EDAB0017CEEC /* larger.less in Resources */ = {isa = PBXBuildFile; fileRef = A01B632D1C75EDAB0017CEEC /* larger.less */; };
+		A01B63521C75EDAB0017CEEC /* list.less in Resources */ = {isa = PBXBuildFile; fileRef = A01B632E1C75EDAB0017CEEC /* list.less */; };
+		A01B63531C75EDAB0017CEEC /* mixins.less in Resources */ = {isa = PBXBuildFile; fileRef = A01B632F1C75EDAB0017CEEC /* mixins.less */; };
+		A01B63541C75EDAB0017CEEC /* path.less in Resources */ = {isa = PBXBuildFile; fileRef = A01B63301C75EDAB0017CEEC /* path.less */; };
+		A01B63551C75EDAB0017CEEC /* rotated-flipped.less in Resources */ = {isa = PBXBuildFile; fileRef = A01B63311C75EDAB0017CEEC /* rotated-flipped.less */; };
+		A01B63561C75EDAB0017CEEC /* stacked.less in Resources */ = {isa = PBXBuildFile; fileRef = A01B63321C75EDAB0017CEEC /* stacked.less */; };
+		A01B63571C75EDAB0017CEEC /* variables.less in Resources */ = {isa = PBXBuildFile; fileRef = A01B63331C75EDAB0017CEEC /* variables.less */; };
+		A01B63581C75EDAB0017CEEC /* _animated.scss in Resources */ = {isa = PBXBuildFile; fileRef = A01B63351C75EDAB0017CEEC /* _animated.scss */; };
+		A01B63591C75EDAB0017CEEC /* _bordered-pulled.scss in Resources */ = {isa = PBXBuildFile; fileRef = A01B63361C75EDAB0017CEEC /* _bordered-pulled.scss */; };
+		A01B635A1C75EDAB0017CEEC /* _core.scss in Resources */ = {isa = PBXBuildFile; fileRef = A01B63371C75EDAB0017CEEC /* _core.scss */; };
+		A01B635B1C75EDAB0017CEEC /* _fixed-width.scss in Resources */ = {isa = PBXBuildFile; fileRef = A01B63381C75EDAB0017CEEC /* _fixed-width.scss */; };
+		A01B635C1C75EDAB0017CEEC /* _icons.scss in Resources */ = {isa = PBXBuildFile; fileRef = A01B63391C75EDAB0017CEEC /* _icons.scss */; };
+		A01B635D1C75EDAB0017CEEC /* _larger.scss in Resources */ = {isa = PBXBuildFile; fileRef = A01B633A1C75EDAB0017CEEC /* _larger.scss */; };
+		A01B635E1C75EDAB0017CEEC /* _list.scss in Resources */ = {isa = PBXBuildFile; fileRef = A01B633B1C75EDAB0017CEEC /* _list.scss */; };
+		A01B635F1C75EDAB0017CEEC /* _mixins.scss in Resources */ = {isa = PBXBuildFile; fileRef = A01B633C1C75EDAB0017CEEC /* _mixins.scss */; };
+		A01B63601C75EDAB0017CEEC /* _path.scss in Resources */ = {isa = PBXBuildFile; fileRef = A01B633D1C75EDAB0017CEEC /* _path.scss */; };
+		A01B63611C75EDAB0017CEEC /* _rotated-flipped.scss in Resources */ = {isa = PBXBuildFile; fileRef = A01B633E1C75EDAB0017CEEC /* _rotated-flipped.scss */; };
+		A01B63621C75EDAB0017CEEC /* _stacked.scss in Resources */ = {isa = PBXBuildFile; fileRef = A01B633F1C75EDAB0017CEEC /* _stacked.scss */; };
+		A01B63631C75EDAB0017CEEC /* _variables.scss in Resources */ = {isa = PBXBuildFile; fileRef = A01B63401C75EDAB0017CEEC /* _variables.scss */; };
+		A01B63641C75EDAB0017CEEC /* font-awesome.scss in Resources */ = {isa = PBXBuildFile; fileRef = A01B63411C75EDAB0017CEEC /* font-awesome.scss */; };
+		A01B63E31C75EF880017CEEC /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A01B63E21C75EF880017CEEC /* NSString+FontAwesome.m */; };
+		A01B63E71C7620500017CEEC /* videocameraICON.ico in Resources */ = {isa = PBXBuildFile; fileRef = A01B63E41C7620500017CEEC /* videocameraICON.ico */; };
+		A01B63E81C7620500017CEEC /* HEARTicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A01B63E51C7620500017CEEC /* HEARTicon.png */; };
+		A01B63E91C7620500017CEEC /* ACCOUNTicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A01B63E61C7620500017CEEC /* ACCOUNTicon.png */; };
+		A01B63EB1C7621400017CEEC /* video-camera-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A01B63EA1C7621400017CEEC /* video-camera-icon.jpg */; };
+		A050774D1C6A2CE40074603B /* movie_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = A050774C1C6A2CE40074603B /* movie_transparent.png */; };
+		A050774F1C6A346D0074603B /* starhighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = A050774E1C6A346D0074603B /* starhighlighted.png */; };
+		A05077511C6A34730074603B /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A05077501C6A34730074603B /* star.png */; };
+		A06625971C64D16300B1B050 /* MOVMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625961C64D16300B1B050 /* MOVMovieTableViewCell.m */; };
+		A06625A41C64EC0700B1B050 /* MOVMovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A06625A31C64EC0700B1B050 /* MOVMovieCollectionViewCell.m */; };
+		A08CE0791C8093B700A49362 /* MOVVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = A08CE0781C8093B700A49362 /* MOVVideo.m */; };
+		A08CE07C1C8093CA00A49362 /* MOVVideosController.m in Sources */ = {isa = PBXBuildFile; fileRef = A08CE07B1C8093CA00A49362 /* MOVVideosController.m */; };
+		A08CE07F1C80968500A49362 /* MOVRealmGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = A08CE07E1C80968500A49362 /* MOVRealmGenre.m */; };
+		A08CE0821C80975800A49362 /* MOVUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A08CE0811C80975800A49362 /* MOVUser.m */; };
+		A08CE0851C809EEE00A49362 /* videocamicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A08CE0831C809EEE00A49362 /* videocamicon.png */; };
+		A08CE0861C809EEE00A49362 /* fa-user.png in Resources */ = {isa = PBXBuildFile; fileRef = A08CE0841C809EEE00A49362 /* fa-user.png */; };
+		A09F020B1C60B48E002E128D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F020A1C60B48E002E128D /* main.m */; };
+		A09F020E1C60B48E002E128D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F020D1C60B48E002E128D /* AppDelegate.m */; };
+		A09F02111C60B48E002E128D /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F02101C60B48E002E128D /* MasterViewController.m */; };
+		A09F02191C60B48E002E128D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09F02181C60B48E002E128D /* Assets.xcassets */; };
+		A09F021C1C60B48E002E128D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A09F021A1C60B48E002E128D /* LaunchScreen.storyboard */; };
+		A09F02261C60B5BB002E128D /* MOVMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F02251C60B5BB002E128D /* MOVMovie.m */; };
+		A09F02321C60D6E9002E128D /* MOVGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F02311C60D6E9002E128D /* MOVGenre.m */; };
+		A0E353E01C6B39ED00E81503 /* MOVMovieStarRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353DF1C6B39ED00E81503 /* MOVMovieStarRateView.m */; };
+		A0E353E21C6B3BF400E81503 /* redstarhald.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E353E11C6B3BF400E81503 /* redstarhald.png */; };
+		A0E353E41C6B3EAB00E81503 /* redstarnotselected.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E353E31C6B3EAB00E81503 /* redstarnotselected.png */; };
+		A0E353E61C6B3EB800E81503 /* redstarfullselected.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E353E51C6B3EB800E81503 /* redstarfullselected.png */; };
+		A0E353ED1C6B5A8500E81503 /* MOVPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353EC1C6B5A8500E81503 /* MOVPerson.m */; };
+		A0E353F01C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E353EF1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m */; };
+		A0E354001C72225000E81503 /* favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E353FF1C72225000E81503 /* favorites.png */; };
+		A0E354021C72225700E81503 /* movies.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E354011C72225700E81503 /* movies.png */; };
+		A0E354061C72239C00E81503 /* account2.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E354051C72239C00E81503 /* account2.png */; };
+		A0E354091C722FE600E81503 /* MOVUpperImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E354081C722FE600E81503 /* MOVUpperImageCell.m */; };
+		A0E3540C1C72319900E81503 /* MOVDescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E3540B1C72319900E81503 /* MOVDescriptionTableViewCell.m */; };
+		A0E3540F1C72332D00E81503 /* MOVRatingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E3540E1C72332D00E81503 /* MOVRatingTableViewCell.m */; };
+		A0E354121C72353700E81503 /* MOVMovieCastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E354111C72353700E81503 /* MOVMovieCastTableViewCell.m */; };
+		A0E354151C723A2100E81503 /* MOVDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E354141C723A2100E81503 /* MOVDetailController.m */; };
+		A0E354181C72421B00E81503 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E354161C72421B00E81503 /* Main.storyboard */; };
+		A0E3541E1C736E4700E81503 /* MOVCastController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E3541D1C736E4700E81503 /* MOVCastController.m */; };
+		A0E354241C7370FD00E81503 /* MOVCastUpperImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E354231C7370FD00E81503 /* MOVCastUpperImageCell.m */; };
+		A0E354271C73711800E81503 /* MOVCastBiographyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E354261C73711800E81503 /* MOVCastBiographyCell.m */; };
+		A0E3542A1C737E8500E81503 /* MOVCastMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E354291C737E8500E81503 /* MOVCastMovieTableViewCell.m */; };
+		A0E3542D1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E3542C1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A01B5B9E1C749E4E0017CEEC /* MOVRealmMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVRealmMovie.h; sourceTree = "<group>"; };
+		A01B5B9F1C749E4E0017CEEC /* MOVRealmMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVRealmMovie.m; sourceTree = "<group>"; };
+		A01B5BA11C74B1530017CEEC /* FavoritesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesController.h; sourceTree = "<group>"; };
+		A01B5BA21C74B1530017CEEC /* FavoritesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesController.m; sourceTree = "<group>"; };
+		A01B5BA41C74C46D0017CEEC /* MOVFavoritesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVFavoritesTableViewCell.h; sourceTree = "<group>"; };
+		A01B5BA51C74C46D0017CEEC /* MOVFavoritesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVFavoritesTableViewCell.m; sourceTree = "<group>"; };
+		A01B631C1C75EDAB0017CEEC /* font-awesome.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "font-awesome.css"; sourceTree = "<group>"; };
+		A01B631D1C75EDAB0017CEEC /* font-awesome.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "font-awesome.min.css"; sourceTree = "<group>"; };
+		A01B631F1C75EDAB0017CEEC /* fontawesome-webfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.eot"; sourceTree = "<group>"; };
+		A01B63201C75EDAB0017CEEC /* fontawesome-webfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "fontawesome-webfont.svg"; sourceTree = "<group>"; };
+		A01B63211C75EDAB0017CEEC /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		A01B63221C75EDAB0017CEEC /* fontawesome-webfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.woff"; sourceTree = "<group>"; };
+		A01B63231C75EDAB0017CEEC /* fontawesome-webfont.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.woff2"; sourceTree = "<group>"; };
+		A01B63241C75EDAB0017CEEC /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		A01B63251C75EDAB0017CEEC /* HELP-US-OUT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HELP-US-OUT.txt"; sourceTree = "<group>"; };
+		A01B63271C75EDAB0017CEEC /* animated.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = animated.less; sourceTree = "<group>"; };
+		A01B63281C75EDAB0017CEEC /* bordered-pulled.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "bordered-pulled.less"; sourceTree = "<group>"; };
+		A01B63291C75EDAB0017CEEC /* core.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = core.less; sourceTree = "<group>"; };
+		A01B632A1C75EDAB0017CEEC /* fixed-width.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fixed-width.less"; sourceTree = "<group>"; };
+		A01B632B1C75EDAB0017CEEC /* font-awesome.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "font-awesome.less"; sourceTree = "<group>"; };
+		A01B632C1C75EDAB0017CEEC /* icons.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = icons.less; sourceTree = "<group>"; };
+		A01B632D1C75EDAB0017CEEC /* larger.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = larger.less; sourceTree = "<group>"; };
+		A01B632E1C75EDAB0017CEEC /* list.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = list.less; sourceTree = "<group>"; };
+		A01B632F1C75EDAB0017CEEC /* mixins.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mixins.less; sourceTree = "<group>"; };
+		A01B63301C75EDAB0017CEEC /* path.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = path.less; sourceTree = "<group>"; };
+		A01B63311C75EDAB0017CEEC /* rotated-flipped.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rotated-flipped.less"; sourceTree = "<group>"; };
+		A01B63321C75EDAB0017CEEC /* stacked.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stacked.less; sourceTree = "<group>"; };
+		A01B63331C75EDAB0017CEEC /* variables.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = variables.less; sourceTree = "<group>"; };
+		A01B63351C75EDAB0017CEEC /* _animated.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _animated.scss; sourceTree = "<group>"; };
+		A01B63361C75EDAB0017CEEC /* _bordered-pulled.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_bordered-pulled.scss"; sourceTree = "<group>"; };
+		A01B63371C75EDAB0017CEEC /* _core.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _core.scss; sourceTree = "<group>"; };
+		A01B63381C75EDAB0017CEEC /* _fixed-width.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_fixed-width.scss"; sourceTree = "<group>"; };
+		A01B63391C75EDAB0017CEEC /* _icons.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _icons.scss; sourceTree = "<group>"; };
+		A01B633A1C75EDAB0017CEEC /* _larger.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _larger.scss; sourceTree = "<group>"; };
+		A01B633B1C75EDAB0017CEEC /* _list.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _list.scss; sourceTree = "<group>"; };
+		A01B633C1C75EDAB0017CEEC /* _mixins.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _mixins.scss; sourceTree = "<group>"; };
+		A01B633D1C75EDAB0017CEEC /* _path.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _path.scss; sourceTree = "<group>"; };
+		A01B633E1C75EDAB0017CEEC /* _rotated-flipped.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_rotated-flipped.scss"; sourceTree = "<group>"; };
+		A01B633F1C75EDAB0017CEEC /* _stacked.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _stacked.scss; sourceTree = "<group>"; };
+		A01B63401C75EDAB0017CEEC /* _variables.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _variables.scss; sourceTree = "<group>"; };
+		A01B63411C75EDAB0017CEEC /* font-awesome.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "font-awesome.scss"; sourceTree = "<group>"; };
+		A01B63E11C75EF880017CEEC /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		A01B63E21C75EF880017CEEC /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		A01B63E41C7620500017CEEC /* videocameraICON.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = videocameraICON.ico; sourceTree = "<group>"; };
+		A01B63E51C7620500017CEEC /* HEARTicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HEARTicon.png; sourceTree = "<group>"; };
+		A01B63E61C7620500017CEEC /* ACCOUNTicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ACCOUNTicon.png; sourceTree = "<group>"; };
+		A01B63EA1C7621400017CEEC /* video-camera-icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "video-camera-icon.jpg"; sourceTree = "<group>"; };
+		A050774C1C6A2CE40074603B /* movie_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie_transparent.png; sourceTree = "<group>"; };
+		A050774E1C6A346D0074603B /* starhighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starhighlighted.png; sourceTree = "<group>"; };
+		A05077501C6A34730074603B /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		A06625951C64D16300B1B050 /* MOVMovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOVMovieTableViewCell.h; path = ../MOVMovieTableViewCell.h; sourceTree = "<group>"; };
+		A06625961C64D16300B1B050 /* MOVMovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVMovieTableViewCell.m; path = ../MOVMovieTableViewCell.m; sourceTree = "<group>"; };
+		A06625A21C64EC0700B1B050 /* MOVMovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOVMovieCollectionViewCell.h; path = ../MOVMovieCollectionViewCell.h; sourceTree = "<group>"; };
+		A06625A31C64EC0700B1B050 /* MOVMovieCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVMovieCollectionViewCell.m; path = ../MOVMovieCollectionViewCell.m; sourceTree = "<group>"; };
+		A08CE0771C8093B700A49362 /* MOVVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVVideo.h; sourceTree = "<group>"; };
+		A08CE0781C8093B700A49362 /* MOVVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVVideo.m; sourceTree = "<group>"; };
+		A08CE07A1C8093CA00A49362 /* MOVVideosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVVideosController.h; sourceTree = "<group>"; };
+		A08CE07B1C8093CA00A49362 /* MOVVideosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVVideosController.m; sourceTree = "<group>"; };
+		A08CE07D1C80968500A49362 /* MOVRealmGenre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVRealmGenre.h; sourceTree = "<group>"; };
+		A08CE07E1C80968500A49362 /* MOVRealmGenre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVRealmGenre.m; sourceTree = "<group>"; };
+		A08CE0801C80975800A49362 /* MOVUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVUser.h; sourceTree = "<group>"; };
+		A08CE0811C80975800A49362 /* MOVUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVUser.m; sourceTree = "<group>"; };
+		A08CE0831C809EEE00A49362 /* videocamicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videocamicon.png; sourceTree = "<group>"; };
+		A08CE0841C809EEE00A49362 /* fa-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fa-user.png"; sourceTree = "<group>"; };
+		A09F02061C60B48E002E128D /* movieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A09F020A1C60B48E002E128D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A09F020C1C60B48E002E128D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A09F020D1C60B48E002E128D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A09F020F1C60B48E002E128D /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		A09F02101C60B48E002E128D /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		A09F02181C60B48E002E128D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A09F021B1C60B48E002E128D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A09F021D1C60B48E002E128D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A09F02241C60B5BB002E128D /* MOVMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOVMovie.h; path = Model/MOVMovie.h; sourceTree = SOURCE_ROOT; };
+		A09F02251C60B5BB002E128D /* MOVMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVMovie.m; path = Model/MOVMovie.m; sourceTree = SOURCE_ROOT; };
+		A09F02301C60D6E9002E128D /* MOVGenre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVGenre.h; sourceTree = "<group>"; };
+		A09F02311C60D6E9002E128D /* MOVGenre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVGenre.m; sourceTree = "<group>"; };
+		A0E353DE1C6B39ED00E81503 /* MOVMovieStarRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieStarRateView.h; sourceTree = "<group>"; };
+		A0E353DF1C6B39ED00E81503 /* MOVMovieStarRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieStarRateView.m; sourceTree = "<group>"; };
+		A0E353E11C6B3BF400E81503 /* redstarhald.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redstarhald.png; sourceTree = "<group>"; };
+		A0E353E31C6B3EAB00E81503 /* redstarnotselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redstarnotselected.png; sourceTree = "<group>"; };
+		A0E353E51C6B3EB800E81503 /* redstarfullselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redstarfullselected.png; sourceTree = "<group>"; };
+		A0E353EB1C6B5A8500E81503 /* MOVPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOVPerson.h; path = Model/MOVPerson.h; sourceTree = SOURCE_ROOT; };
+		A0E353EC1C6B5A8500E81503 /* MOVPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVPerson.m; path = Model/MOVPerson.m; sourceTree = SOURCE_ROOT; };
+		A0E353EE1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieCastCollectionViewCell.h; sourceTree = "<group>"; };
+		A0E353EF1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieCastCollectionViewCell.m; sourceTree = "<group>"; };
+		A0E353FF1C72225000E81503 /* favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorites.png; sourceTree = "<group>"; };
+		A0E354011C72225700E81503 /* movies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movies.png; sourceTree = "<group>"; };
+		A0E354051C72239C00E81503 /* account2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account2.png; sourceTree = "<group>"; };
+		A0E354071C722FE600E81503 /* MOVUpperImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVUpperImageCell.h; sourceTree = "<group>"; };
+		A0E354081C722FE600E81503 /* MOVUpperImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVUpperImageCell.m; sourceTree = "<group>"; };
+		A0E3540A1C72319900E81503 /* MOVDescriptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVDescriptionTableViewCell.h; sourceTree = "<group>"; };
+		A0E3540B1C72319900E81503 /* MOVDescriptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVDescriptionTableViewCell.m; sourceTree = "<group>"; };
+		A0E3540D1C72332D00E81503 /* MOVRatingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVRatingTableViewCell.h; sourceTree = "<group>"; };
+		A0E3540E1C72332D00E81503 /* MOVRatingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVRatingTableViewCell.m; sourceTree = "<group>"; };
+		A0E354101C72353700E81503 /* MOVMovieCastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVMovieCastTableViewCell.h; sourceTree = "<group>"; };
+		A0E354111C72353700E81503 /* MOVMovieCastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVMovieCastTableViewCell.m; sourceTree = "<group>"; };
+		A0E354131C723A2100E81503 /* MOVDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVDetailController.h; sourceTree = "<group>"; };
+		A0E354141C723A2100E81503 /* MOVDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVDetailController.m; sourceTree = "<group>"; };
+		A0E354171C72421B00E81503 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A0E3541C1C736E4700E81503 /* MOVCastController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVCastController.h; sourceTree = "<group>"; };
+		A0E3541D1C736E4700E81503 /* MOVCastController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVCastController.m; sourceTree = "<group>"; };
+		A0E354221C7370FD00E81503 /* MOVCastUpperImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVCastUpperImageCell.h; sourceTree = "<group>"; };
+		A0E354231C7370FD00E81503 /* MOVCastUpperImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVCastUpperImageCell.m; sourceTree = "<group>"; };
+		A0E354251C73711800E81503 /* MOVCastBiographyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVCastBiographyCell.h; sourceTree = "<group>"; };
+		A0E354261C73711800E81503 /* MOVCastBiographyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVCastBiographyCell.m; sourceTree = "<group>"; };
+		A0E354281C737E8500E81503 /* MOVCastMovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVCastMovieTableViewCell.h; sourceTree = "<group>"; };
+		A0E354291C737E8500E81503 /* MOVCastMovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVCastMovieTableViewCell.m; sourceTree = "<group>"; };
+		A0E3542B1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVCastMovieCollectionViewCell.h; sourceTree = "<group>"; };
+		A0E3542C1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVCastMovieCollectionViewCell.m; sourceTree = "<group>"; };
+		A3F45D917B677418DE3994AE /* Pods-movieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.debug.xcconfig"; sourceTree = "<group>"; };
+		BE210623EEC3E4A61D5EB440 /* libPods-movieApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movieApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE31C9C8EE8F0F7ED4F5DE42 /* Pods-movieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A09F02031C60B48E002E128D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51DB8DA0A644345AADCF3F7C /* libPods-movieApp.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B1F24148A95CCAE8C470696 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A3F45D917B677418DE3994AE /* Pods-movieApp.debug.xcconfig */,
+				BE31C9C8EE8F0F7ED4F5DE42 /* Pods-movieApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A01B631A1C75EDAB0017CEEC /* font-awesome-4.5.0 */ = {
+			isa = PBXGroup;
+			children = (
+				A01B631B1C75EDAB0017CEEC /* css */,
+				A01B631E1C75EDAB0017CEEC /* fonts */,
+				A01B63251C75EDAB0017CEEC /* HELP-US-OUT.txt */,
+				A01B63261C75EDAB0017CEEC /* less */,
+				A01B63341C75EDAB0017CEEC /* scss */,
+			);
+			path = "font-awesome-4.5.0";
+			sourceTree = "<group>";
+		};
+		A01B631B1C75EDAB0017CEEC /* css */ = {
+			isa = PBXGroup;
+			children = (
+				A01B631C1C75EDAB0017CEEC /* font-awesome.css */,
+				A01B631D1C75EDAB0017CEEC /* font-awesome.min.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		A01B631E1C75EDAB0017CEEC /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A01B631F1C75EDAB0017CEEC /* fontawesome-webfont.eot */,
+				A01B63201C75EDAB0017CEEC /* fontawesome-webfont.svg */,
+				A01B63211C75EDAB0017CEEC /* fontawesome-webfont.ttf */,
+				A01B63221C75EDAB0017CEEC /* fontawesome-webfont.woff */,
+				A01B63231C75EDAB0017CEEC /* fontawesome-webfont.woff2 */,
+				A01B63241C75EDAB0017CEEC /* FontAwesome.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		A01B63261C75EDAB0017CEEC /* less */ = {
+			isa = PBXGroup;
+			children = (
+				A01B63271C75EDAB0017CEEC /* animated.less */,
+				A01B63281C75EDAB0017CEEC /* bordered-pulled.less */,
+				A01B63291C75EDAB0017CEEC /* core.less */,
+				A01B632A1C75EDAB0017CEEC /* fixed-width.less */,
+				A01B632B1C75EDAB0017CEEC /* font-awesome.less */,
+				A01B632C1C75EDAB0017CEEC /* icons.less */,
+				A01B632D1C75EDAB0017CEEC /* larger.less */,
+				A01B632E1C75EDAB0017CEEC /* list.less */,
+				A01B632F1C75EDAB0017CEEC /* mixins.less */,
+				A01B63301C75EDAB0017CEEC /* path.less */,
+				A01B63311C75EDAB0017CEEC /* rotated-flipped.less */,
+				A01B63321C75EDAB0017CEEC /* stacked.less */,
+				A01B63331C75EDAB0017CEEC /* variables.less */,
+			);
+			path = less;
+			sourceTree = "<group>";
+		};
+		A01B63341C75EDAB0017CEEC /* scss */ = {
+			isa = PBXGroup;
+			children = (
+				A01B63351C75EDAB0017CEEC /* _animated.scss */,
+				A01B63361C75EDAB0017CEEC /* _bordered-pulled.scss */,
+				A01B63371C75EDAB0017CEEC /* _core.scss */,
+				A01B63381C75EDAB0017CEEC /* _fixed-width.scss */,
+				A01B63391C75EDAB0017CEEC /* _icons.scss */,
+				A01B633A1C75EDAB0017CEEC /* _larger.scss */,
+				A01B633B1C75EDAB0017CEEC /* _list.scss */,
+				A01B633C1C75EDAB0017CEEC /* _mixins.scss */,
+				A01B633D1C75EDAB0017CEEC /* _path.scss */,
+				A01B633E1C75EDAB0017CEEC /* _rotated-flipped.scss */,
+				A01B633F1C75EDAB0017CEEC /* _stacked.scss */,
+				A01B63401C75EDAB0017CEEC /* _variables.scss */,
+				A01B63411C75EDAB0017CEEC /* font-awesome.scss */,
+			);
+			path = scss;
+			sourceTree = "<group>";
+		};
+		A09F01FD1C60B48E002E128D = {
+			isa = PBXGroup;
+			children = (
+				A09F02081C60B48E002E128D /* movieApp */,
+				A09F02071C60B48E002E128D /* Products */,
+				1B1F24148A95CCAE8C470696 /* Pods */,
+				F8ABC589A075389147F3BB51 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A09F02071C60B48E002E128D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A09F02061C60B48E002E128D /* movieApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A09F02081C60B48E002E128D /* movieApp */ = {
+			isa = PBXGroup;
+			children = (
+				A09F02231C60B57A002E128D /* Model */,
+				A06625951C64D16300B1B050 /* MOVMovieTableViewCell.h */,
+				A06625961C64D16300B1B050 /* MOVMovieTableViewCell.m */,
+				A06625A21C64EC0700B1B050 /* MOVMovieCollectionViewCell.h */,
+				A06625A31C64EC0700B1B050 /* MOVMovieCollectionViewCell.m */,
+				A0E353DE1C6B39ED00E81503 /* MOVMovieStarRateView.h */,
+				A0E353DF1C6B39ED00E81503 /* MOVMovieStarRateView.m */,
+				A09F020F1C60B48E002E128D /* MasterViewController.h */,
+				A09F02101C60B48E002E128D /* MasterViewController.m */,
+				A0E354131C723A2100E81503 /* MOVDetailController.h */,
+				A0E354141C723A2100E81503 /* MOVDetailController.m */,
+				A0E3541A1C736DB100E81503 /* Detail Cells */,
+				A0E3541C1C736E4700E81503 /* MOVCastController.h */,
+				A0E3541D1C736E4700E81503 /* MOVCastController.m */,
+				A0E3541B1C736E1700E81503 /* Cast View Cells */,
+				A01B5BA11C74B1530017CEEC /* FavoritesController.h */,
+				A01B5BA21C74B1530017CEEC /* FavoritesController.m */,
+				A01B5BA41C74C46D0017CEEC /* MOVFavoritesTableViewCell.h */,
+				A01B5BA51C74C46D0017CEEC /* MOVFavoritesTableViewCell.m */,
+				A08CE07A1C8093CA00A49362 /* MOVVideosController.h */,
+				A08CE07B1C8093CA00A49362 /* MOVVideosController.m */,
+				A0E354161C72421B00E81503 /* Main.storyboard */,
+				A09F02181C60B48E002E128D /* Assets.xcassets */,
+				A09F021A1C60B48E002E128D /* LaunchScreen.storyboard */,
+				A09F021D1C60B48E002E128D /* Info.plist */,
+				A09F02091C60B48E002E128D /* Supporting Files */,
+			);
+			path = movieApp;
+			sourceTree = "<group>";
+		};
+		A09F02091C60B48E002E128D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A08CE0831C809EEE00A49362 /* videocamicon.png */,
+				A08CE0841C809EEE00A49362 /* fa-user.png */,
+				A01B63EA1C7621400017CEEC /* video-camera-icon.jpg */,
+				A01B63E41C7620500017CEEC /* videocameraICON.ico */,
+				A01B63E51C7620500017CEEC /* HEARTicon.png */,
+				A01B63E61C7620500017CEEC /* ACCOUNTicon.png */,
+				A01B63E11C75EF880017CEEC /* NSString+FontAwesome.h */,
+				A01B63E21C75EF880017CEEC /* NSString+FontAwesome.m */,
+				A01B631A1C75EDAB0017CEEC /* font-awesome-4.5.0 */,
+				A09F020C1C60B48E002E128D /* AppDelegate.h */,
+				A09F020D1C60B48E002E128D /* AppDelegate.m */,
+				A0E353E51C6B3EB800E81503 /* redstarfullselected.png */,
+				A0E353E31C6B3EAB00E81503 /* redstarnotselected.png */,
+				A0E353FF1C72225000E81503 /* favorites.png */,
+				A0E353E11C6B3BF400E81503 /* redstarhald.png */,
+				A05077501C6A34730074603B /* star.png */,
+				A0E354051C72239C00E81503 /* account2.png */,
+				A050774E1C6A346D0074603B /* starhighlighted.png */,
+				A0E354011C72225700E81503 /* movies.png */,
+				A050774C1C6A2CE40074603B /* movie_transparent.png */,
+				A09F020A1C60B48E002E128D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A09F02231C60B57A002E128D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A09F02241C60B5BB002E128D /* MOVMovie.h */,
+				A09F02251C60B5BB002E128D /* MOVMovie.m */,
+				A08CE0801C80975800A49362 /* MOVUser.h */,
+				A08CE0811C80975800A49362 /* MOVUser.m */,
+				A09F02301C60D6E9002E128D /* MOVGenre.h */,
+				A09F02311C60D6E9002E128D /* MOVGenre.m */,
+				A0E353EB1C6B5A8500E81503 /* MOVPerson.h */,
+				A0E353EC1C6B5A8500E81503 /* MOVPerson.m */,
+				A08CE07D1C80968500A49362 /* MOVRealmGenre.h */,
+				A08CE07E1C80968500A49362 /* MOVRealmGenre.m */,
+				A01B5B9E1C749E4E0017CEEC /* MOVRealmMovie.h */,
+				A01B5B9F1C749E4E0017CEEC /* MOVRealmMovie.m */,
+				A08CE0771C8093B700A49362 /* MOVVideo.h */,
+				A08CE0781C8093B700A49362 /* MOVVideo.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A0E3541A1C736DB100E81503 /* Detail Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A0E354101C72353700E81503 /* MOVMovieCastTableViewCell.h */,
+				A0E354111C72353700E81503 /* MOVMovieCastTableViewCell.m */,
+				A0E353EE1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.h */,
+				A0E353EF1C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m */,
+				A0E354071C722FE600E81503 /* MOVUpperImageCell.h */,
+				A0E354081C722FE600E81503 /* MOVUpperImageCell.m */,
+				A0E3540A1C72319900E81503 /* MOVDescriptionTableViewCell.h */,
+				A0E3540B1C72319900E81503 /* MOVDescriptionTableViewCell.m */,
+				A0E3540D1C72332D00E81503 /* MOVRatingTableViewCell.h */,
+				A0E3540E1C72332D00E81503 /* MOVRatingTableViewCell.m */,
+			);
+			name = "Detail Cells";
+			sourceTree = "<group>";
+		};
+		A0E3541B1C736E1700E81503 /* Cast View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A0E354221C7370FD00E81503 /* MOVCastUpperImageCell.h */,
+				A0E354231C7370FD00E81503 /* MOVCastUpperImageCell.m */,
+				A0E354251C73711800E81503 /* MOVCastBiographyCell.h */,
+				A0E354261C73711800E81503 /* MOVCastBiographyCell.m */,
+				A0E354281C737E8500E81503 /* MOVCastMovieTableViewCell.h */,
+				A0E354291C737E8500E81503 /* MOVCastMovieTableViewCell.m */,
+				A0E3542B1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.h */,
+				A0E3542C1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m */,
+			);
+			name = "Cast View Cells";
+			sourceTree = "<group>";
+		};
+		F8ABC589A075389147F3BB51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE210623EEC3E4A61D5EB440 /* libPods-movieApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A09F02051C60B48E002E128D /* movieApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A09F02201C60B48E002E128D /* Build configuration list for PBXNativeTarget "movieApp" */;
+			buildPhases = (
+				FA370ACA89CBA9073FEFE495 /* Check Pods Manifest.lock */,
+				A09F02021C60B48E002E128D /* Sources */,
+				A09F02031C60B48E002E128D /* Frameworks */,
+				A09F02041C60B48E002E128D /* Resources */,
+				9E58288AE62D0CEFE0A7C932 /* Embed Pods Frameworks */,
+				8CB42AF5B309EC9B0848E241 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = movieApp;
+			productName = movieApp;
+			productReference = A09F02061C60B48E002E128D /* movieApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A09F01FE1C60B48E002E128D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				KnownAssetTags = (
+					New,
+				);
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = EminaHuskic;
+				TargetAttributes = {
+					A09F02051C60B48E002E128D = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = A09F02011C60B48E002E128D /* Build configuration list for PBXProject "movieApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A09F01FD1C60B48E002E128D;
+			productRefGroup = A09F02071C60B48E002E128D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A09F02051C60B48E002E128D /* movieApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A09F02041C60B48E002E128D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A01B63451C75EDAB0017CEEC /* fontawesome-webfont.svg in Resources */,
+				A01B634B1C75EDAB0017CEEC /* animated.less in Resources */,
+				A01B63EB1C7621400017CEEC /* video-camera-icon.jpg in Resources */,
+				A01B63E81C7620500017CEEC /* HEARTicon.png in Resources */,
+				A0E353E21C6B3BF400E81503 /* redstarhald.png in Resources */,
+				A01B63551C75EDAB0017CEEC /* rotated-flipped.less in Resources */,
+				A01B63471C75EDAB0017CEEC /* fontawesome-webfont.woff in Resources */,
+				A01B635D1C75EDAB0017CEEC /* _larger.scss in Resources */,
+				A01B63461C75EDAB0017CEEC /* fontawesome-webfont.ttf in Resources */,
+				A01B63641C75EDAB0017CEEC /* font-awesome.scss in Resources */,
+				A09F021C1C60B48E002E128D /* LaunchScreen.storyboard in Resources */,
+				A050774F1C6A346D0074603B /* starhighlighted.png in Resources */,
+				A01B63581C75EDAB0017CEEC /* _animated.scss in Resources */,
+				A01B634E1C75EDAB0017CEEC /* fixed-width.less in Resources */,
+				A01B635A1C75EDAB0017CEEC /* _core.scss in Resources */,
+				A01B63E91C7620500017CEEC /* ACCOUNTicon.png in Resources */,
+				A0E354181C72421B00E81503 /* Main.storyboard in Resources */,
+				A01B63561C75EDAB0017CEEC /* stacked.less in Resources */,
+				A01B635B1C75EDAB0017CEEC /* _fixed-width.scss in Resources */,
+				A08CE0861C809EEE00A49362 /* fa-user.png in Resources */,
+				A09F02191C60B48E002E128D /* Assets.xcassets in Resources */,
+				A01B63541C75EDAB0017CEEC /* path.less in Resources */,
+				A01B63621C75EDAB0017CEEC /* _stacked.scss in Resources */,
+				A01B63631C75EDAB0017CEEC /* _variables.scss in Resources */,
+				A0E353E41C6B3EAB00E81503 /* redstarnotselected.png in Resources */,
+				A01B63591C75EDAB0017CEEC /* _bordered-pulled.scss in Resources */,
+				A01B634D1C75EDAB0017CEEC /* core.less in Resources */,
+				A01B634C1C75EDAB0017CEEC /* bordered-pulled.less in Resources */,
+				A0E353E61C6B3EB800E81503 /* redstarfullselected.png in Resources */,
+				A08CE0851C809EEE00A49362 /* videocamicon.png in Resources */,
+				A01B63491C75EDAB0017CEEC /* FontAwesome.otf in Resources */,
+				A05077511C6A34730074603B /* star.png in Resources */,
+				A01B63501C75EDAB0017CEEC /* icons.less in Resources */,
+				A01B634A1C75EDAB0017CEEC /* HELP-US-OUT.txt in Resources */,
+				A01B635F1C75EDAB0017CEEC /* _mixins.scss in Resources */,
+				A01B634F1C75EDAB0017CEEC /* font-awesome.less in Resources */,
+				A0E354021C72225700E81503 /* movies.png in Resources */,
+				A01B63531C75EDAB0017CEEC /* mixins.less in Resources */,
+				A0E354001C72225000E81503 /* favorites.png in Resources */,
+				A01B63431C75EDAB0017CEEC /* font-awesome.min.css in Resources */,
+				A01B635C1C75EDAB0017CEEC /* _icons.scss in Resources */,
+				A01B63511C75EDAB0017CEEC /* larger.less in Resources */,
+				A01B63E71C7620500017CEEC /* videocameraICON.ico in Resources */,
+				A01B63601C75EDAB0017CEEC /* _path.scss in Resources */,
+				A0E354061C72239C00E81503 /* account2.png in Resources */,
+				A01B63571C75EDAB0017CEEC /* variables.less in Resources */,
+				A01B63611C75EDAB0017CEEC /* _rotated-flipped.scss in Resources */,
+				A01B63441C75EDAB0017CEEC /* fontawesome-webfont.eot in Resources */,
+				A050774D1C6A2CE40074603B /* movie_transparent.png in Resources */,
+				A01B63421C75EDAB0017CEEC /* font-awesome.css in Resources */,
+				A01B63521C75EDAB0017CEEC /* list.less in Resources */,
+				A01B635E1C75EDAB0017CEEC /* _list.scss in Resources */,
+				A01B63481C75EDAB0017CEEC /* fontawesome-webfont.woff2 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8CB42AF5B309EC9B0848E241 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-movieApp/Pods-movieApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E58288AE62D0CEFE0A7C932 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-movieApp/Pods-movieApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA370ACA89CBA9073FEFE495 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A09F02021C60B48E002E128D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A06625A41C64EC0700B1B050 /* MOVMovieCollectionViewCell.m in Sources */,
+				A09F02261C60B5BB002E128D /* MOVMovie.m in Sources */,
+				A0E3542D1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m in Sources */,
+				A09F020E1C60B48E002E128D /* AppDelegate.m in Sources */,
+				A0E3541E1C736E4700E81503 /* MOVCastController.m in Sources */,
+				A06625971C64D16300B1B050 /* MOVMovieTableViewCell.m in Sources */,
+				A01B5BA01C749E4E0017CEEC /* MOVRealmMovie.m in Sources */,
+				A0E3540C1C72319900E81503 /* MOVDescriptionTableViewCell.m in Sources */,
+				A0E353ED1C6B5A8500E81503 /* MOVPerson.m in Sources */,
+				A01B5BA31C74B1530017CEEC /* FavoritesController.m in Sources */,
+				A08CE07C1C8093CA00A49362 /* MOVVideosController.m in Sources */,
+				A09F02321C60D6E9002E128D /* MOVGenre.m in Sources */,
+				A0E354151C723A2100E81503 /* MOVDetailController.m in Sources */,
+				A09F02111C60B48E002E128D /* MasterViewController.m in Sources */,
+				A09F020B1C60B48E002E128D /* main.m in Sources */,
+				A0E353E01C6B39ED00E81503 /* MOVMovieStarRateView.m in Sources */,
+				A08CE0791C8093B700A49362 /* MOVVideo.m in Sources */,
+				A0E354241C7370FD00E81503 /* MOVCastUpperImageCell.m in Sources */,
+				A0E3542A1C737E8500E81503 /* MOVCastMovieTableViewCell.m in Sources */,
+				A0E353F01C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m in Sources */,
+				A0E354091C722FE600E81503 /* MOVUpperImageCell.m in Sources */,
+				A0E354121C72353700E81503 /* MOVMovieCastTableViewCell.m in Sources */,
+				A01B63E31C75EF880017CEEC /* NSString+FontAwesome.m in Sources */,
+				A0E3540F1C72332D00E81503 /* MOVRatingTableViewCell.m in Sources */,
+				A01B5BA61C74C46D0017CEEC /* MOVFavoritesTableViewCell.m in Sources */,
+				A08CE0821C80975800A49362 /* MOVUser.m in Sources */,
+				A08CE07F1C80968500A49362 /* MOVRealmGenre.m in Sources */,
+				A0E354271C73711800E81503 /* MOVCastBiographyCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A09F021A1C60B48E002E128D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A09F021B1C60B48E002E128D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A0E354161C72421B00E81503 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0E354171C72421B00E81503 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A09F021E1C60B48E002E128D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A09F021F1C60B48E002E128D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A09F02211C60B48E002E128D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3F45D917B677418DE3994AE /* Pods-movieApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = movieApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eminahuskic.movieApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A09F02221C60B48E002E128D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE31C9C8EE8F0F7ED4F5DE42 /* Pods-movieApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = movieApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eminahuskic.movieApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A09F02011C60B48E002E128D /* Build configuration list for PBXProject "movieApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A09F021E1C60B48E002E128D /* Debug */,
+				A09F021F1C60B48E002E128D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A09F02201C60B48E002E128D /* Build configuration list for PBXNativeTarget "movieApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A09F02211C60B48E002E128D /* Debug */,
+				A09F02221C60B48E002E128D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A09F01FE1C60B48E002E128D /* Project object */;
+}

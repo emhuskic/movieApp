@@ -7,7 +7,6 @@
 //
 
 #import "MOVMovie.h"
-#import "MOVRealmMovie.h"
 
 @interface MOVMovie()
 @end
@@ -20,7 +19,6 @@
     self.isFavorite=NO;
     return self;
 }
-
 
 - (id) initWithRLMObject:(MOVRealmMovie *)RLMmov
 {

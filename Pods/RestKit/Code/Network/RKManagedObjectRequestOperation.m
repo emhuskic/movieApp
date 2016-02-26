@@ -19,7 +19,7 @@
 //
 
 #ifdef _COREDATADEFINES_H
-#if __has_include(<RestKit/CoreData/RKManagedObjectCaching.h>)
+#if __has_include("RKManagedObjectCaching.h")
 
 #import <RestKit/CoreData/NSManagedObject+RKAdditions.h>
 #import <RestKit/CoreData/NSManagedObjectContext+RKAdditions.h>
@@ -126,7 +126,7 @@ static NSManagedObject *RKRefetchManagedObjectInContext(NSManagedObject *managed
     NSManagedObjectID *managedObjectID = [managedObject objectID];
     if ([managedObjectID isTemporaryID]) {
         RKLogWarning(@"Unable to refetch managed object %@: the object has a temporary managed object ID.", managedObject);
-        return nil;
+        return managedObject;
     }
     NSError *error = nil;
     NSManagedObject *refetchedObject = [managedObjectContext existingObjectWithID:managedObjectID error:&error];
@@ -256,14 +256,7 @@ static id RKRefetchedValueInManagedObjectContext(id value, NSManagedObjectContex
                 id value = nil;
                 if ([keyPath isEqual:[NSNull null]]) {
                     value = RKRefetchedValueInManagedObjectContext(mappingResultsAtRootKey, self.managedObjectContext);
-                    if (value) {
-                        newDictionary[rootKey] = value;
-                    }
-                    // else there's no object on the correct context
-                    else {
-                        // ensure newDictionary doesn't have an object on an incorrect context
-                        [newDictionary removeObjectForKey:rootKey];
-                    }
+                    if (value) newDictionary[rootKey] = value;
                 } else {
                     NSMutableArray *keyPathComponents = [[keyPath componentsSeparatedByString:@"."] mutableCopy];
                     NSString *destinationKey = [keyPathComponents lastObject];

@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MOVRealmGenre.h"
-@class MOVRealmGenre;
-@interface MOVGenre :NSObject
+
+@interface MOVGenre : NSObject
 @property (nonatomic) NSNumber *genreID;
 @property (strong, nonatomic) NSString *name;
-- (id) initWithRLMGenre:(MOVRealmGenre *)RLMgen;
 @end
