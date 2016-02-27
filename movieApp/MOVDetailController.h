@@ -41,11 +41,14 @@
 #import "MOVMovie.h"
 #import "MOVMovieCastTableViewCell.h"
 #import "MasterViewController.h"
+#import "MOVDescriptionTableViewCell.h"
 @class MOVDetailController;
 
 @protocol ControllerToFavoritesDelegate <NSObject>
 - (void)updateFavorites:(MOVDetailController *)view;
 @end
+
+
 
 
 @interface MOVDetailController : UITableViewController <MovieCastCollectionCellDelegate, UITabBarControllerDelegate, MasterDetailDelegate>

@@ -442,7 +442,6 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
                                   
                                   self.movies = mappingResult.array;
                                   [self.moviesDict setObject:self.movies forKey:@"popular"];
-                                  
                                   [self.objects addObject:self.movies ];
                                   NSLog(@"tu3");
                                   [self.tableView reloadData];
@@ -452,16 +451,6 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
     
     
     
-    /*  RKObjectMapping* issueMapping = [RKObjectMapping mappingForClass: [MOVMovie class] usingBlock:^(RKObjectMapping *mapping) {
-     [movieMapping addAttributeMappingsFromDictionary:@{
-     @"genr"
-     [mapping mapKeyPathsToAttributes:
-     @"id", @"identifier",
-     nil];
-     }];
-     issueMapping.rootKeyPath = @"issue";
-     [omp setObjectMaping: issueMapping forKeyPath: @"issuelist"];
-     */
 }
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
@@ -602,15 +591,6 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
     }
     else
     {
-        /* switch (section) {
-         case 0:
-         return [[self.moviesDict objectForKey:@"top_rated"] count];
-         
-         break;
-         
-         default: return [self.moviesDict count];
-         break;
-         }*/
         return [self.objects count];
     }
 }
@@ -626,6 +606,8 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
         cell.textLabel.text=[[self.searchResult objectAtIndex:indexPath.row] title];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
         return cell;
     }
     else{
@@ -646,14 +628,13 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
         
         cell.backgroundColor=[UIColor whiteColor];
         cell.delegate=self;
-        //  cell.selectionStyle = UITableViewCellSelectionStyle.none;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
 }
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        
+   /* if (tableView == self.searchDisplayController.searchResultsTableView) {
         controller.movie= [self.searchResult objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
         [self performSegueWithIdentifier: @"showDetail" sender:self];
         
@@ -663,17 +644,17 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
         [self performSegueWithIdentifier: @"showDetail" sender: self];
         NSLog(@"Default Display Controller");
     }
-    controller.navigationItem.leftItemsSupplementBackButton = YES;
+    controller.navigationItem.leftItemsSupplementBackButton = YES;*/
 }
 
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(!self.movies.count)
+    if(!self.objects.count)
         return 0;
     else if([tableView isEqual:self.searchDisplayController.searchResultsTableView])
         return 47;
-    else return 297;
+    else return 268;
     
 }
 

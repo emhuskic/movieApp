@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MOVDetailController.h"
+@class MOVDescriptionTableViewCell;
 
-@interface MOVDescriptionTableViewCell : UITableViewCell
+
+@interface MOVDescriptionTableViewCell : UITableViewCell 
+
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *videosButton;
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UIButton *descriptionButton;
 @property (weak, nonatomic) IBOutlet UIButton *smallVideosButton;
 
+-(void) addSelector;
 @end

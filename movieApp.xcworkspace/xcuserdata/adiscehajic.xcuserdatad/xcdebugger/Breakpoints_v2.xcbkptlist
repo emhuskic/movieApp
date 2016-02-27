@@ -50,17 +50,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "movieApp/MOVDetailController.m"
-            timestampString = "478190804.555968"
+            filePath = "movieApp/MOVDescriptionTableViewCell.m"
+            timestampString = "478298633.779794"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "616"
-            endingLineNumber = "616"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-infoButtonTapped:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MOVDescriptionTableViewCell infoButtonTapped:]"
+                  moduleName = "movieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adiscehajic/Desktop/eminaProjects/movieApp/movieApp/MOVDescriptionTableViewCell.m"
+                  timestampString = "478301946.449594"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "235">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[MOVDescriptionTableViewCell infoButtonTapped:]_block_invoke"
+                  moduleName = "movieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adiscehajic/Desktop/eminaProjects/movieApp/movieApp/MOVDescriptionTableViewCell.m"
+                  timestampString = "478301946.449934"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
