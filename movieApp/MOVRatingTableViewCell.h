@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *avgLabel;
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
 @property (strong, nonatomic) NSNumber *avg;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
+@property (weak, nonatomic) IBOutlet UIButton *ratingButton;
 
 @property (strong, nonatomic) NSNumber *rating;
 - (void) refresh;

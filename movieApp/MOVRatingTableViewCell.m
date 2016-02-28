@@ -7,7 +7,7 @@
 //
 
 #import "MOVRatingTableViewCell.h"
-
+#import "NSString+FontAwesome.h"
 @implementation MOVRatingTableViewCell
 
 
@@ -26,14 +26,26 @@
     self.userRateView.editable = YES;
     self.userRateView.maxRating = 5;
     self.apiRateView.delegate = self;
-    
     self.apiRateView.rating=[self.avg floatValue]/2.;
     
 }
 - (void) refresh
 {
     self.apiRateView.rating=[self.avg floatValue]/2.;
-
+    self.userRateView.rating=[self.rating floatValue]/2.;
+    if (self.userRateView.rating==0)
+    {
+        [self.ratingLabel setHidden:NO];
+        [self.ratingButton setHidden:NO];
+         self.ratingLabel.text=@"Not Yet Rated";
+         [self.ratingButton setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAAngleRight]]forState:UIControlStateNormal];
+        [self.userRateView setHidden:YES];
+    }
+    else
+    {
+        [self.userRateView setHidden:NO];
+        [self.ratingLabel setHidden:YES];
+        }
 }
 - (void)rateView:(MOVMovieStarRateView *)rateView ratingDidChange:(float)rating {
     // self.statusLabel.text = [NSString stringWithFormat:@"Rating: %f", rating];

@@ -51,6 +51,8 @@
 		A01B63E81C7620500017CEEC /* HEARTicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A01B63E51C7620500017CEEC /* HEARTicon.png */; };
 		A01B63E91C7620500017CEEC /* ACCOUNTicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A01B63E61C7620500017CEEC /* ACCOUNTicon.png */; };
 		A01B63EB1C7621400017CEEC /* video-camera-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A01B63EA1C7621400017CEEC /* video-camera-icon.jpg */; };
+		A04D340F1C82500800D39AC0 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D340E1C82500800D39AC0 /* AccountController.swift */; };
+		A04D34121C8250E400D39AC0 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04D34111C8250E400D39AC0 /* LoginController.m */; };
 		A050774D1C6A2CE40074603B /* movie_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = A050774C1C6A2CE40074603B /* movie_transparent.png */; };
 		A050774F1C6A346D0074603B /* starhighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = A050774E1C6A346D0074603B /* starhighlighted.png */; };
 		A05077511C6A34730074603B /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A05077501C6A34730074603B /* star.png */; };
@@ -139,6 +141,10 @@
 		A01B63E51C7620500017CEEC /* HEARTicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HEARTicon.png; sourceTree = "<group>"; };
 		A01B63E61C7620500017CEEC /* ACCOUNTicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ACCOUNTicon.png; sourceTree = "<group>"; };
 		A01B63EA1C7621400017CEEC /* video-camera-icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "video-camera-icon.jpg"; sourceTree = "<group>"; };
+		A04D340D1C82500800D39AC0 /* movieApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "movieApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		A04D340E1C82500800D39AC0 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
+		A04D34101C8250E400D39AC0 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		A04D34111C8250E400D39AC0 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		A050774C1C6A2CE40074603B /* movie_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie_transparent.png; sourceTree = "<group>"; };
 		A050774E1C6A346D0074603B /* starhighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starhighlighted.png; sourceTree = "<group>"; };
 		A05077501C6A34730074603B /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
@@ -345,10 +351,14 @@
 				A08CE07A1C8093CA00A49362 /* MOVVideosController.h */,
 				A08CE07B1C8093CA00A49362 /* MOVVideosController.m */,
 				A0E354161C72421B00E81503 /* Main.storyboard */,
+				A04D34101C8250E400D39AC0 /* LoginController.h */,
+				A04D34111C8250E400D39AC0 /* LoginController.m */,
+				A04D340E1C82500800D39AC0 /* AccountController.swift */,
 				A09F02181C60B48E002E128D /* Assets.xcassets */,
 				A09F021A1C60B48E002E128D /* LaunchScreen.storyboard */,
 				A09F021D1C60B48E002E128D /* Info.plist */,
 				A09F02091C60B48E002E128D /* Supporting Files */,
+				A04D340D1C82500800D39AC0 /* movieApp-Bridging-Header.h */,
 			);
 			path = movieApp;
 			sourceTree = "<group>";
@@ -621,6 +631,7 @@
 				A0E3542D1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m in Sources */,
 				A09F020E1C60B48E002E128D /* AppDelegate.m in Sources */,
 				A0E3541E1C736E4700E81503 /* MOVCastController.m in Sources */,
+				A04D34121C8250E400D39AC0 /* LoginController.m in Sources */,
 				A06625971C64D16300B1B050 /* MOVMovieTableViewCell.m in Sources */,
 				A01B5BA01C749E4E0017CEEC /* MOVRealmMovie.m in Sources */,
 				A0E3540C1C72319900E81503 /* MOVDescriptionTableViewCell.m in Sources */,
@@ -639,6 +650,7 @@
 				A0E354091C722FE600E81503 /* MOVUpperImageCell.m in Sources */,
 				A0E354121C72353700E81503 /* MOVMovieCastTableViewCell.m in Sources */,
 				A01B63E31C75EF880017CEEC /* NSString+FontAwesome.m in Sources */,
+				A04D340F1C82500800D39AC0 /* AccountController.swift in Sources */,
 				A0E3540F1C72332D00E81503 /* MOVRatingTableViewCell.m in Sources */,
 				A01B5BA61C74C46D0017CEEC /* MOVFavoritesTableViewCell.m in Sources */,
 				A08CE0821C80975800A49362 /* MOVUser.m in Sources */,
@@ -754,10 +766,13 @@
 			baseConfigurationReference = A3F45D917B677418DE3994AE /* Pods-movieApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = movieApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eminahuskic.movieApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "movieApp/movieApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -766,10 +781,12 @@
 			baseConfigurationReference = BE31C9C8EE8F0F7ED4F5DE42 /* Pods-movieApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = movieApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eminahuskic.movieApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "movieApp/movieApp-Bridging-Header.h";
 			};
 			name = Release;
 		};

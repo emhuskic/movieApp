@@ -15,7 +15,6 @@
     [self.descriptionButton addTarget:self action:@selector(infoButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
 }
-
 - (void)layoutSubviews
 {
   //  CGRect labelFrame = self.descriptionLabel.frame;

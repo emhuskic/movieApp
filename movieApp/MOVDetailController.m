@@ -32,6 +32,7 @@
 @property (strong, nonatomic) MOVCastController *controller;
 @property (strong, nonatomic) NSArray *videos;
 @property (strong, nonatomic) MOVMovie *movs;
+@property (nonatomic) BOOL loggedOut;
 @property (strong, nonatomic) NSArray *ratedMovies;
 @property (strong, nonatomic) NSString *sessionID;
 @property (strong, nonatomic) NSNumber *userID;
@@ -59,7 +60,9 @@
      the 'account' object and specify that both the old and new values of "openingBalance"
      should be provided in the observe… method.
      */
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"NotificationIdentifier" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"MoviesAreRated" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logOut:) name:@"LoggedOut" object:nil];
+    
 }
 - (void)dealloc
 {
@@ -68,8 +71,16 @@
 
 - (void) updateView:(NSNotification*)notification
 {
-    self.sessionID=notification.userInfo[@"sessionID"];
-    [self loadUser];
+    self.ratedMovies=notification.userInfo[@"ratedMovies"];
+    [[self tableView] reloadData];
+    //[self loadUser];
+    
+}
+- (void) logOut:(NSNotification*)notification
+{
+    self.ratedMovies=nil;
+    self.loggedOut=YES;
+    [[self tableView] reloadData];
 }
 - (void) loadUser
 {
@@ -411,18 +422,24 @@
         cell.avgLabel.text=[NSString stringWithFormat:@"%@",[self.movie voteAverage]];
         cell.countLabel.text=[NSString stringWithFormat:@"%@", [self.movie voteCount]];
         cell.avg=self.movie.voteAverage;
-        for (int i=0; i<[self.ratedMovies count]; i++)
+        cell.rating=self.movie.userRating;
+        if (self.loggedOut) cell.rating=0;
+        else if (self.ratedMovies)
         {
-            if ([[[self.ratedMovies objectAtIndex:i] movID] isEqual:[self.movie movID]])
+            for (int i=0; i<[self.ratedMovies count]; i++)
             {
-                cell.rating=[[self.ratedMovies objectAtIndex:i] userRating];
+                if ([[[self.ratedMovies objectAtIndex:i] movID] isEqual:[self.movie movID]])
+                {
+                    cell.rating=[[self.ratedMovies objectAtIndex:i] userRating];
+                    break;
+                }
+                else
+                    cell.rating=0;
             }
-            else
-                cell.rating=0;
         }
+         [cell.ratingButton setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAAngleRight]]forState:UIControlStateNormal];
         [cell refresh];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
         return cell;
     }
     else

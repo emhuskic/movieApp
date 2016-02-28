@@ -1,3 +1,4 @@
+
 //
 //  MasterViewController.m
 //  movieApp
@@ -5,7 +6,7 @@
 //  Created by Adis Cehajic on 02/02/16.
 //  Copyright © 2016 EminaHuskic. All rights reserved.
 //
-/*
+
 #import "MasterViewController.h"
 #import <RestKit/RestKit.h>
 #import "MOVMovie.h"
@@ -20,15 +21,43 @@
 @property (strong, nonatomic) NSArray *movies;
 @property (nonatomic, strong) NSMutableArray *searchResult;
 @property (nonatomic, strong)  MOVDetailController *controller;
+@property (nonatomic, strong) NSArray *ratedMovies;
 @property (nonatomic, strong) MOVMovieTableViewCell *MovieCell;
+@property (nonatomic, strong) NSString *query;
 @end
 
 @implementation MasterViewController
 
 
+- (void)registerAsObserver {
+    /*
+     Register 'inspector' to receive change notifications for the "openingBalance" property of
+     the 'account' object and specify that both the old and new values of "openingBalance"
+     should be provided in the observe… method.
+     */
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"MoviesAreRated" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logOut:) name:@"LoggedOut" object:nil];
+    
+}
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
+- (void) updateView:(NSNotification*)notification
+{
+    self.ratedMovies=notification.userInfo[@"ratedMovies"];
+    [[self tableView] reloadData];
+    //[self loadUser];
+    
+}
+- (void) logOut:(NSNotification*)notification
+{
+    self.ratedMovies=nil;
+    [[self tableView] reloadData];
+}
 
-- (void)loadMovies
+- (void) findMovies
 {
     NSURL *baseURL = [NSURL URLWithString:@"https://api.themoviedb.org"];
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
@@ -39,8 +68,8 @@
                                                        @"backdrop_path": @"backdropPath",
                                                        @"belongs_to_collection":@"belongsToCollection",
                                                        @"adult": @"adult",
-                                                      
-                                                       @"genres": @"genre_ids",
+                                                       
+                                                       @"genre_ids": @"genres",
                                                        @"homepage": @"homepage",
                                                        @"original_language": @"originalLanguage",
                                                        @"overview": @"overview",
@@ -59,312 +88,26 @@
                                                        @"video": @"video",
                                                        @"vote_count": @"voteCount",
                                                        @"vote_average": @"voteAverage"
-                                                      
+                                                       
                                                        }];
-     NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping method:RKRequestMethodAny pathPattern:@"/3/movie/top_rated" keyPath:@"results" statusCodes:statusCodes];
+    NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping method:RKRequestMethodAny pathPattern:[NSString stringWithFormat:@"/3/search/movie"]
+                                               keyPath:@"results" statusCodes:statusCodes];
     
     
     RKObjectManager *sharedManager = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager addResponseDescriptorsFromArray:@[responseDescriptor]];
-    [ sharedManager getObjectsAtPath:@"/3/movie/top_rated" parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825"}
-                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                  
-                                                  self.movies = mappingResult.array;
-                                                  [self.moviesDict setObject:self.movies forKey:@"top_rated"];
-                                                  self.objects=[NSMutableArray arrayWithCapacity:5];
-                                                  [self.objects addObject:self.movies];
-                                                                                                    //self.objects = [NSMutableArray arrayWithArray:self.movies];
-                                                 [self.tableView reloadData];
-    }
-                                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                              }];
-    
-    
-    RKResponseDescriptor *responseDescriptor2 = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping method:RKRequestMethodAny pathPattern:@"/3/movie/upcoming" keyPath:@"results" statusCodes:statusCodes];
-    RKObjectManager *sharedManager2 = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager2 addResponseDescriptorsFromArray:@[responseDescriptor2]];
-    [ sharedManager2 getObjectsAtPath:@"/3/movie/upcoming" parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825"}
+    [ sharedManager getObjectsAtPath:@"/3/search/movie" parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825", @"query":self.query}
                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                  
-                                 self.movies = mappingResult.array;
-                                 [self.moviesDict setObject:self.movies forKey:@"upcoming"];
-                                 
-                               //  self.objects=[NSMutableArray arrayWithCapacity:5];
-                              [self.objects addObject:self.movies];
-                                 NSLog(@"tu2");
-                                                                  //self.objects = [NSMutableArray arrayWithArray:self.movies];
-                                 [self.tableView reloadData];
+                                 self.searchResult = mappingResult.array;
+                                [self.tableView reloadData];
                              }
                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
                              }];
     
     
-    RKResponseDescriptor *responseDescriptor3 = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping method:RKRequestMethodAny pathPattern:@"/3/movie/popular" keyPath:@"results" statusCodes:statusCodes];
-    RKObjectManager *sharedManager3 = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager3 addResponseDescriptorsFromArray:@[responseDescriptor3]];
-    [ sharedManager3 getObjectsAtPath:@"/3/movie/popular" parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825"}
-                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                  
-                                  self.movies = mappingResult.array;
-                                  [self.moviesDict setObject:self.movies forKey:@"popular"];
-                                  
-                                  [self.objects addObject:self.movies ];
-                                  NSLog(@"tu3");
-                                  [self.tableView reloadData];
-                              }
-                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                              }];
 
 }
-- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
-{
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"title contains[c] %@", searchText];
-    NSMutableArray *arr = [[NSMutableArray alloc] init];
-    for (int i=0; i<[[self.moviesDict objectForKey:@"top_rated"] count]; i++){
-        [arr addObject:[[self.moviesDict objectForKey:@"top_rated"] objectAtIndex:i]];
-    [arr addObject:[[self.moviesDict objectForKey:@"popular"] objectAtIndex:i]];
-    [arr addObject:[[self.moviesDict objectForKey:@"upcoming"] objectAtIndex:i]];
-}
-    
-    self.searchResult = [arr filteredArrayUsingPredicate:resultPredicate];
- 
-   }
-
-
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    [self filterContentForSearchText:searchString
-scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
-       objectAtIndex:[self.searchDisplayController.searchBar
-                      selectedScopeButtonIndex]]];
-    
-    
-    return YES;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-   // UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    //self.navigationItem.rightBarButtonItem = addButton;
-  if (!self.objects) {
-        self.objects = [[NSMutableArray alloc] init];
-   }
-    if(!self.moviesDict)
-        self.moviesDict=[[NSMutableDictionary alloc] init];
-     //Search
-    self.searchResult = [NSMutableArray arrayWithCapacity:[self.objects count]];
-  
-    //Movie for DetailView controller
-    if(!self.movie)
-        self.movie = [[MOVMovie alloc]init];
-    //RESTKIT
-    [self loadMovies];
-    
- }
-
-- (void)viewWillAppear:(BOOL)animated {
-    //self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
-    [super viewWillAppear:animated];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{
-                                                        NSFontAttributeName:[UIFont fontWithName:@"FontAwesome" size:20.0f]
-                                                        } forState:UIControlStateNormal];
-
-   [[self.tabBarController.tabBar.items objectAtIndex:0]  setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAVideoCamera]]];
-    [[self.tabBarController.tabBar.items objectAtIndex:1]  setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAHeartO]]];
-    [[self.tabBarController.tabBar.items objectAtIndex:2]  setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAUser]]];
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Segues
-
-@synthesize controller;
-
-- (void) selectMovie:(MOVMovieTableViewCell *)view withItem:(MOVMovie *)item
-{
-    self.movie=item;
-    controller.movie=item;
-    [self performSegueWithIdentifier:@"showDetail" sender:self];
-}
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"Preparing for Segue in Master view controller...");
-   if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        controller = (MOVDetailController *)[segue destinationViewController];
-       
-   //controller = (MOVDetailController *)[segue destinationViewController] ;
-        if (self.searchDisplayController.active) {
-            NSLog(@"Search Display Controller");
-            controller.movie = [self.searchResult objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
-        } else {
-            NSLog(@"tututu Default Display Controller");
-         controller.movie=self.movie;
-            
-                
-        }
-        
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton = YES;
-    }
-      }
-
-#pragma mark - Table View
-
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-   
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-    {
-      //  NSLog(<#NSString * _Nonnull format, ...#>)
-        return [self.searchResult count];
-    }
-    else
-    {
-       /* switch (section) {
-            case 0:
-                return [[self.moviesDict objectForKey:@"top_rated"] count];
-                
-                break;
-                
-            default: return [self.moviesDict count];
-                break;
-        }
-        return [self.objects count];
-    }
-}
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    MOVMovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-     if (cell == nil)
-     {
-         cell = [[MOVMovieTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-         
-         // cell.movies=[NSArray arrayWithArray:self.movies];
-     }
-    if([tableView isEqual:self.searchDisplayController.searchResultsTableView])
-    {
-        
-    }
-    else{
-      if (indexPath.row==0) {cell.typeLabel.text=@"Top rated movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"top_rated"]];}
-        
-    else if (indexPath.row==1) {cell.typeLabel.text = @"Upcoming movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"upcoming"]];}
-        
-    else if(indexPath.row==2) {cell.typeLabel.text=@"Most popular movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"popular"]];}
-     
-    cell.backgroundColor=[UIColor whiteColor];
-    cell.delegate=self;
-     }
-    return cell;
-}
- 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   
-    if([tableView isEqual:self.searchDisplayController.searchResultsTableView])
-    {
-        static NSString *CellIdentifier = @"NormalCell";
-        
-        UITableViewCell *cell = [self.searchDisplayController.searchResultsTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        }
-        cell.textLabel.text=[[self.searchResult objectAtIndex:indexPath.row] title];
-        return cell;
-    }
-    else{
-        static NSString *CellIdentifier = @"Cell";
-        
-        MOVMovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell == nil)
-        {
-            cell = [[MOVMovieTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            
-            // cell.movies=[NSArray arrayWithArray:self.movies];
-        }
-        if (indexPath.row==0) {cell.typeLabel.text=@"Top rated movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"top_rated"]];}
-        
-        else if (indexPath.row==1) {cell.typeLabel.text = @"Upcoming movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"upcoming"]];}
-        
-        else if(indexPath.row==2) {cell.typeLabel.text=@"Most popular movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"popular"]];}
-        
-        cell.backgroundColor=[UIColor whiteColor];
-        cell.delegate=self;
-      //  cell.selectionStyle = UITableViewCellSelectionStyle.none;
-        return cell;
-    }
-}
-- (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath
-{
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        
-        controller.movie= [self.searchResult objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
-        [self performSegueWithIdentifier: @"showDetail" sender:self];
-        
-        NSLog(@"Search Display Controller");
-    } else {
-        controller.movie = [self.objects objectAtIndex: indexPath.row];
-        [self performSegueWithIdentifier: @"showDetail" sender: self];
-        NSLog(@"Default Display Controller");
-    }
-    controller.navigationItem.leftItemsSupplementBackButton = YES;
-}
-
-
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-        if(!self.movies.count)
-            return 0;
-        else if([tableView isEqual:self.searchDisplayController.searchResultsTableView])
-            return 47;
-        else return 297;
-            
-}
-
-
-
-
-@end*/
-
-//
-//  MasterViewController.m
-//  movieApp
-//
-//  Created by Adis Cehajic on 02/02/16.
-//  Copyright © 2016 EminaHuskic. All rights reserved.
-//
-
-#import "MasterViewController.h"
-#import <RestKit/RestKit.h>
-#import "MOVMovie.h"
-#import "MOVMovieTableViewCell.h"
-#import "MOVDetailController.h"
-
-#import "NSString+FontAwesome.h"
-@interface MasterViewController ()
-
-@property NSMutableArray *objects;
-@property (strong, nonatomic) NSMutableDictionary *moviesDict;
-@property (strong, nonatomic) NSArray *movies;
-@property (nonatomic, strong) NSMutableArray *searchResult;
-@property (nonatomic, strong)  MOVDetailController *controller;
-@property (nonatomic, strong) MOVMovieTableViewCell *MovieCell;
-@end
-
-@implementation MasterViewController
-
-
-
-
 - (void)loadMovies
 {
     NSURL *baseURL = [NSURL URLWithString:@"https://api.themoviedb.org"];
@@ -469,17 +212,19 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-    [self filterContentForSearchText:searchString
+   /* [self filterContentForSearchText:searchString
                                scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
                                       objectAtIndex:[self.searchDisplayController.searchBar
-                                                     selectedScopeButtonIndex]]];
-    
+                                                     selectedScopeButtonIndex]]];*/
+    self.query=searchString;
+    [self findMovies];
     
     return YES;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self registerAsObserver];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     // Do any additional setup after loading the view, typically from a nib.
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -563,10 +308,36 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
         if (self.searchDisplayController.active) {
             NSLog(@"Search Display Controller");
             controller.movie = [self.searchResult objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
+            for (int i=0; i<[self.ratedMovies count]; i++)
+            {
+                if ([[[self.searchResult objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row] movID] isEqual:[[self.ratedMovies objectAtIndex:i] movID]])
+                {
+                   controller.movie.userRating=[[self.ratedMovies objectAtIndex:i] userRating];
+                    break;
+                }
+                else
+                    controller.movie.userRating=0;
+            }
+            if ([self.ratedMovies count]==0)
+                controller.movie.userRating=0;
+
+            
         } else {
             NSLog(@"tututu Default Display Controller");
+            for (int i=0; i<[self.ratedMovies count]; i++)
+            {
+                if ([[[self.ratedMovies objectAtIndex:i] movID] isEqual:[self.movie movID]])
+                {
+                    self.movie.userRating=[[self.ratedMovies objectAtIndex:i] userRating];
+                    break;
+                }
+                else
+                   self.movie.userRating=0;
+            }
+           
             controller.movie=self.movie;
-            
+            if ([self.ratedMovies count]==0)
+                controller.movie.userRating=0;
             
         }
         
@@ -634,17 +405,17 @@ scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
 }
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
-   /* if (tableView == self.searchDisplayController.searchResultsTableView) {
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
         controller.movie= [self.searchResult objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
         [self performSegueWithIdentifier: @"showDetail" sender:self];
         
         NSLog(@"Search Display Controller");
     } else {
-        controller.movie = [self.objects objectAtIndex: indexPath.row];
-        [self performSegueWithIdentifier: @"showDetail" sender: self];
+        //controller.movie = [self.objects objectAtIndex: indexPath.row];
+        //[self performSegueWithIdentifier: @"showDetail" sender: self];
         NSLog(@"Default Display Controller");
     }
-    controller.navigationItem.leftItemsSupplementBackButton = YES;*/
+    controller.navigationItem.leftItemsSupplementBackButton = YES;
 }
 
 
