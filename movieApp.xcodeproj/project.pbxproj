@@ -53,6 +53,7 @@
 		A01B63EB1C7621400017CEEC /* video-camera-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A01B63EA1C7621400017CEEC /* video-camera-icon.jpg */; };
 		A04D340F1C82500800D39AC0 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D340E1C82500800D39AC0 /* AccountController.swift */; };
 		A04D34121C8250E400D39AC0 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04D34111C8250E400D39AC0 /* LoginController.m */; };
+		A04D34141C84737200D39AC0 /* space.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A04D34131C84737200D39AC0 /* space.jpg */; };
 		A050774D1C6A2CE40074603B /* movie_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = A050774C1C6A2CE40074603B /* movie_transparent.png */; };
 		A050774F1C6A346D0074603B /* starhighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = A050774E1C6A346D0074603B /* starhighlighted.png */; };
 		A05077511C6A34730074603B /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A05077501C6A34730074603B /* star.png */; };
@@ -145,6 +146,7 @@
 		A04D340E1C82500800D39AC0 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		A04D34101C8250E400D39AC0 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		A04D34111C8250E400D39AC0 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		A04D34131C84737200D39AC0 /* space.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = space.jpg; sourceTree = "<group>"; };
 		A050774C1C6A2CE40074603B /* movie_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie_transparent.png; sourceTree = "<group>"; };
 		A050774E1C6A346D0074603B /* starhighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starhighlighted.png; sourceTree = "<group>"; };
 		A05077501C6A34730074603B /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				A050774E1C6A346D0074603B /* starhighlighted.png */,
 				A0E354011C72225700E81503 /* movies.png */,
 				A050774C1C6A2CE40074603B /* movie_transparent.png */,
+				A04D34131C84737200D39AC0 /* space.jpg */,
 				A09F020A1C60B48E002E128D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -561,6 +564,7 @@
 				A01B63601C75EDAB0017CEEC /* _path.scss in Resources */,
 				A0E354061C72239C00E81503 /* account2.png in Resources */,
 				A01B63571C75EDAB0017CEEC /* variables.less in Resources */,
+				A04D34141C84737200D39AC0 /* space.jpg in Resources */,
 				A01B63611C75EDAB0017CEEC /* _rotated-flipped.scss in Resources */,
 				A01B63441C75EDAB0017CEEC /* fontawesome-webfont.eot in Resources */,
 				A050774D1C6A2CE40074603B /* movie_transparent.png in Resources */,

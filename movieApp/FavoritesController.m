@@ -15,6 +15,7 @@
 
 RLM_ARRAY_TYPE(MOVRealmMovie)
 @interface FavoritesController()
+@property (strong, nonatomic) NSArray *ratedMovies;
 @end
 @implementation FavoritesController
 
@@ -23,9 +24,39 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     [super viewWillAppear:animated];
     self.movies = [MOVRealmMovie allObjects];
     [self.tableView reloadData];
-    
+    [self registerAsObserver];
 
 }
+
+- (void)registerAsObserver {
+    /*
+     Register 'inspector' to receive change notifications for the "openingBalance" property of
+     the 'account' object and specify that both the old and new values of "openingBalance"
+     should be provided in the observe… method.
+     */
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"MoviesAreRated" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logOut:) name:@"LoggedOut" object:nil];
+    
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void) updateView:(NSNotification*)notification
+{
+    self.ratedMovies=notification.userInfo[@"ratedMovies"];
+    [[self tableView] reloadData];
+    //[self loadUser];
+    
+}
+- (void) logOut:(NSNotification*)notification
+{
+    self.ratedMovies=nil;
+    [[self tableView] reloadData];
+}
+
 - (void) viewDidLoad
 {
     MOVDetailController *detailViewController = [[MOVDetailController alloc] init];
@@ -66,6 +97,7 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     cell.yearLabel.text=[NSString stringWithFormat:@"From %ld", (long)[components year]];
     NSURL * url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", [[self.movies objectAtIndex:indexPath.row] posterPath]]];
     [cell.img sd_setImageWithURL:url];
+    
     return cell;
 }
 
@@ -93,6 +125,21 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         controller = (MOVDetailController *)[segue destinationViewController];
         controller.movie=self.selectedMovie;
+        for (int i=0; i<[self.ratedMovies count]; i++)
+        {
+            if ([[[self.ratedMovies objectAtIndex:i] movID] isEqual:[self.selectedMovie movID]])
+            {
+                self.selectedMovie.userRating=[[self.ratedMovies objectAtIndex:i] userRating];
+                break;
+            }
+            else
+                self.selectedMovie.userRating=0;
+        }
+        
+        controller.movie=self.selectedMovie;
+        if ([self.ratedMovies count]==0)
+            controller.movie.userRating=0;
+
     }
 }
 
@@ -112,6 +159,7 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     self.selectedMovie.voteAverage=[[self.movies objectAtIndex: indexPath.row] voteAverage];
     self.selectedMovie.voteCount=[[self.movies objectAtIndex: indexPath.row] voteCount];
     self.selectedMovie.isFavorite=[[self.movies objectAtIndex:indexPath.row] isFavorite];
+    
     controller.movie= [[MOVMovie alloc] initWithRLMObject: [self.movies objectAtIndex:indexPath.row]];
     // controller.genres =[[NSArray alloc] initWithObjects:[[self.movies objectAtIndex:indexPath.row] genres], nil];
     //   [self performSegueWithIdentifier: @"showDetail" sender: self];

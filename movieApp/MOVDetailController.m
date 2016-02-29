@@ -311,17 +311,18 @@
 
 - (void)addOrRemoveSelectedIndexPath:(NSIndexPath *)indexPath
 {
-    if (!self.selectedIndexPaths) {
+   if (!self.selectedIndexPaths) {
         self.selectedIndexPaths = [NSMutableArray new];
     }
-    
+//    
     BOOL containsIndexPath = [self.selectedIndexPaths containsObject:indexPath];
     
     if (containsIndexPath) {
         [self.selectedIndexPaths removeObject:indexPath];
-    }else{
-        [self.selectedIndexPaths addObject:indexPath];
+    }else{        [self.selectedIndexPaths addObject:indexPath];
     }
+    
+    
     
     [self.tableView reloadRowsAtIndexPaths:@[indexPath]
                           withRowAnimation:UITableViewRowAnimationFade];
@@ -341,7 +342,11 @@
         NSURL * url= [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w1280", self.movie.backdropPath]];
         NSData *data = [NSData dataWithContentsOfURL:url];
         UIImage *cellimg=[UIImage imageWithData:data];
-        cell.img.image = cellimg;
+        if (self.movie.backdropPath)
+        [cell.img sd_setImageWithURL:url placeholderImage:[UIImage imageNamed: @"movies.png"]];
+        else
+            cell.img.image=[UIImage imageNamed:@"space.jpg"];
+        //cell.img.image = cellimg;
         // Get the Layer of any view
         
         //Title label
@@ -516,7 +521,8 @@
     else if (indexPath.row==1)
     {
         BOOL isSelected = [self.selectedIndexPaths containsObject:indexPath];
-        if(isSelected){
+        if(isSelected)
+        {
        CGFloat maxHeight = MAXFLOAT;
         CGFloat minHeight = 135.0f;
         CGFloat constrainHeight = isSelected?maxHeight:minHeight;
@@ -524,10 +530,14 @@
         CGFloat constrainWidth=381.0f;
         NSString *text       = [self.movie overview];
         CGSize constrainSize = CGSizeMake(constrainWidth, constrainHeight);
-        CGSize labelSize     = [text sizeWithFont:[UIFont systemFontOfSize:20.0f]
-                                constrainedToSize:constrainSize
-                                    lineBreakMode:NSLineBreakByCharWrapping];
-        return MAX(labelSize.height+100.0f, 202.0f);}
+
+            CGRect labelSizer     = [text boundingRectWithSize:constrainSize options:NSStringDrawingTruncatesLastVisibleLine attributes:nil context:nil];
+            CGSize labelsize = [text sizeWithFont:[UIFont systemFontOfSize:18.0f] constrainedToSize:constrainSize];//sizeWithFont:[UIFont systemFontOfSize:20.0f]
+                                //constrainedToSize:constrainSize
+                                    //lineBreakMode:NSLineBreakByCharWrapping];
+            CGFloat height = [self calculateHeightOfLabel:text ofFont:[UIFont systemFontOfSize:20.0f] andlabelWidth:381];
+        return MAX(height+100.0f, 202.0f);
+        }
         return 202;
     }
     else if (indexPath.row==2)
@@ -541,7 +551,16 @@
         else return 0;
     }
 }
-
+- (CGFloat)calculateHeightOfLabel:(NSString *)text ofFont:(UIFont *)font andlabelWidth:(NSInteger)width
+{
+    UILabel *testLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 0)];
+    float height = 0;
+    testLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    testLabel.font = font;
+    testLabel.text = text;
+    height = [testLabel.text boundingRectWithSize:CGSizeMake(width, 0) options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObject:testLabel.font forKey:NSFontAttributeName] context:nil].size.height;
+    return height;
+}
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
     

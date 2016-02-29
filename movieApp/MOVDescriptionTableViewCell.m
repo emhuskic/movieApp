@@ -27,13 +27,13 @@
 }
 - (void)infoButtonTapped:(UIButton *)sender
 {
-     NSLog(@"Pressed");
+//     NSLog(@"Pressed");
     // Assuming there is only one constraint. If not, assign it to another property
     // I put 500, but, again, real size rounded to line height should be here
-    self.descriptionLabel.constraints[0].constant = 500;
-    [UIView animateWithDuration:1 animations:^{
+//    self.descriptionLabel.constraints[0].constant = 500;
+//    [UIView animateWithDuration:1 animations:^{
         // Layouting superview, as its frame can be updated because of a new size
-        [self.descriptionLabel.superview layoutIfNeeded];
-    }];
+//        [self.descriptionLabel.superview layoutIfNeeded];
+//    }];
 }
 @end
