@@ -16,6 +16,11 @@
 @property (strong, nonatomic) NSArray *ratedMovies;
 @end
 @implementation LoginController
+- (void) viewWillAppear:(BOOL)animated
+{
+    self.passwordTextField.secureTextEntry = YES;
+}
+
 - (IBAction)loginButtonTapped:(id)sender {
     if(self.usernameTextField.hasText && self.passwordTextField.hasText)
     {

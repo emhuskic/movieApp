@@ -13,6 +13,7 @@
 
 @interface MOVDescriptionTableViewCell : UITableViewCell 
 
+
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *videosButton;
 @property (weak, nonatomic) IBOutlet UIImageView *img;

@@ -263,6 +263,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     //self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
+    
+    self.tabBarController.tabBar.translucent = NO;
+    
+    
+    
     [super viewWillAppear:animated];
     [[UITabBarItem appearance] setTitleTextAttributes:@{
                                                         NSFontAttributeName:[UIFont fontWithName:@"FontAwesome" size:10.0f]
