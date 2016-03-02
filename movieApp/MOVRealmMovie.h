@@ -46,7 +46,7 @@ RLM_ARRAY_TYPE(MOVRealmGenre)
 @property  NSNumber<RLMDouble> *voteAverage;
 @property  BOOL video;
 @property BOOL isFavorite;
-//@property NSNumber<RLMDouble> *userRating;
+@property NSNumber<RLMDouble> *userRating;
 
 - (id) initWithMOVObject:(MOVMovie *)mov;
 @end

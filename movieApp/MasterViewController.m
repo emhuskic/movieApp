@@ -12,7 +12,7 @@
 #import "MOVMovie.h"
 #import "MOVMovieTableViewCell.h"
 #import "MOVDetailController.h"
-
+#import "FavoritesController.h"
 #import "NSString+FontAwesome.h"
 @interface MasterViewController ()
 
@@ -30,11 +30,10 @@
 
 
 - (void)registerAsObserver {
-    /*
-     Register 'inspector' to receive change notifications for the "openingBalance" property of
-     the 'account' object and specify that both the old and new values of "openingBalance"
-     should be provided in the observe… method.
-     */
+    
+    UINavigationController *navcontroller=(UINavigationController *)[self.tabBarController.viewControllers objectAtIndex:1];
+    FavoritesController *rootViewController = (FavoritesController *)[[navcontroller viewControllers] firstObject];
+    [rootViewController registerAsObserver];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"MoviesAreRated" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logOut:) name:@"LoggedOut" object:nil];
     
@@ -100,7 +99,8 @@
                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                  
                                  self.searchResult = mappingResult.array;
-                                [self.tableView reloadData];
+                             //   [self.tableView reloadData];
+                                 [self.searchDisplayController.searchResultsTableView reloadData];
                              }
                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
                              }];
@@ -206,7 +206,6 @@
     }
     
     self.searchResult = [arr filteredArrayUsingPredicate:resultPredicate];
-    
 }
 
 
@@ -281,11 +280,6 @@
     
     [[[self.tabBarController.tabBar items] objectAtIndex:2 ] setImage: [self imageWithImage:image2 scaledToSize:CGSizeMake(30, 30)]];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-    
-    
-    /* [[self.tabBarController.tabBar.items objectAtIndex:0]  setTitle:[NSString stringWithFormat:@"%@\nFeed",[NSString fontAwesomeIconStringForEnum:FAVideoCamera]]];
-     [[self.tabBarController.tabBar.items objectAtIndex:1]  setTitle:[NSString stringWithFormat:@"%@\nFavorites",[NSString fontAwesomeIconStringForEnum:FAHeartO]]];
-     [[self.tabBarController.tabBar.items objectAtIndex:2]  setTitle:[NSString stringWithFormat:@"%@\nAccount",[NSString fontAwesomeIconStringForEnum:FAUser]]];*/
     
 }
 
@@ -367,7 +361,9 @@
     }
     else
     {
-        return [self.objects count];
+        if (self.movies){
+            return 3;}
+        else return self.objects.count;//  return [self.objects count];
     }
 }
 
@@ -383,7 +379,6 @@
         }
         cell.textLabel.text=[[self.searchResult objectAtIndex:indexPath.row] title];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
         return cell;
     }
     else{
@@ -422,7 +417,6 @@
     }
     controller.navigationItem.leftItemsSupplementBackButton = YES;
 }
-
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

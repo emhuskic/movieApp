@@ -28,6 +28,12 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
 
 }
 
+- (instancetype) init
+{
+    self = [super init];
+    [self registerAsObserver];
+    return self;
+}
 - (void)registerAsObserver {
     /*
      Register 'inspector' to receive change notifications for the "openingBalance" property of
@@ -146,23 +152,19 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
 
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
-    self.selectedMovie.overview=[[self.movies objectAtIndex: indexPath.row] overview];
-    self.selectedMovie.posterPath=[[self.movies objectAtIndex: indexPath.row] posterPath];
-    // self.selectedMovie.genres=[[self.movies objectAtIndex:indexPath.row] genres];
-    self.selectedMovie.imdbID=[[self.movies objectAtIndex: indexPath.row] imdbID];
-    self.selectedMovie.movID=[[self.movies objectAtIndex: indexPath.row] movID];
-    self.selectedMovie.releaseDate=[[self.movies objectAtIndex: indexPath.row] releaseDate];
-    self.selectedMovie.backdropPath=[[self.movies objectAtIndex: indexPath.row] backdropPath];
-    self.selectedMovie.title=[[self.movies objectAtIndex: indexPath.row] title];
-    self.selectedMovie.tagline=[[self.movies objectAtIndex: indexPath.row] tagline];
-    self.selectedMovie.originalLanguage=[[self.movies objectAtIndex: indexPath.row] originalTitle];
-    self.selectedMovie.voteAverage=[[self.movies objectAtIndex: indexPath.row] voteAverage];
-    self.selectedMovie.voteCount=[[self.movies objectAtIndex: indexPath.row] voteCount];
-    self.selectedMovie.isFavorite=[[self.movies objectAtIndex:indexPath.row] isFavorite];
-    
+    NSNumber *num;
+    for (int i=0; i<[self.ratedMovies count]; i++)
+    {
+        if ([[[self.ratedMovies objectAtIndex:i] movID] isEqual:[[self.movies objectAtIndex:indexPath.row] movID]])
+        {
+            num=[[self.ratedMovies objectAtIndex:i] userRating];
+            break;
+        }
+        else
+            num=0;
+    }
     controller.movie= [[MOVMovie alloc] initWithRLMObject: [self.movies objectAtIndex:indexPath.row]];
-    // controller.genres =[[NSArray alloc] initWithObjects:[[self.movies objectAtIndex:indexPath.row] genres], nil];
-    //   [self performSegueWithIdentifier: @"showDetail" sender: self];
+    controller.movie.userRating=num;
     NSLog(@"Default Display Controller");
 }
 

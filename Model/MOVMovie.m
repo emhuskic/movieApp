@@ -43,6 +43,7 @@
     self.imdbID=RLMmov.imdbID;
     self.isFavorite=RLMmov.isFavorite;
     self.voteAverage=RLMmov.voteAverage;
+    self.userRating=RLMmov.userRating;
     return self;
 }
 

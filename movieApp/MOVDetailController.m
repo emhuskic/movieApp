@@ -44,6 +44,14 @@
 
 @implementation MOVDetailController
 
+
+
+- (instancetype) init
+{
+    self = [super init];
+    [self registerAsObserver];
+    return self;
+}
 - (void) refreshDetail:(MasterViewController *)view
 {
     [self.tableView reloadData];
@@ -66,7 +74,7 @@
 }
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void) updateView:(NSNotification*)notification
@@ -249,10 +257,8 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self loadGenres];
+    
     [self.navigationController setNavigationBarHidden:NO animated:NO];
-    [self.tableView reloadData];
-   
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -339,9 +345,9 @@
             cell = [[MOVUpperImageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
         //Upper image
-        NSURL * url= [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w1280", self.movie.backdropPath]];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        UIImage *cellimg=[UIImage imageWithData:data];
+        NSURL * url= [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w640", self.movie.backdropPath]];
+       // NSData *data = [NSData dataWithContentsOfURL:url];
+        //UIImage *cellimg=[UIImage imageWithData:data];
         if (self.movie.backdropPath)
         [cell.img sd_setImageWithURL:url placeholderImage:[UIImage imageNamed: @"movies.png"]];
         else
@@ -395,18 +401,22 @@
         {
             cell = [[MOVDescriptionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
-        NSURL * url= [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w1280", self.movie.posterPath]];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        cell.img.image = [UIImage imageWithData:data];
+        NSURL * url= [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", self.movie.posterPath]];
+       // NSData *data = [NSData dataWithContentsOfURL:url];
+        //cell.img.image = [UIImage imageWithData:data];
+        [cell.img sd_setImageWithURL:url placeholderImage:[UIImage imageNamed: @"space.png"]];
         
         [cell.videosButton setTitle:[NSString stringWithFormat:@"%@ Videos",[NSString fontAwesomeIconStringForEnum:FAFilm]]forState:UIControlStateNormal];
         [cell.smallVideosButton setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAAngleRight]]forState:UIControlStateNormal];
         [cell.descriptionButton setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAInfoCircle]]forState:UIControlStateNormal];
         cell.descriptionLabel.text=[self.movie overview];
-        [cell.smallVideosButton addTarget:self action:@selector(videosButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+       [cell.smallVideosButton addTarget:self action:@selector(videosButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.videosButton addTarget:self action:@selector(videosButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         BOOL isSelected = [self.selectedIndexPaths containsObject:indexPath];
         cell.descriptionLabel.numberOfLines = isSelected?0:7;
+        
        // cell.descriptionLabel.adjustsFontSizeToFitWidth=isSelected?YES:NO;
         [cell.descriptionButton addTarget:self action:@selector(infoButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
         [cell.descriptionButton setTag:indexPath.row];
@@ -547,7 +557,7 @@
     else
     {
         if(self.cast)
-            return 163;
+            return 178;
         else return 0;
     }
 }

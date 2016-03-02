@@ -37,7 +37,7 @@
     self.imdbID=mov.imdbID;
     self.isFavorite=mov.isFavorite;
     self.voteAverage=mov.voteAverage;
+    self.userRating=mov.userRating;
     return self;
 }
-
 @end

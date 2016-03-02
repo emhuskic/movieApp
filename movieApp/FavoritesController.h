@@ -41,4 +41,5 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
 @property RLMArray<MOVRealmMovie*><MOVRealmMovie> *movies;
 @property (strong, nonatomic) MOVDetailController *controller;
 @property (strong, nonatomic) MOVMovie *selectedMovie;
+- (void) registerAsObserver;
 @end
