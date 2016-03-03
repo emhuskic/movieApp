@@ -71,6 +71,7 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     self.navigationController.topViewController.title = @"Favorites";
     self.movies = [MOVRealmMovie allObjects];
     self.selectedMovie =[[MOVMovie alloc] init];
+    
 }
 - (void) viewDidAppear:(BOOL)animated
 {

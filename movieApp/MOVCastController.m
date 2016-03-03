@@ -128,6 +128,9 @@
                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                  
                                  self.person=[mappingResult.array firstObject];
+                                 [[self navigationController] setNavigationBarHidden:NO animated:YES];
+                                 self.navigationController.topViewController.title = [NSString stringWithFormat:@"%@", [self.person name]];
+                                 self.navigationController.navigationBar.hidden = NO;
                                  [self.tableView reloadData];
                                  //[self configureView];
                              }
@@ -165,7 +168,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     [self loadPerson];
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

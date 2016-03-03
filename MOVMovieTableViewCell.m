@@ -56,7 +56,7 @@
         NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[mov releaseDate]];
         customCell.yearLabel.text=[NSString stringWithFormat:@"%ld",(long)[components year]];
         customCell.titleLabel.text=[mov title];
-        [customCell.titleLabel sizeToFit];
+       // [customCell.titleLabel sizeToFit];
         NSURL * urlLower = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", mov.posterPath]];
         [customCell.img sd_setImageWithURL:urlLower];
         customCell.img.layer.cornerRadius=5;

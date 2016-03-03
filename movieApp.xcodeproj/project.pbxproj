@@ -310,6 +310,43 @@
 			path = scss;
 			sourceTree = "<group>";
 		};
+		A04D34151C88289B00D39AC0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0E3541C1C736E4700E81503 /* MOVCastController.h */,
+				A0E3541D1C736E4700E81503 /* MOVCastController.m */,
+				A09F020F1C60B48E002E128D /* MasterViewController.h */,
+				A09F02101C60B48E002E128D /* MasterViewController.m */,
+				A0E354131C723A2100E81503 /* MOVDetailController.h */,
+				A0E354141C723A2100E81503 /* MOVDetailController.m */,
+				A01B5BA11C74B1530017CEEC /* FavoritesController.h */,
+				A01B5BA21C74B1530017CEEC /* FavoritesController.m */,
+				A08CE07A1C8093CA00A49362 /* MOVVideosController.h */,
+				A08CE07B1C8093CA00A49362 /* MOVVideosController.m */,
+				A04D34101C8250E400D39AC0 /* LoginController.h */,
+				A04D34111C8250E400D39AC0 /* LoginController.m */,
+				A04D340E1C82500800D39AC0 /* AccountController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A04D34161C8828C600D39AC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A06625951C64D16300B1B050 /* MOVMovieTableViewCell.h */,
+				A06625961C64D16300B1B050 /* MOVMovieTableViewCell.m */,
+				A06625A21C64EC0700B1B050 /* MOVMovieCollectionViewCell.h */,
+				A06625A31C64EC0700B1B050 /* MOVMovieCollectionViewCell.m */,
+				A0E353DE1C6B39ED00E81503 /* MOVMovieStarRateView.h */,
+				A0E353DF1C6B39ED00E81503 /* MOVMovieStarRateView.m */,
+				A01B5BA41C74C46D0017CEEC /* MOVFavoritesTableViewCell.h */,
+				A01B5BA51C74C46D0017CEEC /* MOVFavoritesTableViewCell.m */,
+				A0E3541B1C736E1700E81503 /* Cast View Cells */,
+				A0E3541A1C736DB100E81503 /* Detail Cells */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		A09F01FD1C60B48E002E128D = {
 			isa = PBXGroup;
 			children = (
@@ -332,30 +369,9 @@
 			isa = PBXGroup;
 			children = (
 				A09F02231C60B57A002E128D /* Model */,
-				A06625951C64D16300B1B050 /* MOVMovieTableViewCell.h */,
-				A06625961C64D16300B1B050 /* MOVMovieTableViewCell.m */,
-				A06625A21C64EC0700B1B050 /* MOVMovieCollectionViewCell.h */,
-				A06625A31C64EC0700B1B050 /* MOVMovieCollectionViewCell.m */,
-				A0E353DE1C6B39ED00E81503 /* MOVMovieStarRateView.h */,
-				A0E353DF1C6B39ED00E81503 /* MOVMovieStarRateView.m */,
-				A09F020F1C60B48E002E128D /* MasterViewController.h */,
-				A09F02101C60B48E002E128D /* MasterViewController.m */,
-				A0E354131C723A2100E81503 /* MOVDetailController.h */,
-				A0E354141C723A2100E81503 /* MOVDetailController.m */,
-				A0E3541A1C736DB100E81503 /* Detail Cells */,
-				A0E3541C1C736E4700E81503 /* MOVCastController.h */,
-				A0E3541D1C736E4700E81503 /* MOVCastController.m */,
-				A0E3541B1C736E1700E81503 /* Cast View Cells */,
-				A01B5BA11C74B1530017CEEC /* FavoritesController.h */,
-				A01B5BA21C74B1530017CEEC /* FavoritesController.m */,
-				A01B5BA41C74C46D0017CEEC /* MOVFavoritesTableViewCell.h */,
-				A01B5BA51C74C46D0017CEEC /* MOVFavoritesTableViewCell.m */,
-				A08CE07A1C8093CA00A49362 /* MOVVideosController.h */,
-				A08CE07B1C8093CA00A49362 /* MOVVideosController.m */,
+				A04D34161C8828C600D39AC0 /* View */,
+				A04D34151C88289B00D39AC0 /* Controller */,
 				A0E354161C72421B00E81503 /* Main.storyboard */,
-				A04D34101C8250E400D39AC0 /* LoginController.h */,
-				A04D34111C8250E400D39AC0 /* LoginController.m */,
-				A04D340E1C82500800D39AC0 /* AccountController.swift */,
 				A09F02181C60B48E002E128D /* Assets.xcassets */,
 				A09F021A1C60B48E002E128D /* LaunchScreen.storyboard */,
 				A09F021D1C60B48E002E128D /* Info.plist */,
