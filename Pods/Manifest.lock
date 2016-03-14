@@ -1,5 +1,6 @@
 PODS:
   - AFNetworking (1.3.4)
+  - BEMSimpleLineGraph (4.1)
   - EDStarRating (1.1)
   - FastImageCache (1.5.1)
   - FontAwesome-iOS (0.0.4)
@@ -36,6 +37,7 @@ PODS:
   - youtube-ios-player-helper (0.1.5)
 
 DEPENDENCIES:
+  - BEMSimpleLineGraph
   - EDStarRating
   - FastImageCache (= 1.5.1)
   - FontAwesome-iOS
@@ -57,6 +59,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
+  BEMSimpleLineGraph: 44fd451f27f8e9cf96f2da5bea27603093576dd1
   EDStarRating: a41a6440a945020745d0e9ff8ada7d1afa952114
   FastImageCache: 2e7a6f677b15336eb3d1a4092a494676256c891d
   FontAwesome-iOS: 0fd503f7ae46780e17c2dd98e70fed30b5f90322

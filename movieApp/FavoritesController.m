@@ -12,13 +12,35 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MOVDetailController.h"
 #import "NSString+FontAwesome.h"
-
+#import <CoreSpotlight/CoreSpotlight.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 RLM_ARRAY_TYPE(MOVRealmMovie)
 @interface FavoritesController()
 @property (strong, nonatomic) NSArray *ratedMovies;
 @end
 @implementation FavoritesController
 
+
+- (void) indexItem:(int)which
+{
+    MOVMovie *mov=[[MOVMovie alloc] initWithRLMObject:[self.movies objectAtIndex:which]];
+    CSSearchableItemAttributeSet *attributeSet=[[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeText];
+    attributeSet.title = mov.title;
+    attributeSet.contentDescription = mov.overview;
+    CSSearchableItem *item;
+    NSString *identifier = [NSString stringWithFormat:@"%@",attributeSet.title];
+    item = [[CSSearchableItem alloc] initWithUniqueIdentifier:identifier domainIdentifier:@"com.example.apple_sample.theapp.search" attributeSet:attributeSet];
+    
+    // Index the item.
+    [[CSSearchableIndex defaultSearchableIndex] indexSearchableItems:@[item] completionHandler: ^(NSError * __nullable error) {
+        if (!error)
+            NSLog(@"Search item indexed");
+        else {
+            NSLog(@"******************* E R R O R *********************");}}];
+
+        
+   
+}
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

@@ -14,6 +14,10 @@
 #import "MOVDetailController.h"
 #import "FavoritesController.h"
 #import "NSString+FontAwesome.h"
+#import "movieApp-Swift.h"
+
+@class AccountController;
+
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
@@ -31,9 +35,11 @@
 
 - (void)registerAsObserver {
     
-    UINavigationController *navcontroller=(UINavigationController *)[self.tabBarController.viewControllers objectAtIndex:1];
+    UINavigationController *navcontroller=(UINavigationController *)[self.tabBarController.viewControllers objectAtIndex:2];
     FavoritesController *rootViewController = (FavoritesController *)[[navcontroller viewControllers] firstObject];
     [rootViewController registerAsObserver];
+    AccountController *accController = (AccountController *)[[navcontroller viewControllers] firstObject];
+    [accController registerAsObserver];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"MoviesAreRated" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logOut:) name:@"LoggedOut" object:nil];
     

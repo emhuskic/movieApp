@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BEMSimpleLineGraph.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>EDStarRating.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,12 +77,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>02A157D85E7FB92E64BE99F977842176</key>
+		<key>00DA79E53E75E98DF322FE5C2484FE15</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>03EF8C0127B79F48CC34F2001636CDDE</key>
+		<key>02A157D85E7FB92E64BE99F977842176</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,7 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2FB9B4A9EE200E70633809FABC4821D3</key>
+		<key>0D3A2255DD8FDD12BBA7AF5EC328AB34</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>145587FCB82EE9D6BA93B4A86DA3A0C5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +107,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7DFDCD2D9E627D3B5AE83E1A694898D0</key>
+		<key>78C8AD47D22E340D575CD780FE58BADA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8CF0C99F4B3CAE71E495ADBF8790F1B0</key>
+		<key>7F6D6DF480A3CA0209A2D955FB6C41D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>98E7EE0AA91B36DEBA4C278F599AEE3A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,22 +132,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AF8B244D8FD75374FD2B9BF8976AA2C4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C47E006176ABF4755350B88C088C3F0D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D5E0916F72202C432C7EF78B269333EE</key>
+		<key>CE8BBC57EC649812ABF87EC2C3519835</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DCC59936EF32674A762B9986103177D2</key>
+		<key>CEA8CCB94C8441874368C537CC03C944</key>
 		<dict>
 			<key>primary</key>
 			<true/>

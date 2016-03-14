@@ -279,8 +279,13 @@
     UIImage *image1 = [UIImage imageNamed:@"videocamicon.png"];
     [[[self.tabBarController.tabBar items] objectAtIndex:0 ] setImage: [self imageWithImage:image1 scaledToSize:CGSizeMake(30, 30)]];
     UIImage *image2 = [UIImage imageNamed:@"fa-user.png"];
-    
     [[[self.tabBarController.tabBar items] objectAtIndex:2 ] setImage: [self imageWithImage:image2 scaledToSize:CGSizeMake(30, 30)]];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *dateComponent = [calendar components:(NSWeekOfYearCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit |NSWeekdayCalendarUnit) fromDate:[NSDate date]];
+    NSLog(@"Datum je %@",dateComponent);
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"LogInSuccessful" object:dateComponent];
+    NSDictionary *dict = @{@"weekday" : [NSNumber numberWithInt:dateComponent.weekday], @"weekOfYear":[NSNumber numberWithInt:dateComponent.weekOfYear]};
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"movieViewed" object:nil userInfo:dict];
     [[self tableView] reloadData];
 }
 

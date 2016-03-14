@@ -9,14 +9,29 @@
 #import "AppDelegate.h"
 #import <RestKit/CoreData.h>
 #import <RestKit/RestKit.h>
-
+#import <CoreSpotlight/CoreSpotlight.h>
 #import "MOVMovie.h"
+#import "MOVDetailController.h"
 @interface AppDelegate () <UISplitViewControllerDelegate>
 - (void)configureRestKit;
 - (void) imageCaching;
 @end
 
 @implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray * __nullable restorableObjects))restorationHandler
+{
+    if ([[userActivity activityType] isEqualToString:CSSearchableItemActionType])
+    {
+        NSString *uniqueIdentifier = [userActivity.userInfo objectForKey:CSSearchableItemActivityIdentifier];
+        NSLog(@"%@",uniqueIdentifier);
+        // Launch Detail controller
+        MOVDetailController *detailVC = [[MOVDetailController alloc] init];
+        
+        [(UINavigationController *)self.window.rootViewController pushViewController:detailVC animated:YES];
+    }
+    return YES;
+}
 /*
 - (void) imageCaching
 {

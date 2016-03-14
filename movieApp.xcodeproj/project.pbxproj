@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		51DB8DA0A644345AADCF3F7C /* libPods-movieApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE210623EEC3E4A61D5EB440 /* libPods-movieApp.a */; };
+		6E4530DBD60F02F2F74C8256 /* libPods-movieApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2111A376C92985556B1CFBC /* libPods-movieApp.a */; };
 		A01B5BA01C749E4E0017CEEC /* MOVRealmMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = A01B5B9F1C749E4E0017CEEC /* MOVRealmMovie.m */; };
 		A01B5BA31C74B1530017CEEC /* FavoritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01B5BA21C74B1530017CEEC /* FavoritesController.m */; };
 		A01B5BA61C74C46D0017CEEC /* MOVFavoritesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A01B5BA51C74C46D0017CEEC /* MOVFavoritesTableViewCell.m */; };
@@ -211,7 +211,7 @@
 		A0E3542B1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVCastMovieCollectionViewCell.h; sourceTree = "<group>"; };
 		A0E3542C1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVCastMovieCollectionViewCell.m; sourceTree = "<group>"; };
 		A3F45D917B677418DE3994AE /* Pods-movieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.debug.xcconfig"; sourceTree = "<group>"; };
-		BE210623EEC3E4A61D5EB440 /* libPods-movieApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movieApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2111A376C92985556B1CFBC /* libPods-movieApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movieApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE31C9C8EE8F0F7ED4F5DE42 /* Pods-movieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -220,7 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51DB8DA0A644345AADCF3F7C /* libPods-movieApp.a in Frameworks */,
+				6E4530DBD60F02F2F74C8256 /* libPods-movieApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +466,7 @@
 		F8ABC589A075389147F3BB51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BE210623EEC3E4A61D5EB440 /* libPods-movieApp.a */,
+				B2111A376C92985556B1CFBC /* libPods-movieApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
