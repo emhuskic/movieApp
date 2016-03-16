@@ -15,7 +15,8 @@
 #import "FavoritesController.h"
 #import "NSString+FontAwesome.h"
 #import "movieApp-Swift.h"
-
+#import <CoreSpotlight/CoreSpotlight.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 @class AccountController;
 
 @interface MasterViewController ()
@@ -32,12 +33,28 @@
 
 @implementation MasterViewController
 
-
+- (void) detailsegue:(NSString *)movietitle
+{
+    RLMArray<MOVRealmMovie*><MOVRealmMovie> *movs= [MOVRealmMovie allObjects];
+    for (int i=0; i<movs.count; i++)
+    {
+        if([[[movs objectAtIndex:i] title] isEqualToString:movietitle])
+        {
+            self.movie=[[MOVMovie alloc] initWithRLMObject:[movs objectAtIndex:i]];
+           // controller.movie=[[MOVMovie alloc] initWithRLMObject:[movs objectAtIndex:i]];
+            [self performSegueWithIdentifier:@"showDetail" sender:self];
+            break;
+        }
+    }
+}
 - (void)registerAsObserver {
     
-    UINavigationController *navcontroller=(UINavigationController *)[self.tabBarController.viewControllers objectAtIndex:2];
+    UINavigationController *navcontroller=(UINavigationController *)[self.tabBarController.viewControllers objectAtIndex:1];
     FavoritesController *rootViewController = (FavoritesController *)[[navcontroller viewControllers] firstObject];
+ //   [rootViewController setupCoreSpotlightSearch];
     [rootViewController registerAsObserver];
+    [rootViewController setupCoreSpotlightSearch];
+    navcontroller=(UINavigationController *)[self.tabBarController.viewControllers objectAtIndex:2];
     AccountController *accController = (AccountController *)[[navcontroller viewControllers] firstObject];
     [accController registerAsObserver];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"MoviesAreRated" object:nil];
@@ -265,12 +282,16 @@
     UIGraphicsEndImageContext();
     return newImage;
 }
-
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"masterViewInactive" object:nil];
+    
+}
 - (void)viewWillAppear:(BOOL)animated {
     //self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
     
     self.tabBarController.tabBar.translucent = NO;
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"masterViewActive" object:nil];
     
     
     [super viewWillAppear:animated];

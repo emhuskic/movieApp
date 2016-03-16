@@ -12,8 +12,11 @@ class AccountController: UIViewController, BEMSimpleLineGraphDelegate, BEMSimple
     
     @IBOutlet weak var graphView: BEMSimpleLineGraphView!
     @IBOutlet weak var logButton: UIButton!
+    var realm: RLMRealm!
     var movies:[Int:Int] = [0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0];
+    var visitedMovies=[MOVMovie]()
     var i:CGFloat = 2.3
+    var gradient:CGGradient?
     func registerAsObserver(){
         NSNotificationCenter.defaultCenter().removeObserver(self, name:"movieViewed", object:nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "movieAdd:", name:"movieViewed", object: nil)
@@ -77,7 +80,7 @@ class AccountController: UIViewController, BEMSimpleLineGraphDelegate, BEMSimple
             green:0.0,
             blue:0.0,
             alpha:1.0);
-        graphView.averageLine.width = 2.5;
+        graphView.averageLine.width = 2;
         graphView.enableTouchReport = true;
         graphView.enablePopUpReport = true;
         graphView.enableYAxisLabel = true;
@@ -96,12 +99,23 @@ class AccountController: UIViewController, BEMSimpleLineGraphDelegate, BEMSimple
         graphView.backgroundColor = color;
         // Dash the y reference lines
        // Show the y axis values with this format string
-       graphView.formatStringForValues = "%.1f";
-       
+       graphView.formatStringForValues = "%.0f";
+        let colorspace = CGColorSpaceCreateDeviceRGB();
+        let num_locations:size_t = 2;
+        let locations:[CGFloat]=[ 0.0, 1.0 ];
+        let components:[CGFloat] = [
+            1.0, 1.0, 1.0, 1.0,
+            1.0, 1.0, 1.0, 0.0
+        ];
+        gradient=CGGradientCreateWithColorComponents(colorspace, components, locations, num_locations);
+        graphView.gradientBottom=gradient!;
+        graphView.enableBezierCurve=false;
           }
-    
+    func numberOfGapsBetweenLabelsOnLineGraph(graph: BEMSimpleLineGraphView) -> Int {
+        return 2;
+    }
     func movieAdd(notification:NSNotification){
-        let date = NSDate()
+        /*let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Hour, .Minute, .WeekOfYear, .Weekday, .Day, .Month, .Year], fromDate: date)
         if components.weekOfYear == notification.userInfo!["weekOfYear"] as! Int
@@ -110,7 +124,7 @@ class AccountController: UIViewController, BEMSimpleLineGraphDelegate, BEMSimple
             val=val!+1;
             var oldVal = movies.updateValue(val!, forKey: (notification.userInfo!["weekday"] as? Int)!)
             if ((graphView) != nil) {graphView.reloadGraph()};
-        }
+        }*/
         
     }
     func LogInOut(notification: NSNotification){
@@ -127,7 +141,33 @@ class AccountController: UIViewController, BEMSimpleLineGraphDelegate, BEMSimple
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        realm = RLMRealm.defaultRealm()
+        let arr=MOVRealmVisitedMovie.allObjects();
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Hour, .Minute, .WeekOfYear, .Weekday, .Day, .Month, .Year], fromDate: NSDate())
+        for var i = 0; UInt(i) < arr.count; i++ {
+                     let components2=calendar.components([.Hour, .Minute, .WeekOfYear, .Weekday, .Day, .Month, .Year], fromDate:MOVRealmVisitedMovie(value: arr.objectAtIndex(UInt(i))).lastVisited)
+            
+            var exists=false;
+            if components.weekOfYear == components2.weekOfYear
+            {
+                for var j=0; j<visitedMovies.count; j++
+                {
+                    if(visitedMovies[j].title==arr[UInt(i)].title) {exists=true; break;}
+                }
+                if !exists
+                {
+                visitedMovies.append(MOVMovie.init(RLMVisitedObject: MOVRealmVisitedMovie(value: arr.objectAtIndex(UInt(i)))));
+                var val=movies[(components2.weekday)];
+                val=val!+1;
+                var oldVal = movies.updateValue(val!, forKey: components2.weekday)
+                }
+        
+            }
+            
+        }
         graphView.reloadGraph();
+        
         if loggedIn==true
         {
            logButton.setTitle("Log Out", forState: UIControlState.Normal)

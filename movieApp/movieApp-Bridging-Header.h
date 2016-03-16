@@ -3,3 +3,4 @@
 //
 #import "BEMSimpleLineGraphView.h"
 #import "MOVMovie.h"
+#import "MOVRealmVisitedMovie.h"

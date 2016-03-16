@@ -1,15 +1,15 @@
 //
-//  MOVRealmMovie.m
+//  MOVRealmVisitedMovie.m
 //  movieApp
 //
-//  Created by Adis Cehajic on 17/02/16.
+//  Created by Adis Cehajic on 16/03/16.
 //  Copyright © 2016 EminaHuskic. All rights reserved.
 //
 
-#import "MOVRealmMovie.h"
+#import "MOVRealmVisitedMovie.h"
+#import "MOVMovie.h"
 
-@implementation MOVRealmMovie
-
+@implementation MOVRealmVisitedMovie
 - (id) initWithMOVObject:(MOVMovie *)mov
 {
     self=[super init];

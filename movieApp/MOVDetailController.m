@@ -26,6 +26,7 @@
 #import "MOVVideosController.h"
 #import "MOVVideo.h"
 #import "MOVUser.h"
+#import "MOVRealmVisitedMovie.h"
 @interface MOVDetailController()
 @property (strong, nonatomic) NSArray *cast;
 @property (strong, nonatomic) MOVPerson *selectedCast;
@@ -43,8 +44,6 @@
 @end
 
 @implementation MOVDetailController
-
-
 
 - (instancetype) init
 {
@@ -257,8 +256,27 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
     [self.navigationController setNavigationBarHidden:NO animated:NO];
+    self.movie.lastVisited=[NSDate date];
+    MOVRealmVisitedMovie *mov=[[MOVRealmVisitedMovie alloc]initWithMOVObject:self.movie];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"title = %@",
+                         [self.movie title]];
+    RLMResults<MOVRealmVisitedMovie *> *movies=[MOVRealmVisitedMovie objectsWithPredicate:pred];
+    if (movies.count)
+    {
+        RLMArray *arr = [[RLMArray alloc] initWithObjectClassName:@"MOVRealmVisitedMovie"];
+        [arr addObjects:movies];
+        [realm beginWriteTransaction];
+        [realm deleteObject:[arr firstObject]];
+        [realm addObject:mov];
+        [realm commitWriteTransaction];
+    }
+    else
+    {
+        [realm beginWriteTransaction];
+        [realm addObject:mov];
+        [realm commitWriteTransaction];
+    }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -285,6 +303,8 @@
     NSLog(@"Datum je %@",dateComponent);
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"LogInSuccessful" object:dateComponent];
     NSDictionary *dict = @{@"weekday" : [NSNumber numberWithInt:dateComponent.weekday], @"weekOfYear":[NSNumber numberWithInt:dateComponent.weekOfYear]};
+    self.movie.lastVisited=[NSDate date];
+
     [[NSNotificationCenter defaultCenter] postNotificationName:@"movieViewed" object:nil userInfo:dict];
     [[self tableView] reloadData];
 }
@@ -503,6 +523,7 @@
         NSString *str=[NSString fontAwesomeIconStringForEnum:FAHeartO];
         [button setTitle:str forState:UIControlStateNormal];
         [button setTag:1];
+        
         self.movie.isFavorite=NO;
         
     }
@@ -517,13 +538,9 @@
         [button setTitle:str forState:UIControlStateNormal];
         [button setTag:2];
         
-        
-        
-        
     }
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"FavoritesUpdated" object:nil];
     [self.delegate updateFavorites:self];
-    
     NSLog(@"tapped button in cell at row %i", tag);
 }
 

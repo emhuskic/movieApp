@@ -1,27 +1,23 @@
 //
+//  MOVRealmVisitedMovie.h
+//  movieApp
+//
+//  Created by Adis Cehajic on 16/03/16.
+//  Copyright © 2016 EminaHuskic. All rights reserved.
+//
+
+#import <Realm/Realm.h>
+#import "MOVRealmGenre.h"
+RLM_ARRAY_TYPE(MOVRealmGenre)
+@class MOVMovie;
+@interface MOVRealmVisitedMovie : RLMObject
+//
 //  MOVRealmMovie.h
 //  movieApp
 //
 //  Created by Adis Cehajic on 17/02/16.
 //  Copyright © 2016 EminaHuskic. All rights reserved.
 //
-
-#import "MOVMovie.h"
-#import <Realm/Realm.h>
-#import "MOVRealmGenre.h"
-@class MOVMovie;
-/*
- @property BOOL value;	@property NSNumber<RLMBool> *value;
- Int	@property int value;	@property NSNumber<RLMInt> *value;
- Float	@property float value;	@property NSNumber<RLMFloat> *value;
- Double	@property double value;	@property NSNumber<RLMDouble> *value;
- String	@property NSString *value; †	@property NSString *value;
- Data	@property NSData *value; †	@property NSData *value;
- Date	@property NSDate *value; †	@property NSDate *value;
- Object	n/a: must be optional	@property Object *value;*/
-
-RLM_ARRAY_TYPE(MOVRealmGenre)
-@interface MOVRealmMovie : RLMObject
 @property  NSNumber<RLMBool>* adult;
 @property  NSNumber<RLMInt> *movID;
 @property  NSString *backdropPath;
@@ -50,4 +46,3 @@ RLM_ARRAY_TYPE(MOVRealmGenre)
 @property NSDate *lastVisited;
 - (id) initWithMOVObject:(MOVMovie *)mov;
 @end
-

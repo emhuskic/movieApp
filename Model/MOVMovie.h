@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MOVGenre.h"
 #import "MOVRealmMovie.h"
-
+#import "MOVRealmVisitedMovie.h"
 @class MOVRealmMovie;
 
 @interface MOVMovie : NSObject
@@ -41,7 +41,8 @@
 @property (nonatomic) NSNumber *userRating;
 @property (nonatomic, strong) NSNumber *voteAverage;
 @property (nonatomic, strong) NSNumber *runtime;
-
+@property NSDate *lastVisited;
 
 - (id) initWithRLMObject:(MOVRealmMovie *)RLMmov;
+- (id) initWithRLMVisitedObject:(MOVRealmVisitedMovie *)RLMmov;
 @end

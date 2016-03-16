@@ -19,28 +19,40 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
 @property (strong, nonatomic) NSArray *ratedMovies;
 @end
 @implementation FavoritesController
-
-
-- (void) indexItem:(int)which
+- (void) detailsegue:(NSString *)movietitle
 {
-    MOVMovie *mov=[[MOVMovie alloc] initWithRLMObject:[self.movies objectAtIndex:which]];
-    CSSearchableItemAttributeSet *attributeSet=[[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeText];
-    attributeSet.title = mov.title;
-    attributeSet.contentDescription = mov.overview;
-    CSSearchableItem *item;
-    NSString *identifier = [NSString stringWithFormat:@"%@",attributeSet.title];
-    item = [[CSSearchableItem alloc] initWithUniqueIdentifier:identifier domainIdentifier:@"com.example.apple_sample.theapp.search" attributeSet:attributeSet];
-    
-    // Index the item.
-    [[CSSearchableIndex defaultSearchableIndex] indexSearchableItems:@[item] completionHandler: ^(NSError * __nullable error) {
-        if (!error)
-            NSLog(@"Search item indexed");
-        else {
-            NSLog(@"******************* E R R O R *********************");}}];
-
-        
-   
+    for (int i=0; i<self.movies.count; i++)
+    {
+        if([[[self.movies objectAtIndex:i] title] isEqualToString:movietitle])
+        {
+            self.selectedMovie=[[MOVMovie alloc] initWithRLMObject:[self.movies objectAtIndex:i]];
+            [self performSegueWithIdentifier:@"showDetail" sender:self];
+            break;}
+    }
 }
+-(void) setupCoreSpotlightSearch
+{
+    /*CSSearchableItemAttributeSet *attributeset=[[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeImage];
+    attributeset.title=@"My first spotlight search";
+    attributeset.contentDescription=@"";
+    attributeset.keywords=[NSArray arrayWithObjects:@"Hello", @"Welcome", @"Spotlight", nil];
+    UIImage *image=[UIImage imageNamed:@"fa-user.png"];
+    NSData *imageData=[NSData dataWithData:UIImagePNGRepresentation(image)];
+    attributeset.thumbnailData=imageData;
+    
+    CSSearchableItem *item=[[CSSearchableItem alloc]initWithUniqueIdentifier:@"com.deeplink"  domainIdentifier:@"spotlight.sample" attributeSet:attributeset];
+    [[CSSearchableIndex defaultSearchableIndex] indexSearchableItems:@[item] completionHandler:^(NSError *__nullable error)
+     {
+         if(!error) NSLog(@"uspjelo");
+     }];*/
+    self.movies = [MOVRealmMovie allObjects];
+    self.selectedMovie =[[MOVMovie alloc] init];
+    for (int i=0; i<self.movies.count; i++)
+    {
+        [self indexing:i];
+    }
+}
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -65,8 +77,13 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"MoviesAreRated" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logOut:) name:@"LoggedOut" object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateFavs:) name:@"FavoritesUpdated" object:nil];
 }
 
+- (void)updateFavs:(NSNotification*)notification
+{
+    [self setupCoreSpotlightSearch];
+}
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -85,16 +102,33 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     [[self tableView] reloadData];
 }
 
+-(void)indexing:(int)which
+{
+    MOVMovie *mov=[[MOVMovie alloc] initWithRLMObject:[self.movies objectAtIndex:which]];
+    CSSearchableItemAttributeSet *attributeSet=[[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeText];
+    attributeSet.title = mov.title;
+    attributeSet.contentDescription = mov.overview;
+    CSSearchableItem *item;
+    NSString *identifier = [NSString stringWithFormat:@"%@",attributeSet.title];
+    item = [[CSSearchableItem alloc] initWithUniqueIdentifier:identifier domainIdentifier:@"com.example.apple_sample.theapp.search" attributeSet:attributeSet];
+    
+    // Index the item.
+    [[CSSearchableIndex defaultSearchableIndex] indexSearchableItems:@[item] completionHandler: ^(NSError * __nullable error) {
+        if (!error)
+            NSLog(@"Search item indexed");
+        else {
+            NSLog(@"******************* E R R O R *********************");}}];
+}
 - (void) viewDidLoad
 {
     MOVDetailController *detailViewController = [[MOVDetailController alloc] init];
     // Assign self as the delegate for the child view controller
     detailViewController.delegate = self;
     self.navigationController.topViewController.title = @"Favorites";
-    self.movies = [MOVRealmMovie allObjects];
-    self.selectedMovie =[[MOVMovie alloc] init];
+    [self setupCoreSpotlightSearch];
+   }
     
-}
+
 - (void) viewDidAppear:(BOOL)animated
 {
     [self.tableView reloadData];

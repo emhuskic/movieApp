@@ -22,7 +22,7 @@
             <objects>
                 <tableViewController id="gYn-oz-p5l" customClass="MOVDetailController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tdR-vU-ed7">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -419,15 +419,15 @@
                         <viewControllerLayoutGuide type="bottom" id="tSq-wq-1Kl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Htc-HS-dih">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLb-oQ-QYc" customClass="YTPlayerView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NLb-oQ-QYc" customClass="YTPlayerView">
                                 <rect key="frame" x="0.0" y="40" width="600" height="299"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKr-Xd-34c">
-                                <rect key="frame" x="279" y="364" width="42" height="21"/>
+                                <rect key="frame" x="279" y="428" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -457,7 +457,7 @@
             <objects>
                 <tableViewController id="8G1-lo-zH1" customClass="MOVCastController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="uF8-vB-kU1">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -878,6 +878,7 @@
                         <segue destination="9PB-gy-ER5" kind="relationship" relationship="viewControllers" id="1uu-ih-IAd"/>
                         <segue destination="BLU-SP-zPV" kind="relationship" relationship="viewControllers" id="6ef-ve-5sv"/>
                         <segue destination="Def-Gt-0Kr" kind="relationship" relationship="viewControllers" id="jVz-fU-CzY"/>
+                        <segue destination="gYn-oz-p5l" kind="show" identifier="showDetail" id="A7e-5W-z74"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8I-Ld-Zh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1189,7 +1190,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yRj-wD-cpV"/>
+        <segue reference="A7e-5W-z74"/>
         <segue reference="9gg-m4-38d"/>
     </inferredMetricsTieBreakers>
 </document>

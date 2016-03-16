@@ -59,5 +59,6 @@
 @property (strong, nonatomic) MOVMovie *movie;
 
 @property (strong, nonatomic) NSArray *genres;
+- (void)setMovie:(MOVMovie *)movie;
 
 @end

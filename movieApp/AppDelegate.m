@@ -12,23 +12,29 @@
 #import <CoreSpotlight/CoreSpotlight.h>
 #import "MOVMovie.h"
 #import "MOVDetailController.h"
+#import "FavoritesController.h"
 @interface AppDelegate () <UISplitViewControllerDelegate>
 - (void)configureRestKit;
 - (void) imageCaching;
 @end
 
 @implementation AppDelegate
-
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray * __nullable restorableObjects))restorationHandler
+    - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray * __nullable restorableObjects))restorationHandler
 {
     if ([[userActivity activityType] isEqualToString:CSSearchableItemActionType])
     {
         NSString *uniqueIdentifier = [userActivity.userInfo objectForKey:CSSearchableItemActivityIdentifier];
-        NSLog(@"%@",uniqueIdentifier);
+        NSLog(@"Unique identifier: %@",uniqueIdentifier);
         // Launch Detail controller
-        MOVDetailController *detailVC = [[MOVDetailController alloc] init];
-        
-        [(UINavigationController *)self.window.rootViewController pushViewController:detailVC animated:YES];
+       
+        if (!self.activeMaster)
+        {
+            [((FavoritesController *)[[((UINavigationController *)[[((UITabBarController *)self.window.rootViewController) viewControllers] objectAtIndex:1]) viewControllers] objectAtIndex:0]) detailsegue:uniqueIdentifier];
+            
+        }
+        else{
+        [((MasterViewController *)[[((UINavigationController *)[[((UITabBarController *)self.window.rootViewController) viewControllers] objectAtIndex:0]) viewControllers] objectAtIndex:0]) detailsegue:uniqueIdentifier];
+        }
     }
     return YES;
 }
@@ -91,7 +97,19 @@
     [operation start];*/
 
 }
+-(void)updateBoolean:(NSNotification *)notification
+{
+    if(self.activeMaster)
+    self.activeMaster=false;
+    else
+        self.activeMaster=true;
+    
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.activeMaster=false;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBoolean:) name:@"masterViewActive" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBoolean:) name:@"masterViewInactive" object:nil];
+    
     // Override point for customization after application launch.
     //UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     //UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
