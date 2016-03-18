@@ -248,11 +248,6 @@
     [super viewDidLoad];
     [self registerAsObserver];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-    // Do any additional setup after loading the view, typically from a nib.
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-    // UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    //self.navigationItem.rightBarButtonItem = addButton;
     if (!self.objects) {
         self.objects = [[NSMutableArray alloc] init];
     }
@@ -383,14 +378,11 @@
     
     if (tableView == self.searchDisplayController.searchResultsTableView)
     {
-        //  NSLog(<#NSString * _Nonnull format, ...#>)
         return [self.searchResult count];
     }
     else
     {
-        if (self.movies){
-            return 3;}
-        else return self.objects.count;//  return [self.objects count];
+        return self.objects.count;//  return [self.objects count];
     }
 }
 
@@ -415,9 +407,7 @@
         if (cell == nil)
         {
             cell = [[MOVMovieTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            
-            // cell.movies=[NSArray arrayWithArray:self.movies];
-        }
+       }
         if (indexPath.row==0) {cell.typeLabel.text=@"Top rated movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"top_rated"]];}
         
         else if (indexPath.row==1) {cell.typeLabel.text = @"Upcoming movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"upcoming"]];}
@@ -438,18 +428,14 @@
         
         NSLog(@"Search Display Controller");
     } else {
-        //controller.movie = [self.objects objectAtIndex: indexPath.row];
-        //[self performSegueWithIdentifier: @"showDetail" sender: self];
-        NSLog(@"Default Display Controller");
+         NSLog(@"Default Display Controller");
     }
     controller.navigationItem.leftItemsSupplementBackButton = YES;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(!self.objects.count)
-        return 0;
-    else if([tableView isEqual:self.searchDisplayController.searchResultsTableView])
+    if([tableView isEqual:self.searchDisplayController.searchResultsTableView])
         return 47;
     else return 268;
     

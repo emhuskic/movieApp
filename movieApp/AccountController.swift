@@ -13,6 +13,7 @@ class AccountController: UIViewController, BEMSimpleLineGraphDelegate, BEMSimple
     @IBOutlet weak var graphView: BEMSimpleLineGraphView!
     @IBOutlet weak var logButton: UIButton!
     var realm: RLMRealm!
+    var accmovie: MOVMovie!
     var movies:[Int:Int] = [0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0];
     var visitedMovies=[MOVMovie]()
     var i:CGFloat = 2.3
@@ -22,7 +23,42 @@ class AccountController: UIViewController, BEMSimpleLineGraphDelegate, BEMSimple
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "movieAdd:", name:"movieViewed", object: nil)
         
     }
+/*
 
+- (void) detailsegue:(NSString *)movietitle
+{
+RLMArray<MOVRealmMovie*><MOVRealmMovie> *movs= [MOVRealmMovie allObjects];
+for (int i=0; i<movs.count; i++)
+{
+if([[[movs objectAtIndex:i] title] isEqualToString:movietitle])
+{
+self.movie=[[MOVMovie alloc] initWithRLMObject:[movs objectAtIndex:i]];
+// controller.movie=[[MOVMovie alloc] initWithRLMObject:[movs objectAtIndex:i]];
+[self performSegueWithIdentifier:@"showDetail" sender:self];
+break;
+}
+}
+}
+
+*/
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if (segue.identifier == "detailSegue") {
+              let viewController:MOVDetailController = segue!.destinationViewController as!MOVDetailController
+            viewController.movie=accmovie;
+        }
+    }
+    func detailsegue(movietitle:String)
+    {
+        let movs=MOVRealmMovie.allObjects();
+        for (var i=0; UInt(i)<movs.count; i++)
+        {
+            if(MOVRealmMovie(value: movs.objectAtIndex(UInt(i))).title==movietitle)
+            {
+                accmovie=MOVMovie(RLMObject: MOVRealmMovie(value: movs.objectAtIndex(UInt(i))));
+                performSegueWithIdentifier("detailSegue", sender: self);
+            }
+        }
+    }
     func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView) -> Int {
         return 7;
     }
@@ -146,7 +182,7 @@ class AccountController: UIViewController, BEMSimpleLineGraphDelegate, BEMSimple
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Hour, .Minute, .WeekOfYear, .Weekday, .Day, .Month, .Year], fromDate: NSDate())
         for var i = 0; UInt(i) < arr.count; i++ {
-                     let components2=calendar.components([.Hour, .Minute, .WeekOfYear, .Weekday, .Day, .Month, .Year], fromDate:MOVRealmVisitedMovie(value: arr.objectAtIndex(UInt(i))).lastVisited)
+                    var components2=calendar.components([.Hour, .Minute, .WeekOfYear, .Weekday, .Day, .Month, .Year], fromDate:MOVRealmVisitedMovie(value: arr.objectAtIndex(UInt(i))).lastVisited)
             
             var exists=false;
             if components.weekOfYear == components2.weekOfYear

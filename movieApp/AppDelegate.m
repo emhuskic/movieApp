@@ -13,6 +13,7 @@
 #import "MOVMovie.h"
 #import "MOVDetailController.h"
 #import "FavoritesController.h"
+#import "movieApp-Swift.h"
 @interface AppDelegate () <UISplitViewControllerDelegate>
 - (void)configureRestKit;
 - (void) imageCaching;
@@ -27,77 +28,23 @@
         NSLog(@"Unique identifier: %@",uniqueIdentifier);
         // Launch Detail controller
        
-        if (!self.activeMaster)
+        if (self.activeFavorites)
         {
             [((FavoritesController *)[[((UINavigationController *)[[((UITabBarController *)self.window.rootViewController) viewControllers] objectAtIndex:1]) viewControllers] objectAtIndex:0]) detailsegue:uniqueIdentifier];
             
         }
-        else{
+        else if(self.activeMaster){
         [((MasterViewController *)[[((UINavigationController *)[[((UITabBarController *)self.window.rootViewController) viewControllers] objectAtIndex:0]) viewControllers] objectAtIndex:0]) detailsegue:uniqueIdentifier];
+        }
+        else
+        {
+             [((AccountController *)[[((UINavigationController *)[[((UITabBarController *)self.window.rootViewController) viewControllers] objectAtIndex:2]) viewControllers] objectAtIndex:0]) detailsegue:uniqueIdentifier];
         }
     }
     return YES;
 }
-/*
-- (void) imageCaching
-{
-    static NSString *XXImageFormatNameUserThumbnailSmall = @"com.mycompany.myapp.XXImageFormatNameUserThumbnailSmall";
-    static NSString *XXImageFormatNameUserThumbnailMedium = @"com.mycompany.myapp.XXImageFormatNameUserThumbnailMedium";
-    static NSString *XXImageFormatFamilyUserThumbnails = @"com.mycompany.myapp.XXImageFormatFamilyUserThumbnails";
-    
-    FICImageFormat *smallUserThumbnailImageFormat = [[FICImageFormat alloc] init];
-    smallUserThumbnailImageFormat.name = XXImageFormatNameUserThumbnailSmall;
-    smallUserThumbnailImageFormat.family = XXImageFormatFamilyUserThumbnails;
-    smallUserThumbnailImageFormat.style = FICImageFormatStyle16BitBGR;
-    smallUserThumbnailImageFormat.imageSize = CGSizeMake(50, 50);
-    smallUserThumbnailImageFormat.maximumCount = 250;
-    smallUserThumbnailImageFormat.devices = FICImageFormatDevicePhone;
-    smallUserThumbnailImageFormat.protectionMode = FICImageFormatProtectionModeNone;
-    
-    FICImageFormat *mediumUserThumbnailImageFormat = [[FICImageFormat alloc] init];
-    mediumUserThumbnailImageFormat.name = XXImageFormatNameUserThumbnailMedium;
-    mediumUserThumbnailImageFormat.family = XXImageFormatFamilyUserThumbnails;
-    mediumUserThumbnailImageFormat.style = FICImageFormatStyle32BitBGRA;
-    mediumUserThumbnailImageFormat.imageSize = CGSizeMake(100, 100);
-    mediumUserThumbnailImageFormat.maximumCount = 250;
-    mediumUserThumbnailImageFormat.devices = FICImageFormatDevicePhone;
-    mediumUserThumbnailImageFormat.protectionMode = FICImageFormatProtectionModeNone;
-    
-    NSArray *imageFormats = @[smallUserThumbnailImageFormat, mediumUserThumbnailImageFormat];
-    FICImageCache *sharedImageCache = [FICImageCache sharedImageCache];
-    sharedImageCache.delegate = self;
-    sharedImageCache.formats = imageFormats;
-}
 
-- (void)imageCache:(FICImageCache *)imageCache wantsSourceImageForEntity:(id<FICEntity>)entity withFormatName:(NSString *)formatName completionBlock:(FICImageRequestCompletionBlock)completionBlock {
-    // Images typically come from the Internet rather than from the app bundle directly, so this would be the place to fire off a network request to download the image.
-    // For the purposes of this demo app, we'll just access images stored locally on disk.
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIImage *sourceImage = [(MOVMovie*)entity posterPath];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completionBlock(sourceImage);
-        });
-    });
-}
-*/
-
-- (void)configureRestKit
-{
-    
-        // initialize AFNetworking HTTPClient
-     
-  //  [objectManager addResponseDescriptorsFromArray:@[responseDescriptor]];
-   /*
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.themoviedb.org"]];
-    RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
-    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
-                    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        NSLog(@"Failed with error: %@", [error localizedDescription]);
-    }];
-    [operation start];*/
-
-}
--(void)updateBoolean:(NSNotification *)notification
+-(void)updateBooleanMaster:(NSNotification *)notification
 {
     if(self.activeMaster)
     self.activeMaster=false;
@@ -105,11 +52,21 @@
         self.activeMaster=true;
     
 }
+- (void)updateBooleanFavorites:(NSNotification *)notification
+{
+    if(self.activeFavorites)
+        self.activeFavorites=false;
+    else
+        self.activeFavorites=true;
+
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.activeMaster=false;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBoolean:) name:@"masterViewActive" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBoolean:) name:@"masterViewInactive" object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBooleanMaster:) name:@"masterViewActive" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBooleanMaster:) name:@"masterViewInactive" object:nil];
+    self.activeFavorites=false;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBooleanFavorites:) name:@"favoritesViewActive" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBooleanFavorites:) name:@"favoritesViewInactive" object:nil];
     // Override point for customization after application launch.
     //UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     //UINavigationController *navigationController = [splitViewController.viewControllers lastObject];

@@ -53,13 +53,19 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     }
 }
 
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"favoritesViewInactive" object:nil];
+
+}
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     self.movies = [MOVRealmMovie allObjects];
     [self.tableView reloadData];
     [self registerAsObserver];
-
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"favoritesViewActive" object:nil];
+    
 }
 
 - (instancetype) init

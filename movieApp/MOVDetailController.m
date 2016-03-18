@@ -62,14 +62,8 @@
     [self performSegueWithIdentifier:@"castSegue" sender:self];
 }
 - (void)registerAsObserver {
-    /*
-     Register 'inspector' to receive change notifications for the "openingBalance" property of
-     the 'account' object and specify that both the old and new values of "openingBalance"
-     should be provided in the observe… method.
-     */
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"MoviesAreRated" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logOut:) name:@"LoggedOut" object:nil];
-    
 }
 - (void)dealloc
 {
@@ -80,8 +74,6 @@
 {
     self.ratedMovies=notification.userInfo[@"ratedMovies"];
     [[self tableView] reloadData];
-    //[self loadUser];
-    
 }
 - (void) logOut:(NSNotification*)notification
 {
@@ -257,11 +249,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
+    if(self.movie){
     self.movie.lastVisited=[NSDate date];
     MOVRealmVisitedMovie *mov=[[MOVRealmVisitedMovie alloc]initWithMOVObject:self.movie];
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"title = %@",
                          [self.movie title]];
     RLMResults<MOVRealmVisitedMovie *> *movies=[MOVRealmVisitedMovie objectsWithPredicate:pred];
+    
     if (movies.count)
     {
         RLMArray *arr = [[RLMArray alloc] initWithObjectClassName:@"MOVRealmVisitedMovie"];
@@ -276,6 +270,7 @@
         [realm beginWriteTransaction];
         [realm addObject:mov];
         [realm commitWriteTransaction];
+    }
     }
 }
 - (void)viewDidLoad {

@@ -1054,6 +1054,7 @@
                         <outlet property="graphView" destination="kHT-53-mRA" id="i7f-Bd-4jc"/>
                         <outlet property="logButton" destination="azQ-TA-vKP" id="Tqf-QB-m5v"/>
                         <segue destination="sj3-1Z-txc" kind="show" identifier="loginSegue" id="gqx-ji-R0e"/>
+                        <segue destination="gYn-oz-p5l" kind="show" identifier="detailSegue" id="dcy-l6-9uh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCQ-0G-b7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1190,7 +1191,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="A7e-5W-z74"/>
+        <segue reference="dcy-l6-9uh"/>
         <segue reference="9gg-m4-38d"/>
     </inferredMetricsTieBreakers>
 </document>
