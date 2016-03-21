@@ -8,5 +8,6 @@ pod 'EDStarRating'
 pod 'Realm'
 pod 'FontAwesome-iOS'
 pod 'youtube-ios-player-helper', :git=>'https://github.com/youtube/youtube-ios-player-helper', :commit=>'head'
-
+pod 'Fabric'
+pod 'Crashlytics'
 end

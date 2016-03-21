@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "movieApp/AppDelegate.m"
-            timestampString = "480008305.16967"
+            timestampString = "480277100.39157"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "-application:continueUserActivity:restorationHandler:"
             landmarkType = "5">
          </BreakpointContent>

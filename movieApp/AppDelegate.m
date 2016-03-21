@@ -14,6 +14,8 @@
 #import "MOVDetailController.h"
 #import "FavoritesController.h"
 #import "movieApp-Swift.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 @interface AppDelegate () <UISplitViewControllerDelegate>
 - (void)configureRestKit;
 - (void) imageCaching;
@@ -72,7 +74,8 @@
     //UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     //navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     //splitViewController.delegate = self;
-    
+    [Fabric with:@[[Crashlytics class]]];
+
     return YES;
 }
 
@@ -84,6 +87,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

@@ -489,6 +489,7 @@
 				A09F02041C60B48E002E128D /* Resources */,
 				9E58288AE62D0CEFE0A7C932 /* Embed Pods Frameworks */,
 				8CB42AF5B309EC9B0848E241 /* Copy Pods Resources */,
+				A03A2F881CA0725800A5DB9A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -628,6 +629,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-movieApp/Pods-movieApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A03A2F881CA0725800A5DB9A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/Fabric/run b5ec156fe6f7db58f91d56e84dd778fe6e64229a 710a5e204165ab3f1935802d6c85ffafb7d183459cb3c7d10b0f2d84f455e88b";
 		};
 		FA370ACA89CBA9073FEFE495 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -793,6 +807,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = movieApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eminahuskic.movieApp;
