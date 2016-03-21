@@ -41,7 +41,6 @@
         if([[[movs objectAtIndex:i] title] isEqualToString:movietitle])
         {
             self.movie=[[MOVMovie alloc] initWithRLMObject:[movs objectAtIndex:i]];
-           // controller.movie=[[MOVMovie alloc] initWithRLMObject:[movs objectAtIndex:i]];
             [self performSegueWithIdentifier:@"showDetail" sender:self];
             break;
         }
@@ -51,7 +50,6 @@
     
     UINavigationController *navcontroller=(UINavigationController *)[self.tabBarController.viewControllers objectAtIndex:1];
     FavoritesController *rootViewController = (FavoritesController *)[[navcontroller viewControllers] firstObject];
- //   [rootViewController setupCoreSpotlightSearch];
     [rootViewController registerAsObserver];
     [rootViewController setupCoreSpotlightSearch];
     navcontroller=(UINavigationController *)[self.tabBarController.viewControllers objectAtIndex:2];

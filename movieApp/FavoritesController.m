@@ -114,11 +114,13 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     CSSearchableItemAttributeSet *attributeSet=[[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeText];
     attributeSet.title = mov.title;
     attributeSet.contentDescription = mov.overview;
+    NSURL * url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", [[self.movies objectAtIndex:which] posterPath]]];
+    NSData *imageData=[NSData dataWithContentsOfURL:url];
+    attributeSet.thumbnailData=imageData;
     CSSearchableItem *item;
     NSString *identifier = [NSString stringWithFormat:@"%@",attributeSet.title];
     item = [[CSSearchableItem alloc] initWithUniqueIdentifier:identifier domainIdentifier:@"com.example.apple_sample.theapp.search" attributeSet:attributeSet];
-    
-    // Index the item.
+       // Index the item.
     [[CSSearchableIndex defaultSearchableIndex] indexSearchableItems:@[item] completionHandler: ^(NSError * __nullable error) {
         if (!error)
             NSLog(@"Search item indexed");
