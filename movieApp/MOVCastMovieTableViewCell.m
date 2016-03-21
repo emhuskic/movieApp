@@ -50,7 +50,7 @@
         // NSData *dataLower = [NSData dataWithContentsOfURL:urlLower];
         //UIImage *imgLower= [[UIImage alloc] initWithData:dataLower];
         // customCell.img.image=imgLower;
-        [customCell.img sd_setImageWithURL:urlLower];
+        [customCell.img sd_setImageWithURL:urlLower placeholderImage:[UIImage imageNamed:@"imgplaceholder.png"]];
         customCell.img.layer.cornerRadius=10;
         customCell.img.layer.borderWidth=0.0;
         customCell.img.layer.masksToBounds = YES;

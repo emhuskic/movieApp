@@ -80,18 +80,32 @@
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
-
+- (BOOL)isEndDateSmallerThanCurrent:(NSDate *)checkEndDate
+{
+    NSDate* enddate = checkEndDate;
+    NSDate* currentdate = [NSDate date];
+    NSTimeInterval distanceBetweenDates = [enddate timeIntervalSinceDate:currentdate];
+    double secondsInMinute = 60;
+    NSInteger secondsBetweenDates = distanceBetweenDates / secondsInMinute;
+    
+    if (secondsBetweenDates == 0)
+        return YES;
+    else if (secondsBetweenDates < 0)
+        return YES;
+    else
+        return NO;
+}
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     RLMArray<MOVRealmMovie*><MOVRealmMovie> *movs= [MOVRealmMovie allObjects];
     for (int i=0; i<movs.count; i++)
     {
-        if([[movs objectAtIndex:i] releaseDate] > [NSDate date])
-        {
+        if ([[[movs objectAtIndex:i] releaseDate] compare:[NSDate date]] == NSOrderedDescending)
+            {
             UILocalNotification *notification = [[UILocalNotification alloc]init];
             [notification setAlertBody:[NSString stringWithFormat:@"Premiere of %@ is in 24hours!", [[movs objectAtIndex:i] title]]];
-            [notification setFireDate:[[[movs objectAtIndex:i] releaseDate] dateByAddingTimeInterval:60*60*24]];
+            [notification setFireDate:[[[movs objectAtIndex:i] releaseDate] dateByAddingTimeInterval:-(60*60*24)]];
             [notification setTimeZone:[NSTimeZone defaultTimeZone]];
             [[UIApplication sharedApplication] scheduleLocalNotification:notification];
         }

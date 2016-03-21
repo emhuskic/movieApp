@@ -60,7 +60,7 @@
     self.mySLComposerSheet = [[SLComposeViewController alloc] init];
     self.mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     
-    [self.mySLComposerSheet setInitialText:[NSString stringWithFormat:@"Check out this movie:\n %@ \n", [self.movie title]]];
+    [self.mySLComposerSheet setInitialText:[NSString stringWithFormat:@"Check out this movie:\n %@ - via movieApp\n", [self.movie title]]];
     
     NSURL * url= [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", self.movie.posterPath]];
         NSData *data = [NSData dataWithContentsOfURL:url];

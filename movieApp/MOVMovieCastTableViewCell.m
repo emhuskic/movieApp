@@ -47,7 +47,7 @@
         per = [self.cast objectAtIndex:indexPath.row];
         NSURL * urlLower = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", [per profilePath]]];
         
-         [customCell.img sd_setImageWithURL:urlLower];
+         [customCell.img sd_setImageWithURL:urlLower placeholderImage:[UIImage imageNamed:@"imgplaceholder.png"]];
         //customCell.img.layer.backgroundColor=[[UIColor clearColor] CGColor];
         customCell.img.layer.cornerRadius=10;
         customCell.img.layer.borderWidth=0.0;
