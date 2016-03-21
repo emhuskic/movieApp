@@ -12,9 +12,9 @@
 #import "MOVCastBiographyCell.h"
 #import "MOVCastMovieTableViewCell.h"
 #import "MOVDetailController.h"
-
+#import "NSString+FontAwesome.h"
 @interface MOVCastController()
-
+@property (nonatomic, strong) NSMutableArray *selectedIndexPaths;
 @property (nonatomic, strong)  MOVDetailController *controller;
 @property (nonatomic, strong) MOVMovie *selectedMovie;
 @property (nonatomic, strong) NSString *selectedMovieID;
@@ -173,6 +173,33 @@
     
 }
 
+
+-(void)infoButtonTapped:(UIButton *)button
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:button.tag inSection:0];
+    [self addOrRemoveSelectedIndexPath:indexPath];
+}
+
+- (void)addOrRemoveSelectedIndexPath:(NSIndexPath *)indexPath
+{
+    if (!self.selectedIndexPaths) {
+        self.selectedIndexPaths = [NSMutableArray new];
+    }
+    //
+    BOOL containsIndexPath = [self.selectedIndexPaths containsObject:indexPath];
+    if (containsIndexPath)
+    {
+        [self.selectedIndexPaths removeObject:indexPath];
+    }
+    else
+    {
+        [self.selectedIndexPaths addObject:indexPath];
+    }
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath]
+                          withRowAnimation:UITableViewRowAnimationNone];
+    
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -217,6 +244,7 @@
     else if (indexPath.row==1)
     {
         static NSString *CellIdentifier = @"CastBiographyCell";
+        BOOL isSelected = [self.selectedIndexPaths containsObject:indexPath];
         MOVCastBiographyCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil)
         {
@@ -230,7 +258,14 @@
         [cell.img sd_setImageWithURL:urlLower placeholderImage:[UIImage imageNamed: @"imgplaceholder.png"]];
 
         cell.biographyLabel.text=[self.person biography];
-        return cell;
+       [cell.infoButton setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAInfoCircle]]forState:UIControlStateNormal];
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell.infoButton addTarget:self action:@selector(infoButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.infoButton setTag:indexPath.row];
+        if(isSelected)
+           [cell.biographyLabel sizeToFit];
+       return cell;
     }
     
     
@@ -284,6 +319,16 @@
     
 }
 
+- (CGFloat)calculateHeightOfLabel:(NSString *)text ofFont:(UIFont *)font andlabelWidth:(NSInteger)width
+{
+    UILabel *testLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 0)];
+    float height = 0;
+    testLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    testLabel.font = font;
+    testLabel.text = text;
+    height = [testLabel.text boundingRectWithSize:CGSizeMake(width, 0) options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObject:testLabel.font forKey:NSFontAttributeName] context:nil].size.height;
+    return height;
+}
 
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -294,6 +339,24 @@
     }
     else if (indexPath.row==1)
     {
+        BOOL isSelected = [self.selectedIndexPaths containsObject:indexPath];
+        if(isSelected)
+        {
+            CGFloat maxHeight = MAXFLOAT;
+            CGFloat minHeight = 172.0f;
+            CGFloat constrainHeight = isSelected?maxHeight:minHeight;
+            //CGFloat constrainWidth  = tableView.frame.size.width-50.0f;
+            CGFloat constrainWidth=416.0f;
+            NSString *text       = [self.person biography];
+            CGSize constrainSize = CGSizeMake(constrainWidth, constrainHeight);
+            
+            CGRect labelSizer     = [text boundingRectWithSize:constrainSize options:NSStringDrawingTruncatesLastVisibleLine attributes:nil context:nil];
+            CGSize labelsize = [text sizeWithFont:[UIFont systemFontOfSize:18.0f] constrainedToSize:constrainSize];
+            CGFloat height = [self calculateHeightOfLabel:text ofFont:[UIFont systemFontOfSize:15.0f] andlabelWidth:416.0f];
+            
+            return MAX(height, 182.0f);
+
+        }
         return 182;
     }
     else if (indexPath.row==2)

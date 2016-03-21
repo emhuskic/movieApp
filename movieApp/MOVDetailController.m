@@ -314,6 +314,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self registerAsObserver];
     [self loadVideos];
     [self loadGenres];
@@ -338,7 +339,7 @@
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"LogInSuccessful" object:dateComponent];
     NSDictionary *dict = @{@"weekday" : [NSNumber numberWithInt:dateComponent.weekday], @"weekOfYear":[NSNumber numberWithInt:dateComponent.weekOfYear]};
     self.movie.lastVisited=[NSDate date];
-
+    [[self tableView] setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"movieViewed" object:nil userInfo:dict];
     [[self tableView] reloadData];
 }
@@ -390,7 +391,7 @@
     
     
     [self.tableView reloadRowsAtIndexPaths:@[indexPath]
-                          withRowAnimation:UITableViewRowAnimationFade];
+                          withRowAnimation:UITableViewRowAnimationNone];
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

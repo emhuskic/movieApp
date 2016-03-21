@@ -15,6 +15,7 @@
             <string>FontAwesome</string>
             <string>FontAwesome</string>
             <string>FontAwesome</string>
+            <string>FontAwesome</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -592,29 +593,46 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A9I-ah-c85">
                                             <rect key="frame" x="8" y="8" width="106" height="172"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="106" id="ATx-qr-ysU"/>
+                                                <constraint firstAttribute="height" constant="172" id="cca-xP-o7I"/>
                                                 <constraint firstAttribute="width" constant="106" id="nUa-9e-f44"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biography" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaA-Iz-R6b">
-                                            <rect key="frame" x="122" y="8" width="470" height="172"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Biography" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaA-Iz-R6b">
+                                            <rect key="frame" x="122" y="8" width="416" height="172"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bod-Yx-XUC">
+                                            <rect key="frame" x="546" y="8" width="44" height="172"/>
+                                            <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="15"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Bod-Yx-XUC" firstAttribute="leading" secondItem="JaA-Iz-R6b" secondAttribute="trailing" constant="8" symbolic="YES" id="1xP-H5-bT1"/>
                                         <constraint firstItem="JaA-Iz-R6b" firstAttribute="leading" secondItem="A9I-ah-c85" secondAttribute="trailing" constant="8" symbolic="YES" id="80w-d1-dYC"/>
                                         <constraint firstItem="A9I-ah-c85" firstAttribute="centerY" secondItem="frX-Pq-OaH" secondAttribute="centerY" id="9u7-eW-Bpa"/>
-                                        <constraint firstItem="A9I-ah-c85" firstAttribute="bottom" secondItem="JaA-Iz-R6b" secondAttribute="bottom" id="Aaa-gU-ykj"/>
+                                        <constraint firstItem="A9I-ah-c85" firstAttribute="leading" secondItem="frX-Pq-OaH" secondAttribute="leadingMargin" id="JN6-Sh-Cd1"/>
                                         <constraint firstItem="A9I-ah-c85" firstAttribute="leading" secondItem="frX-Pq-OaH" secondAttribute="leadingMargin" id="Wfo-YW-dGS"/>
-                                        <constraint firstItem="JaA-Iz-R6b" firstAttribute="trailing" secondItem="frX-Pq-OaH" secondAttribute="trailingMargin" id="bIG-MY-qpo"/>
+                                        <constraint firstItem="JaA-Iz-R6b" firstAttribute="trailing" secondItem="frX-Pq-OaH" secondAttribute="trailingMargin" constant="-54" id="bIG-MY-qpo"/>
                                         <constraint firstItem="JaA-Iz-R6b" firstAttribute="top" secondItem="frX-Pq-OaH" secondAttribute="topMargin" id="e6W-ve-Gen"/>
+                                        <constraint firstItem="A9I-ah-c85" firstAttribute="top" secondItem="frX-Pq-OaH" secondAttribute="topMargin" id="ihE-7r-exc"/>
                                         <constraint firstItem="JaA-Iz-R6b" firstAttribute="top" secondItem="A9I-ah-c85" secondAttribute="top" id="kf4-fu-Muh"/>
+                                        <constraint firstItem="Bod-Yx-XUC" firstAttribute="top" secondItem="JaA-Iz-R6b" secondAttribute="top" id="nW1-Qo-cwD"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="9u7-eW-Bpa"/>
+                                            <exclude reference="Wfo-YW-dGS"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="biographyLabel" destination="JaA-Iz-R6b" id="wSB-0b-1c5"/>
                                     <outlet property="img" destination="A9I-ah-c85" id="cnx-Zp-7a9"/>
+                                    <outlet property="infoButton" destination="Bod-Yx-XUC" id="EMc-vl-8Tp"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CastNormalCell" rowHeight="38" id="pOj-JH-9Df">
@@ -1230,7 +1248,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dcy-l6-9uh"/>
+        <segue reference="suO-BL-TkF"/>
         <segue reference="9gg-m4-38d"/>
     </inferredMetricsTieBreakers>
 </document>

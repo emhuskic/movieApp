@@ -11,5 +11,6 @@
 @interface MOVCastBiographyCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UILabel *biographyLabel;
+@property (weak, nonatomic) IBOutlet UIButton *infoButton;
 
 @end
