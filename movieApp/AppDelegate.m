@@ -69,13 +69,10 @@
     self.activeFavorites=false;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBooleanFavorites:) name:@"favoritesViewActive" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBooleanFavorites:) name:@"favoritesViewInactive" object:nil];
-    // Override point for customization after application launch.
-    //UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-    //UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-    //navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
-    //splitViewController.delegate = self;
     [Fabric with:@[[Crashlytics class]]];
-
+    
+    
+    
     return YES;
 }
 
@@ -87,7 +84,19 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    
+    RLMArray<MOVRealmMovie*><MOVRealmMovie> *movs= [MOVRealmMovie allObjects];
+    for (int i=0; i<movs.count; i++)
+    {
+        if([[movs objectAtIndex:i] releaseDate] > [NSDate date])
+        {
+            UILocalNotification *notification = [[UILocalNotification alloc]init];
+            [notification setAlertBody:[NSString stringWithFormat:@"Premiere of %@ is in 24hours!", [[movs objectAtIndex:i] title]]];
+            [notification setFireDate:[[[movs objectAtIndex:i] releaseDate] dateByAddingTimeInterval:60*60*24]];
+            [notification setTimeZone:[NSTimeZone defaultTimeZone]];
+            [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+        }
+    }
+
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
