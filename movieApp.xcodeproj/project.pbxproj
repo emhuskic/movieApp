@@ -52,6 +52,7 @@
 		A01B63E91C7620500017CEEC /* ACCOUNTicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A01B63E61C7620500017CEEC /* ACCOUNTicon.png */; };
 		A01B63EB1C7621400017CEEC /* video-camera-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A01B63EA1C7621400017CEEC /* video-camera-icon.jpg */; };
 		A01CDA991C9994A10003FE26 /* MOVRealmVisitedMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CDA981C9994A10003FE26 /* MOVRealmVisitedMovie.m */; };
+		A03A2F8A1CA0816300A5DB9A /* imgplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = A03A2F891CA0816300A5DB9A /* imgplaceholder.png */; };
 		A04D340F1C82500800D39AC0 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D340E1C82500800D39AC0 /* AccountController.swift */; };
 		A04D34121C8250E400D39AC0 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04D34111C8250E400D39AC0 /* LoginController.m */; };
 		A04D34141C84737200D39AC0 /* space.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A04D34131C84737200D39AC0 /* space.jpg */; };
@@ -145,6 +146,7 @@
 		A01B63EA1C7621400017CEEC /* video-camera-icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "video-camera-icon.jpg"; sourceTree = "<group>"; };
 		A01CDA971C9994A10003FE26 /* MOVRealmVisitedMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVRealmVisitedMovie.h; sourceTree = "<group>"; };
 		A01CDA981C9994A10003FE26 /* MOVRealmVisitedMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVRealmVisitedMovie.m; sourceTree = "<group>"; };
+		A03A2F891CA0816300A5DB9A /* imgplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgplaceholder.png; sourceTree = "<group>"; };
 		A04D340D1C82500800D39AC0 /* movieApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "movieApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		A04D340E1C82500800D39AC0 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		A04D34101C8250E400D39AC0 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 		A09F02091C60B48E002E128D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A03A2F891CA0816300A5DB9A /* imgplaceholder.png */,
 				A08CE0831C809EEE00A49362 /* videocamicon.png */,
 				A08CE0841C809EEE00A49362 /* fa-user.png */,
 				A01B63EA1C7621400017CEEC /* video-camera-icon.jpg */,
@@ -591,6 +594,7 @@
 				A01B63441C75EDAB0017CEEC /* fontawesome-webfont.eot in Resources */,
 				A050774D1C6A2CE40074603B /* movie_transparent.png in Resources */,
 				A01B63421C75EDAB0017CEEC /* font-awesome.css in Resources */,
+				A03A2F8A1CA0816300A5DB9A /* imgplaceholder.png in Resources */,
 				A01B63521C75EDAB0017CEEC /* list.less in Resources */,
 				A01B635E1C75EDAB0017CEEC /* _list.scss in Resources */,
 				A01B63481C75EDAB0017CEEC /* fontawesome-webfont.woff2 in Resources */,

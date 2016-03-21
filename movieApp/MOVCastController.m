@@ -195,7 +195,9 @@
         NSLog(@"IMAGE IS %@",[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w300", [[self.images firstObject] filePath]]);
         
         NSData *data = [NSData dataWithContentsOfURL:urlUpper];
-        cell.img.image = [UIImage imageWithData:data];
+        [cell.img sd_setImageWithURL:urlUpper placeholderImage:[UIImage imageNamed: @"imgplaceholder.png"]];
+
+        
         //Namelabel
         cell.nameLabel.text = self.person.name;
         
@@ -225,7 +227,8 @@
         NSLog(@"IMAGE 2 IS %@",[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", [self.person profilePath]]);
         
         NSData *data = [NSData dataWithContentsOfURL:urlLower];
-        cell.img.image = [UIImage imageWithData:data];
+        [cell.img sd_setImageWithURL:urlLower placeholderImage:[UIImage imageNamed: @"imgplaceholder.png"]];
+
         cell.biographyLabel.text=[self.person biography];
         return cell;
     }

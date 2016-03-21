@@ -408,9 +408,9 @@
        // NSData *data = [NSData dataWithContentsOfURL:url];
         //UIImage *cellimg=[UIImage imageWithData:data];
         if (self.movie.backdropPath)
-        [cell.img sd_setImageWithURL:url placeholderImage:[UIImage imageNamed: @"movies.png"]];
+        [cell.img sd_setImageWithURL:url placeholderImage:[UIImage imageNamed: @"imgplaceholder.png"]];
         else
-            cell.img.image=[UIImage imageNamed:@"space.jpg"];
+            cell.img.image=[UIImage imageNamed:@"imgplaceholder.png"];
         //cell.img.image = cellimg;
         // Get the Layer of any view
         
@@ -464,7 +464,8 @@
         NSURL * url= [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", self.movie.posterPath]];
        // NSData *data = [NSData dataWithContentsOfURL:url];
         //cell.img.image = [UIImage imageWithData:data];
-        [cell.img sd_setImageWithURL:url placeholderImage:[UIImage imageNamed: @"space.png"]];
+        [cell.img sd_setImageWithURL:url placeholderImage:[UIImage imageNamed: @"imgplaceholder.png"]];
+
         
         [cell.videosButton setTitle:[NSString stringWithFormat:@"%@ Videos",[NSString fontAwesomeIconStringForEnum:FAFilm]]forState:UIControlStateNormal];
         [cell.smallVideosButton setTitle:[NSString stringWithFormat:@"%@",[NSString fontAwesomeIconStringForEnum:FAAngleRight]]forState:UIControlStateNormal];
