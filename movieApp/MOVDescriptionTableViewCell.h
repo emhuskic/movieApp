@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UIButton *descriptionButton;
 @property (weak, nonatomic) IBOutlet UIButton *smallVideosButton;
+@property (weak, nonatomic) IBOutlet UIButton *facebook;
 
 -(void) addSelector;
 @end

@@ -51,6 +51,45 @@
     [self registerAsObserver];
     return self;
 }
+
+- (IBAction)postToFacebook:(id)sender {
+    if(![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])  {
+        NSLog(@"log output of your choice here");
+    }
+    // Facebook may not be available but the SLComposeViewController will handle the error for us.
+    self.mySLComposerSheet = [[SLComposeViewController alloc] init];
+    self.mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    
+    [self.mySLComposerSheet setInitialText:[NSString stringWithFormat:@"Check out this movie:\n %@ \n", [self.movie title]]];
+    
+    NSURL * url= [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", self.movie.posterPath]];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *image = [UIImage imageWithData:data];
+    [self.mySLComposerSheet addImage:image]; //an image you could post
+    
+    [self presentViewController:self.mySLComposerSheet animated:YES completion:nil];
+    
+    [self.mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+        NSString *output;
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                output = @"Action Cancelled";
+                break;
+            case SLComposeViewControllerResultDone:
+                output = @"Post Successfull";
+                break;
+            default:
+                break;
+        }
+        if (![output isEqualToString:@"Action Cancelled"]) {
+            // Only alert if the post was a success. Or not! Up to you.
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook" message:output delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
+}
+
+
 - (void) refreshDetail:(MasterViewController *)view
 {
     [self.tableView reloadData];
@@ -409,6 +448,7 @@
             [cell.favorite setTitle:[NSString fontAwesomeIconStringForEnum:FAHeartO] forState:UIControlStateNormal];
         // bla bla bla
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell.facebook setTitle:[NSString fontAwesomeIconStringForEnum:FAfacebookOfficial] forState:UIControlStateNormal];
         return cell;
         
     }
