@@ -176,7 +176,7 @@
                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                  self.movies = mappingResult.array;
                                  [self.moviesDict setObject:self.movies forKey:@"top_rated"];
-                                 self.objects=[NSMutableArray arrayWithCapacity:5];
+                                 if(!self.objects) self.objects=[NSMutableArray arrayWithCapacity:5];
                                  [self.objects addObject:self.movies];
                                  //self.objects = [NSMutableArray arrayWithArray:self.movies];
                                  [self.tableView reloadData];

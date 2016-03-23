@@ -48,7 +48,6 @@
         NSURL * urlLower = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", [per profilePath]]];
         
          [customCell.img sd_setImageWithURL:urlLower placeholderImage:[UIImage imageNamed:@"imgplaceholder.png"]];
-        //customCell.img.layer.backgroundColor=[[UIColor clearColor] CGColor];
         customCell.img.layer.cornerRadius=10;
         customCell.img.layer.borderWidth=0.0;
         customCell.img.layer.masksToBounds = YES;
@@ -64,6 +63,11 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
    [self.delegate selectCast:self withItem:[self.cast objectAtIndex:indexPath.row]];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self.delegate loadMore:self];
 }
 
 - (void) refreshCollection

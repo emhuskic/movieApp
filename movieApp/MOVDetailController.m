@@ -39,7 +39,7 @@
 @property (strong, nonatomic) NSNumber *userID;
 @property BOOL readmore;
 @property (nonatomic, strong) NSMutableArray *selectedIndexPaths;
-
+@property int index;
 @property RLMRealm *realm;
 @end
 
@@ -225,6 +225,10 @@
                              }];
     
 }
+- (void) loadMore:(MOVMovieCastTableViewCell *)view
+{
+    self.index=self.index+1;
+}
 - (void) loadCast
 {
     NSURL *baseURL = [NSURL URLWithString:@"https://api.themoviedb.org"];
@@ -242,7 +246,6 @@
                                                        }];
     NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping method:RKRequestMethodAny pathPattern:[NSString stringWithFormat:@"/3/movie/%@/credits",self.movie.movID]  keyPath:@"cast" statusCodes:statusCodes];
-    
     RKObjectManager *sharedManager = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager addResponseDescriptorsFromArray:@[responseDescriptor]];
     [ sharedManager getObjectsAtPath:[NSString stringWithFormat:@"/3/movie/%@/credits",self.movie.movID]  parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825"}
                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {

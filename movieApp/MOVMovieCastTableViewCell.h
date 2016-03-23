@@ -12,6 +12,7 @@
 
 @protocol MovieCastCollectionCellDelegate <NSObject>
 - (void)selectCast:(MOVMovieCastTableViewCell *)view withItem:(MOVPerson *)item;
+- (void)loadMore:(MOVMovieCastTableViewCell *)view;
 @end
 
 @interface MOVMovieCastTableViewCell : UITableViewCell
