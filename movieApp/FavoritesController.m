@@ -32,19 +32,6 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
 }
 -(void) setupCoreSpotlightSearch
 {
-    /*CSSearchableItemAttributeSet *attributeset=[[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString *)kUTTypeImage];
-    attributeset.title=@"My first spotlight search";
-    attributeset.contentDescription=@"";
-    attributeset.keywords=[NSArray arrayWithObjects:@"Hello", @"Welcome", @"Spotlight", nil];
-    UIImage *image=[UIImage imageNamed:@"fa-user.png"];
-    NSData *imageData=[NSData dataWithData:UIImagePNGRepresentation(image)];
-    attributeset.thumbnailData=imageData;
-    
-    CSSearchableItem *item=[[CSSearchableItem alloc]initWithUniqueIdentifier:@"com.deeplink"  domainIdentifier:@"spotlight.sample" attributeSet:attributeset];
-    [[CSSearchableIndex defaultSearchableIndex] indexSearchableItems:@[item] completionHandler:^(NSError *__nullable error)
-     {
-         if(!error) NSLog(@"uspjelo");
-     }];*/
     self.movies = [MOVRealmMovie allObjects];
     self.selectedMovie =[[MOVMovie alloc] init];
     for (int i=0; i<self.movies.count; i++)
@@ -75,17 +62,10 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     return self;
 }
 - (void)registerAsObserver {
-    /*
-     Register 'inspector' to receive change notifications for the "openingBalance" property of
-     the 'account' object and specify that both the old and new values of "openingBalance"
-     should be provided in the observe… method.
-     */
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"MoviesAreRated" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logOut:) name:@"LoggedOut" object:nil];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateFavs:) name:@"FavoritesUpdated" object:nil];
 }
-
 - (void)updateFavs:(NSNotification*)notification
 {
     [self setupCoreSpotlightSearch];
@@ -99,8 +79,6 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
 {
     self.ratedMovies=notification.userInfo[@"ratedMovies"];
     [[self tableView] reloadData];
-    //[self loadUser];
-    
 }
 - (void) logOut:(NSNotification*)notification
 {
@@ -181,12 +159,16 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
+        NSString *identifier = [NSString stringWithFormat:@"%@",[[self.movies objectAtIndex:indexPath.row] title]];
         RLMRealm *realm = [RLMRealm defaultRealm];
         [realm beginWriteTransaction];
         [realm deleteObject:[self.movies objectAtIndex:indexPath.row]];
         [realm commitWriteTransaction];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         // [self.movies removeObjectAtIndex:indexPath.row]; /// delete record from Array
+        CSSearchableIndex *index = [CSSearchableIndex new];
+        NSArray *identifiers=[[NSArray alloc] initWithObjects:identifier, nil];
+       [index deleteSearchableItemsWithIdentifiers:identifiers completionHandler:nil];
         [self.tableView reloadData]; /// Custom method
     }
 }

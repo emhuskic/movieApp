@@ -15,16 +15,18 @@
 
 @protocol MovieCollectionCellDelegate <NSObject>
 - (void)selectMovie:(MOVMovieTableViewCell *)view withItem:(MOVMovie *)item;
+-(void)loadMoreMovies:(MOVMovieTableViewCell *)view type:(NSString *)type;
 @end
 
 
 
 @interface MOVMovieTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic, weak) id <MovieCollectionCellDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
-@property (strong, nonatomic) NSArray *movies;
+@property (strong, nonatomic) NSMutableArray *movies;
 @property (strong, nonatomic) MOVMovie *selectedMovie;
 @property (strong, nonatomic) NSArray *photos;
 @property (nonatomic, copy) NSString *imageFormatName;

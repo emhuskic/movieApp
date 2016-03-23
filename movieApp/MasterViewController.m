@@ -29,6 +29,10 @@
 @property (nonatomic, strong) NSArray *ratedMovies;
 @property (nonatomic, strong) MOVMovieTableViewCell *MovieCell;
 @property (nonatomic, strong) NSString *query;
+
+@property int index1;
+@property int index2;
+@property int index3;
 @end
 
 @implementation MasterViewController
@@ -129,7 +133,7 @@
     
 
 }
-- (void)loadMovies
+- (void)loadMovies:(NSString *)type
 {
     NSURL *baseURL = [NSURL URLWithString:@"https://api.themoviedb.org"];
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
@@ -140,7 +144,6 @@
                                                        @"backdrop_path": @"backdropPath",
                                                        @"belongs_to_collection":@"belongsToCollection",
                                                        @"adult": @"adult",
-                                                       
                                                        @"genre_ids": @"genres",
                                                        @"homepage": @"homepage",
                                                        @"original_language": @"originalLanguage",
@@ -160,16 +163,17 @@
                                                        @"video": @"video",
                                                        @"vote_count": @"voteCount",
                                                        @"vote_average": @"voteAverage"
-                                                       
                                                        }];
+    
     NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
+    if ( [type isEqualToString:@"Top rated movies"])   self.index1=self.index1+1;
+    
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping method:RKRequestMethodAny pathPattern:@"/3/movie/top_rated" keyPath:@"results" statusCodes:statusCodes];
     
     
     RKObjectManager *sharedManager = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager addResponseDescriptorsFromArray:@[responseDescriptor]];
-    [ sharedManager getObjectsAtPath:@"/3/movie/top_rated" parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825"}
+    [ sharedManager getObjectsAtPath:@"/3/movie/top_rated" parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825", @"page":[NSString stringWithFormat:@"%i", self.index1]}
                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                 
                                  self.movies = mappingResult.array;
                                  [self.moviesDict setObject:self.movies forKey:@"top_rated"];
                                  self.objects=[NSMutableArray arrayWithCapacity:5];
@@ -181,12 +185,13 @@
                              }];
     
     
+    if ( [type isEqualToString:@"Upcoming movies"])  self.index2=self.index2+1;
+    
     RKResponseDescriptor *responseDescriptor2 = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping method:RKRequestMethodAny pathPattern:@"/3/movie/upcoming" keyPath:@"results" statusCodes:statusCodes];
     RKObjectManager *sharedManager2 = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager2 addResponseDescriptorsFromArray:@[responseDescriptor2]];
-    [ sharedManager2 getObjectsAtPath:@"/3/movie/upcoming" parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825"}
+    [ sharedManager2 getObjectsAtPath:@"/3/movie/upcoming" parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825",@"page":[NSString stringWithFormat:@"%i", self.index2]}
                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                  
-                                  self.movies = mappingResult.array;
+                                 self.movies = mappingResult.array;
                                   [self.moviesDict setObject:self.movies forKey:@"upcoming"];
                                   
                                   //  self.objects=[NSMutableArray arrayWithCapacity:5];
@@ -199,13 +204,13 @@
                               }];
     
     
-    RKResponseDescriptor *responseDescriptor3 = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping method:RKRequestMethodAny pathPattern:@"/3/movie/popular" keyPath:@"results" statusCodes:statusCodes];
+    if ( [type isEqualToString:@"Now playing movies"])  self.index3=self.index3+1;
+    RKResponseDescriptor *responseDescriptor3 = [RKResponseDescriptor responseDescriptorWithMapping:movieMapping method:RKRequestMethodAny pathPattern:@"/3/movie/now_playing" keyPath:@"results" statusCodes:statusCodes];
     RKObjectManager *sharedManager3 = [[RKObjectManager alloc] initWithHTTPClient:client];    [sharedManager3 addResponseDescriptorsFromArray:@[responseDescriptor3]];
-    [ sharedManager3 getObjectsAtPath:@"/3/movie/popular" parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825"}
+    [ sharedManager3 getObjectsAtPath:@"/3/movie/now_playing" parameters:@{@"api_key" : @"41965971728f5fe48c3a8db464bd3825",@"page":[NSString stringWithFormat:@"%i", self.index3]}
                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                  
-                                  self.movies = mappingResult.array;
-                                  [self.moviesDict setObject:self.movies forKey:@"popular"];
+                                 self.movies = mappingResult.array;
+                                  [self.moviesDict setObject:self.movies forKey:@"now_playing"];
                                   [self.objects addObject:self.movies ];
                                   NSLog(@"tu3");
                                   [self.tableView reloadData];
@@ -222,7 +227,7 @@
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     for (int i=0; i<[[self.moviesDict objectForKey:@"top_rated"] count]; i++){
         [arr addObject:[[self.moviesDict objectForKey:@"top_rated"] objectAtIndex:i]];
-        [arr addObject:[[self.moviesDict objectForKey:@"popular"] objectAtIndex:i]];
+        [arr addObject:[[self.moviesDict objectForKey:@"now_playing"] objectAtIndex:i]];
         [arr addObject:[[self.moviesDict objectForKey:@"upcoming"] objectAtIndex:i]];
     }
     
@@ -244,6 +249,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.index3=1;
+    self.index2=1;
+    self.index1=1;
     [self registerAsObserver];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     if (!self.objects) {
@@ -265,7 +273,7 @@
     UIImage *image2 = [UIImage imageNamed:@"fa-user.png"];
     self.definesPresentationContext = NO;
     [[[self.tabBarController.tabBar items] objectAtIndex:2 ] setImage: [self imageWithImage:image2 scaledToSize:CGSizeMake(30, 30)]];
-    [self loadMovies];
+    [self loadMovies:@"all"];
     
 }
 - (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
@@ -296,8 +304,6 @@
     UIImage *image1 = [UIImage imageNamed:@"videocamicon.png"];
     [[[self.tabBarController.tabBar items] objectAtIndex:0 ] setImage: [self imageWithImage:image1 scaledToSize:CGSizeMake(30, 30)]];
     UIImage *image2 = [UIImage imageNamed:@"fa-user.png"];
-    
-    
     [[[self.tabBarController.tabBar items] objectAtIndex:2 ] setImage: [self imageWithImage:image2 scaledToSize:CGSizeMake(30, 30)]];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
@@ -318,13 +324,15 @@
     controller.movie=item;
     [self performSegueWithIdentifier:@"showDetail" sender:self];
 }
+- (void) loadMoreMovies:(MOVMovieTableViewCell *)view type:(NSString *)type
+{
+    [self loadMovies:type];
+}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSLog(@"Preparing for Segue in Master view controller...");
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         controller = (MOVDetailController *)[segue destinationViewController];
-        
-        //controller = (MOVDetailController *)[segue destinationViewController] ;
-        if (self.searchDisplayController.active) {
+           if (self.searchDisplayController.active) {
             NSLog(@"Search Display Controller");
             controller.movie = [self.searchResult objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
             for (int i=0; i<[self.ratedMovies count]; i++)
@@ -406,11 +414,33 @@
         {
             cell = [[MOVMovieTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
        }
-        if (indexPath.row==0) {cell.typeLabel.text=@"Top rated movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"top_rated"]];}
+        if (indexPath.row==0) {
+            cell.typeLabel.text=@"Top rated movies";
+            if(!cell.movies) cell.movies=[NSMutableArray arrayWithArray:[self.moviesDict objectForKey:@"top_rated"]];
+            else {
+                [cell.movies addObjectsFromArray:[self.moviesDict objectForKey:@"top_rated"]];
+                [cell.collectionView reloadData];
+                
+                 }
+                 }
         
-        else if (indexPath.row==1) {cell.typeLabel.text = @"Upcoming movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"upcoming"]];}
+        else  if (indexPath.row==1) {
+            cell.typeLabel.text=@"Upcoming movies";
+            if(!cell.movies) cell.movies=[NSMutableArray arrayWithArray:[self.moviesDict objectForKey:@"upcoming"]];
+            else {
+                [cell.movies addObjectsFromArray:[self.moviesDict objectForKey:@"upcoming"]];
+                [cell.collectionView reloadData];
+            }
+        }
         
-        else if(indexPath.row==2) {cell.typeLabel.text=@"Most popular movies";  cell.movies=[NSArray arrayWithArray:[self.moviesDict objectForKey:@"popular"]];}
+        else  if (indexPath.row==2) {
+            cell.typeLabel.text=@"Now playing movies";
+            if(!cell.movies) cell.movies=[NSMutableArray arrayWithArray:[self.moviesDict objectForKey:@"now_playing"]];
+            else {
+                [cell.movies addObjectsFromArray:[self.moviesDict objectForKey:@"now_playing"]];
+                [cell.collectionView reloadData];
+            }
+        }
         
         cell.backgroundColor=[UIColor whiteColor];
         cell.delegate=self;

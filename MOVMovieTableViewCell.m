@@ -58,9 +58,7 @@
         customCell.titleLabel.text=[mov title];
        // [customCell.titleLabel sizeToFit];
         NSURL * urlLower = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@", @"http://image.tmdb.org/t/p/", @"w92", mov.posterPath]];
-      //  [customCell.img sd_setImageWithURL:urlLower];
         [customCell.img sd_setImageWithURL:urlLower placeholderImage:[UIImage imageNamed: @"imgplaceholder.png"]];
-
         customCell.img.layer.cornerRadius=5;
         customCell.img.layer.borderWidth=0.0;
         customCell.img.layer.masksToBounds = YES;
@@ -76,9 +74,6 @@
     NSLog([[self.movies objectAtIndex: indexPath.row] title]);
     self.selectedMovie=[self.movies objectAtIndex: indexPath.row];
     [self.delegate selectMovie:self withItem:[self.movies objectAtIndex: indexPath.row]];
-    // [super. performSegueWithIdentifier:@"cellShowDetail" sender:self];
-    
-    //   self.image = cell.img;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
@@ -96,7 +91,10 @@
     return UIEdgeInsetsMake(0,0,0,0);  // top, left, bottom, right
 }
 
-
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self.delegate loadMoreMovies:self type:self.typeLabel.text];
+}
 
 
 @end

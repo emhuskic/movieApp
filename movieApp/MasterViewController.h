@@ -24,6 +24,7 @@
 @property (nonatomic, weak) id <MasterDetailDelegate> delegate;
 @property (strong, nonatomic) MOVMovie *movie;
 -(void)detailsegue:(NSString*)movietitle;
+
 @end
 
 

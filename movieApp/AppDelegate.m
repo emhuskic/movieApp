@@ -35,12 +35,15 @@
             [((FavoritesController *)[[((UINavigationController *)[[((UITabBarController *)self.window.rootViewController) viewControllers] objectAtIndex:1]) viewControllers] objectAtIndex:0]) detailsegue:uniqueIdentifier];
             
         }
-        else if(self.activeMaster){
+        else{
+        if(self.activeMaster)
+        {
         [((MasterViewController *)[[((UINavigationController *)[[((UITabBarController *)self.window.rootViewController) viewControllers] objectAtIndex:0]) viewControllers] objectAtIndex:0]) detailsegue:uniqueIdentifier];
         }
         else
         {
              [((AccountController *)[[((UINavigationController *)[[((UITabBarController *)self.window.rootViewController) viewControllers] objectAtIndex:2]) viewControllers] objectAtIndex:0]) detailsegue:uniqueIdentifier];
+        }
         }
     }
     return YES;
