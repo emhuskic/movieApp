@@ -72,7 +72,6 @@
 {
     self.ratedMovies=notification.userInfo[@"ratedMovies"];
     [[self tableView] reloadData];
-    //[self loadUser];
     
 }
 - (void) logOut:(NSNotification*)notification
@@ -92,7 +91,6 @@
                                                        @"backdrop_path": @"backdropPath",
                                                        @"belongs_to_collection":@"belongsToCollection",
                                                        @"adult": @"adult",
-                                                       
                                                        @"genre_ids": @"genres",
                                                        @"homepage": @"homepage",
                                                        @"original_language": @"originalLanguage",
@@ -176,8 +174,8 @@
                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                  self.movies = mappingResult.array;
                                  [self.moviesDict setObject:self.movies forKey:@"top_rated"];
-                                 if(!self.objects) self.objects=[NSMutableArray arrayWithCapacity:5];
-                                 [self.objects addObject:self.movies];
+                                 if(!self.objects) self.objects=[NSMutableArray arrayWithCapacity:5]; 
+                                 if (self.objects.count<3) [self.objects addObject:self.movies];
                                  //self.objects = [NSMutableArray arrayWithArray:self.movies];
                                  [self.tableView reloadData];
                              }
@@ -195,7 +193,7 @@
                                   [self.moviesDict setObject:self.movies forKey:@"upcoming"];
                                   
                                   //  self.objects=[NSMutableArray arrayWithCapacity:5];
-                                  [self.objects addObject:self.movies];
+                                    if (self.objects.count<3)[self.objects addObject:self.movies];
                                   NSLog(@"tu2");
                                   //self.objects = [NSMutableArray arrayWithArray:self.movies];
                                   [self.tableView reloadData];
@@ -211,7 +209,7 @@
                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                  self.movies = mappingResult.array;
                                   [self.moviesDict setObject:self.movies forKey:@"now_playing"];
-                                  [self.objects addObject:self.movies ];
+                                   if (self.objects.count<3) [self.objects addObject:self.movies ];
                                   NSLog(@"tu3");
                                   [self.tableView reloadData];
                               }

@@ -579,6 +579,40 @@
         [button setTag:2];
         
     }
+   
+   
+    
+    [UIView animateWithDuration:0.5f delay:0 options:UIViewAnimationOptionCurveLinear  animations:^{
+        CABasicAnimation *theAnimation;
+        theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.scale"];
+        theAnimation.duration=0.5;
+        theAnimation.repeatCount=3;
+        theAnimation.autoreverses=YES;
+        theAnimation.fromValue=[NSNumber numberWithFloat:1.0];
+        theAnimation.toValue=[NSNumber numberWithFloat:0.7];
+        theAnimation.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+        [button.layer addAnimation:theAnimation forKey:@"animateOpacity"];
+        
+    } completion:^(BOOL finished) {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.8f];
+        
+        [UIView commitAnimations];
+         //if (finished) [button.layer removeAllAnimations];
+    }];
+  
+    /* FADE IN OUT
+     [UIView animateWithDuration:0.3 animations:^{
+     button.alpha = 0;
+     } completion: ^(BOOL finished) {//creates a variable (BOOL) called "finished" that is set to *YES* when animation IS completed.
+     button.hidden = finished;//if animation is finished ("finished" == *YES*), then hidden = "finished" ... (aka hidden = *YES*)
+     }];
+     button.alpha = 0;
+     button.hidden = NO;
+     [UIView animateWithDuration:0.3 animations:^{
+     button.alpha = 1;
+     }];
+    */
     [[NSNotificationCenter defaultCenter] postNotificationName:@"FavoritesUpdated" object:nil];
     [self.delegate updateFavorites:self];
     NSLog(@"tapped button in cell at row %i", tag);
