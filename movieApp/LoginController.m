@@ -10,17 +10,21 @@
 #import "MOVUser.h"
 #import "MOVMovie.h"
 #import "movieApp-Swift.h"
+#import "LoadingView.h"
 @class AccountController;
 @interface LoginController()
+@property (weak, nonatomic) IBOutlet LoadingView *activityimage;
 @property (strong, nonatomic) MOVUser *user;
 @property (strong, nonatomic) NSArray *ratedMovies;
+@property BOOL errorOccured;
 @end
 @implementation LoginController
 - (void) viewWillAppear:(BOOL)animated
 {
     self.passwordTextField.secureTextEntry = YES;
+    [self.activityimage setHidden:YES];
+    self.errorOccured=NO;
 }
-
 - (IBAction)loginButtonTapped:(id)sender {
     if(self.usernameTextField.hasText && self.passwordTextField.hasText)
     {
@@ -30,11 +34,11 @@
     self.user.password=password;
     self.user.username=username;
     NSLog(@"Username: %@, password: %@", username, password);
-    
          self.progressLabel.text=@"Logging in...";
+        [self.activityimage setHidden:NO];
+        [LoadingView rotateLayerInfinite:self.activityimage.layer];
     [self getRequestToken];
-        
-    }
+           }
     else
     {
         self.progressLabel.text=@"Username/Password field empty";
@@ -42,6 +46,11 @@
 }
 
 
+- (void) viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+}
 - (void) getRequestToken
 {
     NSURL *baseURL = [NSURL URLWithString:@"https://api.themoviedb.org"];
@@ -59,9 +68,12 @@
                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                   self.user.requestToken=[[[mappingResult array] firstObject] requestToken];
                                   [self loginWithToken];
+                                  self.errorOccured=NO;
                               }
                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
                               self.progressLabel.text=[NSString stringWithFormat:@"Error while trying to get Request Token" ];
+                                  self.errorOccured=YES;
+                                  [[[self activityimage] layer] removeAllAnimations];
                               }];
 }
 - (void) loginWithToken
@@ -81,9 +93,13 @@
                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                   self.user.requestToken=[[[mappingResult array] firstObject] requestToken];
                                   [self getSessionID];
+                                  self.errorOccured=NO;
                               }
                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                              self.progressLabel.text=[NSString stringWithFormat:@"Error while trying to validate login"];
+                                  self.progressLabel.text=[NSString stringWithFormat:@"Error while trying to validate login"];
+                                  [[[self activityimage] layer] removeAllAnimations];
+                                  self.errorOccured=YES;
+                                 
                               }];
 }
 
@@ -104,9 +120,13 @@
                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                   self.user.sessionID=[[[mappingResult array] firstObject] sessionID];
                                   [self getUserID];
+                                  self.errorOccured=NO;
                               }
                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
                               self.progressLabel.text=[NSString stringWithFormat:@"Error while trying to get Session ID"];
+                                  self.errorOccured=YES;
+                                  [[[self activityimage] layer] removeAllAnimations];
+
                               }];
 }
 
@@ -129,9 +149,13 @@
                                   self.user.userID=[[[mappingResult array] firstObject] userID];
                                   self.user.name=[[[mappingResult array] firstObject] name];
                                   [self getFavoriteMovies];
+                                  self.errorOccured=NO;
                               }
                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                   self.progressLabel.text=[NSString stringWithFormat:@"Error while trying to get User ID" ];
+                                  self.errorOccured=YES;
+                                  [[[self activityimage] layer] removeAllAnimations];
+
                               }];
 
 }
@@ -160,10 +184,13 @@
                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                   self.ratedMovies=[mappingResult array];
                                   [self loginComplete];
+                                  self.errorOccured=NO;
                               }
                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                   self.progressLabel.text=[NSString stringWithFormat:@"Error while trying to get User's Favorite Movies"];
-                                  
+                                  self.errorOccured=YES;
+                                  [[[self activityimage] layer] removeAllAnimations];
+
                               }];
 }
 - (void) loginComplete

@@ -94,6 +94,9 @@
 		A0E354271C73711800E81503 /* MOVCastBiographyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E354261C73711800E81503 /* MOVCastBiographyCell.m */; };
 		A0E3542A1C737E8500E81503 /* MOVCastMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E354291C737E8500E81503 /* MOVCastMovieTableViewCell.m */; };
 		A0E3542D1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E3542C1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m */; };
+		A0EDD8791CA56B7E00A9D2C1 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EDD8781CA56B7E00A9D2C1 /* LoadingView.m */; };
+		A0EDD87B1CA5794F00A9D2C1 /* activity.png in Resources */ = {isa = PBXBuildFile; fileRef = A0EDD87A1CA5794F00A9D2C1 /* activity.png */; };
+		A0EDD87D1CA5808300A9D2C1 /* activity2.png in Resources */ = {isa = PBXBuildFile; fileRef = A0EDD87C1CA5808300A9D2C1 /* activity2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -215,6 +218,10 @@
 		A0E354291C737E8500E81503 /* MOVCastMovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVCastMovieTableViewCell.m; sourceTree = "<group>"; };
 		A0E3542B1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVCastMovieCollectionViewCell.h; sourceTree = "<group>"; };
 		A0E3542C1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVCastMovieCollectionViewCell.m; sourceTree = "<group>"; };
+		A0EDD8771CA56B7E00A9D2C1 /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
+		A0EDD8781CA56B7E00A9D2C1 /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		A0EDD87A1CA5794F00A9D2C1 /* activity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity.png; sourceTree = "<group>"; };
+		A0EDD87C1CA5808300A9D2C1 /* activity2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity2.png; sourceTree = "<group>"; };
 		A3F45D917B677418DE3994AE /* Pods-movieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B2111A376C92985556B1CFBC /* libPods-movieApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movieApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE31C9C8EE8F0F7ED4F5DE42 /* Pods-movieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -348,6 +355,8 @@
 				A01B5BA51C74C46D0017CEEC /* MOVFavoritesTableViewCell.m */,
 				A0E3541B1C736E1700E81503 /* Cast View Cells */,
 				A0E3541A1C736DB100E81503 /* Detail Cells */,
+				A0EDD8771CA56B7E00A9D2C1 /* LoadingView.h */,
+				A0EDD8781CA56B7E00A9D2C1 /* LoadingView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -389,6 +398,8 @@
 		A09F02091C60B48E002E128D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0EDD87C1CA5808300A9D2C1 /* activity2.png */,
+				A0EDD87A1CA5794F00A9D2C1 /* activity.png */,
 				A03A2F891CA0816300A5DB9A /* imgplaceholder.png */,
 				A08CE0831C809EEE00A49362 /* videocamicon.png */,
 				A08CE0841C809EEE00A49362 /* fa-user.png */,
@@ -555,6 +566,7 @@
 				A01B63641C75EDAB0017CEEC /* font-awesome.scss in Resources */,
 				A09F021C1C60B48E002E128D /* LaunchScreen.storyboard in Resources */,
 				A050774F1C6A346D0074603B /* starhighlighted.png in Resources */,
+				A0EDD87B1CA5794F00A9D2C1 /* activity.png in Resources */,
 				A01B63581C75EDAB0017CEEC /* _animated.scss in Resources */,
 				A01B634E1C75EDAB0017CEEC /* fixed-width.less in Resources */,
 				A01B635A1C75EDAB0017CEEC /* _core.scss in Resources */,
@@ -581,6 +593,7 @@
 				A01B634F1C75EDAB0017CEEC /* font-awesome.less in Resources */,
 				A0E354021C72225700E81503 /* movies.png in Resources */,
 				A01B63531C75EDAB0017CEEC /* mixins.less in Resources */,
+				A0EDD87D1CA5808300A9D2C1 /* activity2.png in Resources */,
 				A0E354001C72225000E81503 /* favorites.png in Resources */,
 				A01B63431C75EDAB0017CEEC /* font-awesome.min.css in Resources */,
 				A01B635C1C75EDAB0017CEEC /* _icons.scss in Resources */,
@@ -670,6 +683,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A06625A41C64EC0700B1B050 /* MOVMovieCollectionViewCell.m in Sources */,
+				A0EDD8791CA56B7E00A9D2C1 /* LoadingView.m in Sources */,
 				A09F02261C60B5BB002E128D /* MOVMovie.m in Sources */,
 				A0E3542D1C737F8C00E81503 /* MOVCastMovieCollectionViewCell.m in Sources */,
 				A01CDA991C9994A10003FE26 /* MOVRealmVisitedMovie.m in Sources */,
