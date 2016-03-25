@@ -17,6 +17,7 @@
 #import "movieApp-Swift.h"
 #import <CoreSpotlight/CoreSpotlight.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "Reachability.h"
 @class AccountController;
 
 @interface MasterViewController ()
@@ -29,7 +30,7 @@
 @property (nonatomic, strong) NSArray *ratedMovies;
 @property (nonatomic, strong) MOVMovieTableViewCell *MovieCell;
 @property (nonatomic, strong) NSString *query;
-
+@property BOOL isInternet;
 @property int index1;
 @property int index2;
 @property int index3;
@@ -286,9 +287,40 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"masterViewInactive" object:nil];
     
 }
+- (BOOL) connectedToNetwork{
+    Reachability* reachability = [Reachability reachabilityWithHostName:@"google.com"];
+    NetworkStatus remoteHostStatus = [reachability currentReachabilityStatus];
+    
+    if(remoteHostStatus == NotReachable)
+    {
+        self.isInternet =NO;
+    }
+    else if (remoteHostStatus == ReachableViaWWAN)
+    {
+        self.isInternet = TRUE;
+    }
+    else if (remoteHostStatus == ReachableViaWiFi)
+    {
+        self.isInternet = TRUE;
+        
+    }
+    return self.isInternet;
+}
 - (void)viewWillAppear:(BOOL)animated {
     //self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
-    
+    BOOL connected=[self connectedToNetwork];
+    if(!connected)
+    {
+         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"This can't be true"
+                                                                       message:@"This app needs internet, but you don't have it, please connect"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
     self.tabBarController.tabBar.translucent = NO;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"masterViewActive" object:nil];
     

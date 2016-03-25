@@ -14,6 +14,7 @@
 #import "NSString+FontAwesome.h"
 #import <CoreSpotlight/CoreSpotlight.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "Reachability.h"
 RLM_ARRAY_TYPE(MOVRealmMovie)
 @interface FavoritesController()
 @property (strong, nonatomic) NSArray *ratedMovies;
@@ -45,9 +46,43 @@ RLM_ARRAY_TYPE(MOVRealmMovie)
     [[NSNotificationCenter defaultCenter] postNotificationName:@"favoritesViewInactive" object:nil];
 
 }
+
+- (BOOL) connectedToNetwork{
+    Reachability* reachability = [Reachability reachabilityWithHostName:@"google.com"];
+    NetworkStatus remoteHostStatus = [reachability currentReachabilityStatus];
+    BOOL isInternet=YES;
+    if(remoteHostStatus == NotReachable)
+    {
+        isInternet =NO;
+    }
+    else if (remoteHostStatus == ReachableViaWWAN)
+    {
+        isInternet = TRUE;
+    }
+    else if (remoteHostStatus == ReachableViaWiFi)
+    {
+        isInternet = TRUE;
+        
+    }
+    return isInternet;
+}
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    BOOL connected=[self connectedToNetwork];
+    if(!connected)
+    {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"This can't be true"
+                                                                       message:@"This app needs internet, but you don't have it, please connect"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+
     self.movies = [MOVRealmMovie allObjects];
     [self.tableView reloadData];
     [self registerAsObserver];

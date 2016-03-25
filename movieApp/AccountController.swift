@@ -23,24 +23,6 @@ class AccountController: UIViewController, BEMSimpleLineGraphDelegate, BEMSimple
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "movieAdd:", name:"movieViewed", object: nil)
         
     }
-/*
-
-- (void) detailsegue:(NSString *)movietitle
-{
-RLMArray<MOVRealmMovie*><MOVRealmMovie> *movs= [MOVRealmMovie allObjects];
-for (int i=0; i<movs.count; i++)
-{
-if([[[movs objectAtIndex:i] title] isEqualToString:movietitle])
-{
-self.movie=[[MOVMovie alloc] initWithRLMObject:[movs objectAtIndex:i]];
-// controller.movie=[[MOVMovie alloc] initWithRLMObject:[movs objectAtIndex:i]];
-[self performSegueWithIdentifier:@"showDetail" sender:self];
-break;
-}
-}
-}
-
-*/
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         if (segue.identifier == "detailSegue") {
               let viewController:MOVDetailController = segue!.destinationViewController as!MOVDetailController
@@ -175,8 +157,57 @@ break;
         }
     }
     
+/*- (BOOL) connectedToNetwork{
+Reachability* reachability = [Reachability reachabilityWithHostName:@"google.com"];
+NetworkStatus remoteHostStatus = [reachability currentReachabilityStatus];
+BOOL isInternet=YES;
+if(remoteHostStatus == NotReachable)
+{
+isInternet =NO;
+}
+else if (remoteHostStatus == ReachableViaWWAN)
+{
+isInternet = TRUE;
+}
+else if (remoteHostStatus == ReachableViaWiFi)
+{
+isInternet = TRUE;
+
+}
+return isInternet;
+}*/
+    func connectedToNetwork() -> Bool{
+        let reachability=Reachability.reachabilityForInternetConnection()
+        reachability.reachableBlock = {
+            (let reach: Reachability!) -> Void in
+            
+            // keep in mind this is called on a background thread
+            // and if you are updating the UI it needs to happen
+            // on the main thread, like this:
+            dispatch_async(dispatch_get_main_queue()) {
+                return true;
+            }
+        }
+        
+        reachability.unreachableBlock = {
+            (let reach: Reachability!) -> Void in
+            return false;
+        }
+        return true;
+    }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if connectedToNetwork() == true {
+            print("Internet connection OK")
+        } else {
+            print("Internet connection FAILED")
+            
+            let alert = UIAlertController(title: "This can't be true", message:"This app needs internet, but you don't have it, please connect", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
+            self.presentViewController(alert, animated: true){}
+        }
+        
         realm = RLMRealm.defaultRealm()
         let arr=MOVRealmVisitedMovie.allObjects();
         let calendar = NSCalendar.currentCalendar()

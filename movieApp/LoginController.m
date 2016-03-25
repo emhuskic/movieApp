@@ -11,16 +11,52 @@
 #import "MOVMovie.h"
 #import "movieApp-Swift.h"
 #import "LoadingView.h"
+#import "Reachability.h"
 @class AccountController;
 @interface LoginController()
 @property (weak, nonatomic) IBOutlet LoadingView *activityimage;
 @property (strong, nonatomic) MOVUser *user;
 @property (strong, nonatomic) NSArray *ratedMovies;
+
 @property BOOL errorOccured;
 @end
 @implementation LoginController
+
+- (BOOL) connectedToNetwork{
+    Reachability* reachability = [Reachability reachabilityWithHostName:@"google.com"];
+    NetworkStatus remoteHostStatus = [reachability currentReachabilityStatus];
+    BOOL isInternet=YES;
+    if(remoteHostStatus == NotReachable)
+    {
+        isInternet =NO;
+    }
+    else if (remoteHostStatus == ReachableViaWWAN)
+    {
+        isInternet = TRUE;
+    }
+    else if (remoteHostStatus == ReachableViaWiFi)
+    {
+        isInternet = TRUE;
+        
+    }
+    return isInternet;
+}
 - (void) viewWillAppear:(BOOL)animated
 {
+    BOOL connected=[self connectedToNetwork];
+    if(!connected)
+    {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"This can't be true"
+                                                                       message:@"This app needs internet, but you don't have it, please connect"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+
     self.passwordTextField.secureTextEntry = YES;
     [self.activityimage setHidden:YES];
     self.errorOccured=NO;

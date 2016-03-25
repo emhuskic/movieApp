@@ -5,3 +5,4 @@
 #import "MOVMovie.h"
 #import "MOVRealmVisitedMovie.h"
 #import "MOVDetailController.h"
+#import "Reachability.h"

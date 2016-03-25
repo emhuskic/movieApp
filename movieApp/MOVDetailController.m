@@ -27,6 +27,7 @@
 #import "MOVVideo.h"
 #import "MOVUser.h"
 #import "MOVRealmVisitedMovie.h"
+#import "Reachability.h"
 @interface MOVDetailController()
 @property (strong, nonatomic) NSArray *cast;
 @property (strong, nonatomic) MOVPerson *selectedCast;
@@ -288,6 +289,26 @@
     UIGraphicsEndImageContext();
     return newImage;
 }
+
+- (BOOL) connectedToNetwork{
+    Reachability* reachability = [Reachability reachabilityWithHostName:@"google.com"];
+    NetworkStatus remoteHostStatus = [reachability currentReachabilityStatus];
+    BOOL isInternet=YES;
+    if(remoteHostStatus == NotReachable)
+    {
+        isInternet =NO;
+    }
+    else if (remoteHostStatus == ReachableViaWWAN)
+    {
+        isInternet = TRUE;
+    }
+    else if (remoteHostStatus == ReachableViaWiFi)
+    {
+        isInternet = TRUE;
+        
+    }
+    return isInternet;
+}
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
@@ -297,7 +318,20 @@
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"title = %@",
                          [self.movie title]];
     RLMResults<MOVRealmVisitedMovie *> *movies=[MOVRealmVisitedMovie objectsWithPredicate:pred];
-    
+        BOOL connected=[self connectedToNetwork];
+        if(!connected)
+        {
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"This can't be true"
+                                                                           message:@"This app needs internet, but you don't have it, please connect"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+
     if (movies.count)
     {
         RLMArray *arr = [[RLMArray alloc] initWithObjectClassName:@"MOVRealmVisitedMovie"];

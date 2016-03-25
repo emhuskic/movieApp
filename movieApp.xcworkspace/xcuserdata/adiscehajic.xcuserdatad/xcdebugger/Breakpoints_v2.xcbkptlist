@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "movieApp/LoginController.m"
-            timestampString = "480607645.529936"
+            timestampString = "480610751.494206"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "-getRequestToken"
             landmarkType = "5">
          </BreakpointContent>

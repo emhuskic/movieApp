@@ -97,6 +97,8 @@
 		A0EDD8791CA56B7E00A9D2C1 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EDD8781CA56B7E00A9D2C1 /* LoadingView.m */; };
 		A0EDD87B1CA5794F00A9D2C1 /* activity.png in Resources */ = {isa = PBXBuildFile; fileRef = A0EDD87A1CA5794F00A9D2C1 /* activity.png */; };
 		A0EDD87D1CA5808300A9D2C1 /* activity2.png in Resources */ = {isa = PBXBuildFile; fileRef = A0EDD87C1CA5808300A9D2C1 /* activity2.png */; };
+		A0EDD8801CA5868000A9D2C1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EDD87F1CA5868000A9D2C1 /* Reachability.m */; };
+		A0EDD8821CA586A700A9D2C1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0EDD8811CA586A700A9D2C1 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -222,6 +224,9 @@
 		A0EDD8781CA56B7E00A9D2C1 /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
 		A0EDD87A1CA5794F00A9D2C1 /* activity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity.png; sourceTree = "<group>"; };
 		A0EDD87C1CA5808300A9D2C1 /* activity2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity2.png; sourceTree = "<group>"; };
+		A0EDD87E1CA5868000A9D2C1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		A0EDD87F1CA5868000A9D2C1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		A0EDD8811CA586A700A9D2C1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A3F45D917B677418DE3994AE /* Pods-movieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B2111A376C92985556B1CFBC /* libPods-movieApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movieApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE31C9C8EE8F0F7ED4F5DE42 /* Pods-movieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-movieApp/Pods-movieApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -232,6 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0EDD8821CA586A700A9D2C1 /* SystemConfiguration.framework in Frameworks */,
 				6E4530DBD60F02F2F74C8256 /* libPods-movieApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +436,8 @@
 		A09F02231C60B57A002E128D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A0EDD87E1CA5868000A9D2C1 /* Reachability.h */,
+				A0EDD87F1CA5868000A9D2C1 /* Reachability.m */,
 				A09F02241C60B5BB002E128D /* MOVMovie.h */,
 				A09F02251C60B5BB002E128D /* MOVMovie.m */,
 				A08CE0801C80975800A49362 /* MOVUser.h */,
@@ -485,6 +493,7 @@
 		F8ABC589A075389147F3BB51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0EDD8811CA586A700A9D2C1 /* SystemConfiguration.framework */,
 				B2111A376C92985556B1CFBC /* libPods-movieApp.a */,
 			);
 			name = Frameworks;
@@ -707,6 +716,7 @@
 				A0E353F01C6B63DB00E81503 /* MOVMovieCastCollectionViewCell.m in Sources */,
 				A0E354091C722FE600E81503 /* MOVUpperImageCell.m in Sources */,
 				A0E354121C72353700E81503 /* MOVMovieCastTableViewCell.m in Sources */,
+				A0EDD8801CA5868000A9D2C1 /* Reachability.m in Sources */,
 				A01B63E31C75EF880017CEEC /* NSString+FontAwesome.m in Sources */,
 				A04D340F1C82500800D39AC0 /* AccountController.swift in Sources */,
 				A0E3540F1C72332D00E81503 /* MOVRatingTableViewCell.m in Sources */,
